@@ -1,0 +1,809 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Ailzr's Blog" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Ailzr's Blog" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Ailzr's Blog" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="C" />
+
+
+<link rel="canonical" href="http://example.com/2023/02/20/C-Foundation/">
+
+
+
+  <title>
+C语言基础 |
+Ailzr's Blog</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">C语言基础
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-02-20 12:50:15">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-02-20T12:50:15+08:00">2023-02-20</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>9.8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>9 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ailzr's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/assets/C_Foundation.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/20/C-Foundation/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ailzr">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ailzr's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="变量类型"><a class="markdownIt-Anchor" href="#变量类型">#</a> 变量类型</h1>
+<p>C 语言是 强数据类型语言</p>
+<p>int	整型		如果输出一个整数，使用 % d   如果是 long  ，则用 % ld，long long 为 % lld</p>
+<p>double	小数		如果输出一个小数，使用 % f  或者用 %.2f  ，其中数字 2 表明保留两位小数</p>
+<p>char	字符		如果输出字符，则用 % c  	如果输出字符串，则用 % s</p>
+<h1 id="常量"><a class="markdownIt-Anchor" href="#常量">#</a> 常量</h1>
+<p>整数常量  前缀为 0x 或 0x 表示十六进制	0 表示八进制，不带前缀表示十进制</p>
+<p>可加后缀 U 和 L	U 表示无符号整数（unsigned）	L 表示长整数（long）	后缀不区分大小写</p>
+<p>写东西时可用 \ 换行，如</p>
+<p>hello \</p>
+<p>world      输出为 hello world</p>
+<p>#define 预处理器	可用于定义常量	#define 常量名 常量值</p>
+<p>如  #define PI 3.14// 定义常量 PI 常量值 3.14</p>
+<p>用 define 定义的常量不可修改</p>
+<p>也可以用 const 定义常量	用法：const 数值类型 常量名 = 常量值</p>
+<p>例如：const double PI = 3.14；	const 定义常量同样不可以修改</p>
+<p>#define 和 const 均写在主函数外</p>
+<p>#define 可以不加；在预处理时起作用	const 须加；在编译，运行时起作用</p>
+<p>#define 只是简单的替换，没有类型检查。简单的字符串替换会导致边界效应</p>
+<p>例如：</p>
+<p>#define A 1</p>
+<p>#define B A+3</p>
+<p>#define C A/B*3</p>
+<p>//C = A/A + 3 * 3 = 1 + 3 * 3 = 10</p>
+<p>#define 不可以调试	const 可以进行调试</p>
+<p>const 不能重复定义，不可以定义两个一样的，#define 可以通过 undef 取消某个符号的定义</p>
+<p>#define 可以配合 #ifdef// 如果定义过，则	#endif	#ifndef// 如果未定义过，则	使用</p>
+<h1 id="断点调试"><a class="markdownIt-Anchor" href="#断点调试">#</a> 断点调试</h1>
+<p>左键双击代码最左端，可在该行创建一个断点</p>
+<p>f5 开始执行断点调试 / 从下一断点开始执行调试</p>
+<p>f10 逐过程运行，f11 逐语句运行；</p>
+<p>逐过程时，当遇到函数，则会当成一个语句直接跑过。</p>
+<p>逐语句时，遇到函数则会进入函数逐语句调试。</p>
+<p>shift+f5 结束断点调试。</p>
+<p>shift+f11 跳出函数体</p>
+<h1 id="运算符"><a class="markdownIt-Anchor" href="#运算符">#</a> 运算符</h1>
+<p>取模公式：	a % b == a - (a /b) * b</p>
+<p>关系运算符的结果要么为真（用非 0 表示，默认为 1），要么为假（用 0 表示）</p>
+<p>逻辑运算符结果用 0（假），或非 0（真，默认为 1）表示</p>
+<p>int A = 1,B = 0;</p>
+<p>&amp;&amp; 称为逻辑与运算符，如果两个操作数都非 0，则条件为真 (A &amp;&amp; B = 0)</p>
+<p>|| 称为逻辑或运算符，如果两个操作数中有任意一个非 0，则条件为真（A || B = 1）</p>
+<p>！称为逻辑非运算符，用来逆转操作数的逻辑状态，\</p>
+<p>如果条件为真则逻辑非运算符使其为假。例如：!(A &amp;&amp;B = 1)</p>
+<p>C += 3	即为	C = C + 3		-= /= %= 同理</p>
+<p>条件表达式？表达式 1：表达式 2；</p>
+<p>如果条件表达式为非 0（真），则运行表达式 1，如果为 0（假），则运行表达式 2.</p>
+<p>逗号的运算符优先级最低，</p>
+<p>所有的双目运算符中只有赋值运算符的结合方向是从右向左</p>
+<p>单目运算和三目运算从右向左</p>
+<p>运算符大概的顺序为：</p>
+<p>算术运算符	&gt;	关系运算符	&gt;	逻辑运算符 (逻辑非！除外)	&gt;	赋值运算符	&gt;	逗号运算符</p>
+<h1 id="scanf与sprintf函数"><a class="markdownIt-Anchor" href="#scanf与sprintf函数">#</a> scanf 与 sprintf 函数</h1>
+<p>使用 scanf 函数接收字符串时，字符串名即代表其地址</p>
+<p>如	scanf（&quot;% s&quot;，name）;</p>
+<p>scanf (&quot;% d&quot;,&amp;age); 中，要将输入值存放到 age 变量指向的地址，因此需要加 &amp;</p>
+<p>scanf (&quot;% lf&quot;,&amp;sal); 使用 scanf 函数接收 double 类型时，格式参数为 % lf</p>
+<p>scanf (&quot;% c&quot;,&amp;x); 输入字符串时需注意，若上一行也为输入函数，则用户输入回车时</p>
+<p>会被 scanf 函数将回车识别为一个字符，并存入 x 中</p>
+<p>sprintf 函数用于拼接字符（字符串）</p>
+<p>sprintf(temp,&quot;\nxxx %d %.2f xxxxx&quot;,a,b);</p>
+<p>表示将信息拼接并存入 temp;</p>
+<h1 id="c语言执行方式与转义符"><a class="markdownIt-Anchor" href="#c语言执行方式与转义符">#</a> C 语言执行方式与转义符</h1>
+<p>C 语言没有对象</p>
+<p>程序源文件.c 进行编译执行 cl.exe 程序</p>
+<p>形成 obj 文件，与库文件进行链接后（即 link.exe）</p>
+<p>形成可执行的 exe 程序。</p>
+<p>\ 为转义符</p>
+<p>\t 为缩进  \n 下一行  \r 为回车</p>
+<p>\r 指  ABB\rB  会将 \r 后方内容从头开始替换显示，显示为 BBB</p>
+<h1 id="二进制八进制与十六进制转换"><a class="markdownIt-Anchor" href="#二进制八进制与十六进制转换">#</a> 二进制，八进制与十六进制转换</h1>
+<p>假设有二进制数  11010101	转换为八进制数</p>
+<p>将其划分为 3 个一组，若不足，在前方补 0 ，如</p>
+<p>011，010，101：三个一组转换为十进制数：</p>
+<p>011 = 3	010 = 2	101 = 5</p>
+<p>则 11010101 转换为八进制数就是 325</p>
+<p>假设有二进制数 11010101	转换为十六进制数</p>
+<p>将其划分为 4 个一组，若不足，在前方补 0 ，如</p>
+<p>1101，0101 ：四个一组转换为十六进制数（A-F 分别代表 10-15）：</p>
+<p>1101 = D	0101 = 5</p>
+<p>则 11010101 转换为十六进制数就是 D5</p>
+<p>11，100，101	转八进制为 345</p>
+<p>11，1001，0110	转十六进制为 396</p>
+<p>八进制与十六进制转换为二进制则相反</p>
+<p>如将 0237 转为二进制，则将每一位转换为三个数为一组的二进制数</p>
+<p>0 = 0	2 = 010	3 = 011	7 = 111</p>
+<p>则 0237 = 1，011，111</p>
+<p>如将 0x23B 转为二进制，则将每一位转换为四个数为一组的二进制数</p>
+<p>2 = 0010	3 = 0011	B = 1011</p>
+<p>则 0x23B = 10，0011，1011</p>
+<p>01230	转二进制为 1，010，011，000</p>
+<p>0xAB29	转二进制为 1010,1011,0010,1001</p>
+<h1 id="分支语句"><a class="markdownIt-Anchor" href="#分支语句">#</a> 分支语句</h1>
+<p>需注意，while 和 for 为循环语句</p>
+<p>switch 与 if 并非循环语句</p>
+<p>for （循环变量初始化（语句 1）; 循环条件（语句 2）；循环变量迭代（语句 3））{代码块}；</p>
+<p>表示 执行语句 1，判断语句 2 是否为真，若为真，执行代码块，结束后执行语句 3，再从语句 2 开始循环</p>
+<p>若语句 2 为假，则结束 for 循环</p>
+<p>while （表达式）{代码块}；</p>
+<p>判断表示式是否为真，为真则执行代码块，执行结束再次判断，若为真则再次执行。</p>
+<p>直至表达式判断为假，则结束 while 循环。（中间可用 break 强行结束）</p>
+<p>注意：while 循环容易形成死循环，如</p>
+<p>while （0 == 0）{printf（“死循环”）}，则在 debug 条件下，会不停的输出死循环导致卡死</p>
+<p>switch （表达式）{	// 该表达式是也给常量表达式，必须是一个整型（char、short、int、long 等）											// 或枚举类型</p>
+<p>​	case 常量 1:	// 当表达式值等于常量 1 时，执行以下所有代码块（包括 default 语句块）</p>
+<p>​	代码块 1；</p>
+<p>​	case 常量 2:	// 若不等于常量 1，则判断是否等于常量 2，执行从代码块 2 开始的下列代码块</p>
+<p>​	代码块 2；		// 代码块后可用 break 强行结束</p>
+<p>​	case 常量 n:	//case 语句中必须是常量，不能是变量</p>
+<p>​	代码块 n；	// 若常量 1 符合，且中间无 break，则会从代码 1 一直执行到 default 语句，称为穿透</p>
+<p>​	default：	// 若表达式值与以上常量皆不相等，则执行 default 语句块</p>
+<p>​	default 语句块；	//default 并非必要</p>
+<p>}</p>
+<p>if （表达式 1）{代码块 1}		// 若表达式为真，则执行代码块，分支结束</p>
+<p>else if （表达式 2）{代码块 2}	// 若表达式 1 为假，则判断表达式 2 是否为真</p>
+<p>// 若为真，执行代码块 2，分支结束。（else if 并非必要）</p>
+<p>else {代码块 3}	// 若表达式 1，表达式 2 皆为假，则执行代码块 3，分支结束。（else 并非必要）</p>
+<h1 id="浮点类型-字符类型与布尔类型"><a class="markdownIt-Anchor" href="#浮点类型-字符类型与布尔类型">#</a> 浮点类型 字符类型与布尔类型</h1>
+<p>// 浮点类型</p>
+<p>float 单精度  占用 4 字节  精度为 6 位小数  值范围 1.2e-38 到 3.4E+38<br>
+double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 到 1.7E+308<br>
+5.12e2 = 5.12* 10^2 = 512	5.12e-2 = 5.12 * 10^-2 = 0.0512<br>
+ 浮点数是近似值<br>
+浮点型常量默认为 double 型，声明 float 型常量时，须在后面加 f 或 F<br>
+ 输出时，% f 默认保留 6 位小数，若写为 %15f，则保留为 15 为小数</p>
+<p>// 字符类型</p>
+<p>字符类型是 char	char 是 1 个字节，可以存放数字或者字母</p>
+<p>多个字符称为字符串，C 语言中使用 char 数组表示</p>
+<p>% c 表示以字符的形式输出	字符需用’’</p>
+<p>//vs2010 编译器是 c89</p>
+<p>// 要求变量的定义在执行语句之前</p>
+<p>// 布尔类型	boolean</p>
+<p>0 表示假，非 0 表示真</p>
+<h1 id="函数指针"><a class="markdownIt-Anchor" href="#函数指针">#</a> 函数指针</h1>
+<p>int max(int a,int b){</p>
+<pre><code>return a&gt;b ? a : b;
+</code></pre>
+<p>}</p>
+<p>void main(){</p>
+<pre><code>int (*pmax)(int,int)=max;
+</code></pre>
+<p>}// 函数指针名为 pmax</p>
+<p>//int 表示该函数指针指向的函数返还的是 int 类型</p>
+<p>//（int，int）表示该函数指针指向的函数形参是接收两个 int，也可写上形参名</p>
+<p>maxVal = （*pmax）（x,y）；// 通过函数指针调用函数，调用方式 1</p>
+<p>maxVal = pmax (x,y);	// 调用方式 2</p>
+<h1 id="结构体与共用体"><a class="markdownIt-Anchor" href="#结构体与共用体">#</a> 结构体与共用体</h1>
+<p>结构体 struct</p>
+<p>创建一个结构体，里面包含三个成员（变量），猫的名字，猫的年龄，猫的颜色</p>
+<p>struct Cat {// 结构体名 Cat，Cat 就是我们自己构造的一个数据类型</p>
+<p>​	char * name;</p>
+<p>​	int age;</p>
+<p>​	char * color;</p>
+<p>};</p>
+<p>// 使用 Cat 结构体，创建变量：</p>
+<p>struct Cat cat1;</p>
+<p>// 给 cat1 的各个成员赋值。</p>
+<p><span class="exturl" data-url="aHR0cDovL2NhdDEubmFtZQ==">cat1.name</span> = “小白”;</p>
+<p>cat1.age = 3;</p>
+<p>cat1.color = “白色”;</p>
+<p>// 输出猫的信息</p>
+<p>printf (&quot;\n 第一只猫 name=% s，age=% d，color=% s&quot;,<span class="exturl" data-url="aHR0cDovL2NhdDEubmFtZQ==">cat1.name</span>,cat1.age,cat1.color);</p>
+<p>结构体使自定义的数据类型（构造数据类型），表示的是一种数据类型</p>
+<p>结构体变量代表一个具体变量</p>
+<p><strong>例 int num1；//int 是整型数据类型，num1 是 int 变量</strong></p>
+<p><strong>如 struct Cat cat1；//Cat 是结构体数据类型，cat1 是一个 Cat 变量</strong></p>
+<p><strong>结构体传递默认是值传递，而非地址传递</strong></p>
+<p>共用体 union</p>
+<p>union 共用体名 {</p>
+<p>​	成员列标</p>
+<p>};</p>
+<p>结构体的各个成员会占用不同的内存，互相之间没有影响，而共用体的所有成员占用同一段内存，修改一个成员会影响其余所有成员</p>
+<h1 id="静态数据函数中局部变量注意点"><a class="markdownIt-Anchor" href="#静态数据函数中局部变量注意点">#</a> 静态数据，函数中局部变量注意点</h1>
+<p>如 int *func (){</p>
+<p>​	int n = 100;</p>
+<p>​	return &amp;n;</p>
+<p>}</p>
+<p>void main(){</p>
+<p>​	int * ptr = func();</p>
+<p>​	int n = *p;</p>
+<p>}</p>
+<p>将函数中局部变量的地址赋予整型指针 ptr 后，取指针 ptr 所指向的值赋予整型变量 n</p>
+<p>须注意，函数运行结束后，栈将会被销毁，但内存数据并不会被清 0</p>
+<p>而是放弃对该块内存的使用权限，该块内存可能会被其他语句调用</p>
+<p>从而导致该地址内存放数据的改变，以影响 n 的值。</p>
+<p>因此若要用函数将其中局部变量返还于主函数，须用 static 修饰。</p>
+<p>如 static int n = 100;// 在 func 函数中改写成这样</p>
+<p>表示整型 n 是一个静态数据，将被存于静态数据区（类似于全局变量）。</p>
+<h1 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型">#</a> 数据类型</h1>
+<p>C 语言中数据类型包括</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">基本类型</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">​	数值类型</span><br><span class="line"></span><br><span class="line">​	&#123;</span><br><span class="line"></span><br><span class="line">​		整型</span><br><span class="line"></span><br><span class="line">​		&#123;</span><br><span class="line"></span><br><span class="line">​			短整型	<span class="type">short</span></span><br><span class="line"></span><br><span class="line">​			整型	<span class="type">int</span></span><br><span class="line"></span><br><span class="line">​			长整型	<span class="type">long</span></span><br><span class="line"></span><br><span class="line">​		&#125;</span><br><span class="line"></span><br><span class="line">​		浮点型</span><br><span class="line"></span><br><span class="line">​		&#123;</span><br><span class="line"></span><br><span class="line">​			单精度型	<span class="type">float</span></span><br><span class="line"></span><br><span class="line">​			双精度型	<span class="type">double</span></span><br><span class="line"></span><br><span class="line">​		&#125;</span><br><span class="line"></span><br><span class="line">​	&#125;</span><br><span class="line"></span><br><span class="line">​	字符类型	<span class="type">char</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">构造类型</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">​	数组</span><br><span class="line"></span><br><span class="line">​	结构体	<span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">​	共用体	<span class="title">union</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">​	枚举类型	<span class="title">enum</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#125;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">指针类型</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">空类型	<span class="title">void</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="数据类型转换"><a class="markdownIt-Anchor" href="#数据类型转换">#</a> 数据类型转换</h1>
+<p>精度从低到高顺序</p>
+<p>short	int	unsigned int	long	unsigned long	float	double	long double</p>
+<p>C 程序在进行赋值或者运算时，精度小的类型自动转换为精度大的数据类型</p>
+<p>强制类型转换符（）  格式：	（类型名）表达式</p>
+<p>例：	（若浮点型强行转换为整型，则会将小数点后部分直接截断）</p>
+<p>#include&lt;stdio.h&gt;</p>
+<p>void main()</p>
+<p>{</p>
+<p>​	double d1 = 1.234;</p>
+<p>​	int num = (int)d1;</p>
+<p>}</p>
+<p>// 这种强制类型转换，并不会使操作数（d1）发生类型改变</p>
+<p>// 强制转换符只针对最近的操作数有效，若希望针对更多的表达式转换，须使用小括号</p>
+<h1 id="位运算原码反码与补码"><a class="markdownIt-Anchor" href="#位运算原码反码与补码">#</a> 位运算，原码，反码与补码</h1>
+<p>对于有符号的数而言：</p>
+<p>1) 二进制的最高位是符号位，0 表示正数，1 表示负数</p>
+<p>2) 正数的原码反码补码都一样（三码合一）</p>
+<p>3) 负数的反码 = 它的原码符号位不变，其他位取反（0 取 1，1 取 0）‘</p>
+<p>4) 负数的补码 = 它的反码 + 1</p>
+<p>5) 0 的反码补码都是 0</p>
+<p>6) 计算机运算时，都是以补码的方式来运算的</p>
+<p>位运算符：</p>
+<p>&amp; 按位与运算符	两边皆为 1 时才为 1，否则为 0，如</p>
+<p>0&amp;0=0	0&amp;1=0	1&amp;1=1</p>
+<p>| 按位或运算符	两边皆为 0 时才为 0，否则为 1，如</p>
+<p>0|0=0	0|1=1	1|1=1</p>
+<p>^ 异或运算符	两边相同时为 0，否则为 1，如</p>
+<dl>
+<dt>0^0=0	0^1=1	1^1=0</dt>
+<dd>取反运算符	即 1 取 0，0 取 1，如</dd>
+</dl>
+<p>~1=0	~0=1</p>
+<p>&lt;&lt; 左移运算符	将一个运算对象的各二进制位全部左移若干位</p>
+<p>(左边的二进制位舍弃，右边补 0)，如</p>
+<p>&gt;&gt; 右移运算符 	将一个运算对象的各二进制位全部右移若干位</p>
+<p>(右边移除位舍弃，正数左边补 0，负数左边补 1)，如</p>
+<p>int a = 1&gt;&gt;2		// 1/2/2=0</p>
+<p>int b = -1&gt;&gt;2		= -1（详见详解 1）</p>
+<p>例一：若对 2 取反（~2=），2 的原码<br>
+为 00000000	00000000	00000000	00000010	（也为 2 的补码）取反则<br>
+为 11111111	11111111	11111111	11111101	此时为结果的补码<br>
+因 11111111	11111111	11111111	11111101	首位为 1，所以其为负数<br>
+又因负数的补码 = 它的反码 + 1，所以它的反码 = 它的补码 - 1	则其反码<br>
+为 11111111	11111111	11111111	11111100	则其原码（3）</p>
+<p>为 10000000	00000000	00000000	00000011	可知为 - 3</p>
+<p>则～2 = -3</p>
+<p>例二：2&amp;-3=</p>
+<p>2 的补码	00000000	00000000	00000000	00000010</p>
+<p>-3 的反码	11111111	11111111	11111111	11111100</p>
+<p>-3 的补码	11111111	11111111	11111111	11111101</p>
+<p>则 2&amp;-3 为	00000000	00000000	00000000	00000000	（此为补码）</p>
+<p>其为正数（三码合一），所以其原码也表示 0</p>
+<p>详解 1：</p>
+<p>原码	10000000	00000000	00000000	00000001	(-1 的原码)</p>
+<p>反码	11111111	11111111	11111111	11111110</p>
+<p>补码	11111111	11111111	11111111	11111111</p>
+<p>右移	11111111	11111111	11111111	11111111	(负数右移后左边补 1，获得结果补码)</p>
+<p>反码	11111111	11111111	11111111	11111110</p>
+<p>原码	10000000	00000000	00000000	00000001	(结果为 - 1)</p>
+<h1 id="栈堆与全局静态变量及动态内存分配"><a class="markdownIt-Anchor" href="#栈堆与全局静态变量及动态内存分配">#</a> 栈，堆与全局，静态变量及动态内存分配</h1>
+<p>头文件 stdlib.h 中声明了四个关于内存动态分配的函数</p>
+<p><strong>函数原型 void * malloc (unsigned int size)</strong>	//malloc 即 memory allocation</p>
+<p><strong>作用–在内存的动态存储区（堆区）中分配一个长度为 size 的连续空间</strong></p>
+<p>形参 size 的类型为无符号整型，函数的返回值是所分配区域的第一个字节的地址</p>
+<p>即此函数是一个指针型函数，返回的指针指向该分配域的开头位置。</p>
+<p>malloc（100）；开辟 100 字节的临时空间，返回值为其第一个字节的地址</p>
+<p><strong>函数原型 void * calloc (unsigned n,unsigned size)</strong></p>
+<p><strong>作用–在内存的动态存储区中分配 n 个长度为 size 的连续空间，该空间一般比较大，足以保存一个数组</strong></p>
+<p>用 calloc 函数可以为一维数组开辟动态存储空间，n 为数组元素个数，每个元素长度为 size</p>
+<p>函数返回指向所分配域的起始位置的指针，分配不成功，返回 NULL。</p>
+<p>p = calloc（50，4）；// 开辟一个 50*4 个字节的临时空间，把起始地址分配给指针变量 p</p>
+<p>*<em> 函数原型 void free (void <em>p)</em></em></p>
+<p><strong>作用–释放变量 p 所指向的动态空间，使这部分空间能重新被其他变量使用。</strong></p>
+<p>free（p）；// 释放 p 所指向的已分配的动态空间</p>
+<p>*<em> 函数原型 void * realloc (void <em>p,unsigned int size)</em></em></p>
+<p><strong>作用–重新分配 malloc 或 calloc 函数获得的动态空间大小，将 p 指向的动态空间大小改变为 size，p 的值不变，分配失败返回 NULL。</strong></p>
+<p>realloc（p，50）；// 将 p 所指向的已分配的动态空间改为 50 字节</p>
+<p><strong>void * p 表示 p 中仅存放一个地址，该地址不指向任何数据</strong></p>
+<p>仅在需要时分配内存，只要使用完堆上的内存块，就需要及时释放，否则可能出现<strong>内存泄漏</strong></p>
+<p>尽量避免分配大量小的内存块。</p>
+<h1 id="指针"><a class="markdownIt-Anchor" href="#指针">#</a> 指针</h1>
+<p>#include&lt;stdio.h&gt;</p>
+<p>int* ptr = &amp;num</p>
+<p>int*  表示类型为指针类型</p>
+<p>名称为 ptr，指向了一个 int 类型的变量的地址</p>
+<p>输出地址时使用的时 % p</p>
+<p>printf (“xxx 的地址为 % p”,&amp;xxx);</p>
+<p>指针变量自身也有地址 &amp; ptr	指针变量存放的地址 ptr	指针变量存放的地址中存放的值 * ptr</p>
+<p>基本类型都有对应的指针类型，int 对应 int*	float 对应 float*</p>
+<p>int *ptr = arr []; 时</p>
+<p>ptr 是一个指针类型，指向数组 arr [] 的首地址</p>
+<p>*ptr 中 * 表示取值，printf 时，ptr 打印出 arr [] 首地址，*ptr 打印出 arr [0]</p>
+<p>对 ptr 使用自增时，即 ptr++, 表示 ptr 自增一个 int 的字节数</p>
+<p>即 ptr++ 等价于 ptr = ptr + 4.(但写出来的时候写成 + 1，表示增加 1 个 int 的字节数)(–同理)</p>
+<p>指针数组</p>
+<p>要让数组的元素指向某数据类型的地址（指针），可以使用指针数组</p>
+<p>如 int *ptr [3]; 则定义一个指针数组</p>
+<p>ptr 指向指针数组的首地址。</p>
+<p>字符串的首地址即代表字符串内容</p>
+<p>*pStr = &quot;abc&quot; 时，若要打印字符串，只需 pStr，并不需要 * pStr</p>
+<p>可用 int **ptr 创建一个二级指针，二级指针内存放的内容是地址，该地址指向一个指针类型，指向的指针为一级指针，一级指针内存放的也为地址，该地址指向一个值。（int 表示该指针类型是 int 类型）</p>
+<p>向上类推，有三级指针，，，多级指针。</p>
+<h1 id="字符串与数相互转换"><a class="markdownIt-Anchor" href="#字符串与数相互转换">#</a> 字符串与数相互转换</h1>
+<p>sprintf 函数存于 stdio.h 头文件下，可将结果存放到字符串中</p>
+<p>sprintf(str1,&quot;%d%d&quot;,a,b);</p>
+<p>sprintf(str2,&quot;%.2f&quot;,d);</p>
+<p>sprintf (str3,&quot;%8.2f&quot;,d);//%8.2f 含义是格式化后，共有 8 位，小数点后占用 2 位，不够用空格占位，小数点也算位置。</p>
+<p>int num1 = atoi (str);	//atoi (str) 将 str 转成整数</p>
+<p>short s1 = atoi(str4);</p>
+<p>double d = atof (str2);	//atof (str2) 将 str2 转成小数</p>
+<p>char c = str3 [0];	//str3 [0] 表示获取到 str3 这个字符串（数组）的第一个 [0] 元素</p>
+<h1 id="字符数组与字符指针"><a class="markdownIt-Anchor" href="#字符数组与字符指针">#</a> 字符数组与字符指针</h1>
+<p>C 语言中并不存在字符串类型，字符串作为数组存在</p>
+<p>每一个字符作为一个单独的元素</p>
+<p>字符数组名是一个常量，不可改变</p>
+<p>如	char str [10];</p>
+<p>str = &quot;hello&quot; 是错误写法</p>
+<p>char str [10]；时会在内存中创建一段空间用来存储或空或乱码</p>
+<p>str = &quot;hello&quot; 会修改 str 指向的地址，从指向或空或乱码的地址改为指向字符串 &quot;hello&quot; 的地址</p>
+<p>因为字符数组名是常量，所以会错误</p>
+<p>char* a = “yes”;</p>
+<p>a = “hello”，建立一个指针，此指针存储的地址指向一个 char 类型，该地址中存储为 &quot;yes&quot; 字符数组</p>
+<p>随后改变 a 指针内存放的地址，新地址指向另一个字符数组</p>
+<h1 id="写入与读取文件的函数"><a class="markdownIt-Anchor" href="#写入与读取文件的函数">#</a> 写入与读取文件的函数</h1>
+<p>int fputc(int c,FILE * fp);</p>
+<p>函数 fputc () 把参数 c 的字符写入到 fp 所指向的输出流中。如果写入成功，它会返回写入的字符，如果发生失误，则会返回 EOF。您可以使用下面的函数来把一个以 null 结尾的字符串写入到流中；</p>
+<p>int fputs(const char *s,FILE *fp);</p>
+<p>说明：函数 fputs () 把字符串 s 写入到 fp 所指向的输出流中。如果写入成功，它会返回一个非负值，如果错误，则会返回 EOF。您也可以使用 int fprint (FILE *fp,const char * format,…) 函数来写把一个字符串写入到文件中。</p>
+<p>int fgetc(FILE * fp);</p>
+<p>fgetc () 函数从 fp 所指向的输入文件中读取一个字符。返回值是读取的字符，如果发生错误则返回 EOF</p>
+<p>char * fgets(char * buf,int n,FILE * fp);</p>
+<p>1）说明：函数 fgets（）从 fp 所指向的输入流中读取 n-1 个字符。它会把读取的字符串复制到缓冲区 buf，并在最后追加一个 null 字符来终止字符串。</p>
+<p>如果这个函数在读取最后一个字符之前就遇到一个换行符’\n’或文件的末尾 EOF，则只会返回读取到的字符，包括换行符。</p>
+<p>2）也可以使用 int fscanf (FILE * fp,const char * format,…) 函数来从文件中读取字符串，但是在遇到第一个空格字符时，它会停止读取。</p>
+<h1 id="c语言打开与关闭文件"><a class="markdownIt-Anchor" href="#c语言打开与关闭文件">#</a> C 语言打开与关闭文件</h1>
+<p>使用 stdio.h 头文件下的函数</p>
+<p>fopen（）来创建一个新的文件或者打开一个已有的文件</p>
+<p>这个调用会初始化类型 FILE 的一个对象，类型 FILE 包含了所有用来控制流的必要的信息</p>
+<p>原型：FILE *fopen（const char * filename,const char * mode）</p>
+<p>1) filename 是字符串，用来命名文件，访问模式 mode 的值可以是下列值中的一个</p>
+<p>r	打开一个已有的文本文件，允许<strong>读取</strong>文件</p>
+<p>w	打开一个文本文件，允许<strong>写入</strong>文件。<strong>如果文件不存在，则会创建一个新的文件</strong>。在这里，您的程序会从文件的开头写入内容，<strong>如果文件存在，则会被截断为零长度，重新写入</strong>。</p>
+<p>a	打开一个文本文件，以<strong>追加模式写入</strong>文件，<strong>如果文件不存在，则会创建一个文件</strong>。在这里，您的程序<strong>会在已有的文件内容中追加内容</strong>。</p>
+<p>r+	打开一个文本文件，允许<strong>读写</strong>文件。</p>
+<p>w+	打开一个文本文件，允许<strong>读写</strong>文件。<strong>如果文件已存在，则文件会被截断为零长度，如果不存在，则会创建一个新文件</strong>。</p>
+<p>a+	打开一个文本文件，允许<strong>读写</strong>文件。<strong>如果文件不存在，则会创建一个新文件，读取会从文件的开头开始，写入则只能是追加模式。</strong></p>
+<p><strong>若要打开二进制文件 (图片，视频等) 须在后面加 b，如 rb，rb+</strong></p>
+<p>关闭文件，使用 fclose () 函数</p>
+<p>原型：int fclose (FILE * fp);</p>
+<p>如果成功关闭文件，则函数会返回 0. 如果文件关闭错误，则返回 EOF，EOF 是定义在 stdio.h 中的一个常量</p>
+<h1 id="stringtimemath头文件应用"><a class="markdownIt-Anchor" href="#stringtimemath头文件应用">#</a> string,time,math 头文件应用</h1>
+<p>string.h</p>
+<p>strlen (str); 可用于统计字符串的大小</p>
+<p>strcpy(char1,char2);</p>
+<p>可将 char2 拷贝到 char1，将 char1 原内容覆盖</p>
+<p>strcat(char1,char2);</p>
+<p>可将 char2 连接在 char1 后面（接头霸王）</p>
+<p>strcmp(char1,char2)</p>
+<p>可将 char1 与 char2 中的字符串对比，若相同，则返回 0，若 char1&gt;char2，则返回值大于 0，反之小于 0</p>
+<p>time.h</p>
+<p>time_t curtime; time_t 为结构体，此语句为初始化 curtime</p>
+<p>time (&amp;curtime);	获取当前时间，并插入 curtime 的地址中</p>
+<p>math.h</p>
+<p>double exp (double x)	返回 e 的 x 次幂的值</p>
+<p>double log (double x)	返回 x 的自然对数（基数为 e 的对数）</p>
+<p>double pow (double x,double y)	返回 x 的 y 次幂</p>
+<p>double sqrt (double x)	返回 x 的平方根</p>
+<p>double fabs (double x)	返回 x 的绝对值</p>
+
+      <div class="tags">
+          <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-02-21 14:41:14" itemprop="dateModified" datetime="2023-02-21T14:41:14+08:00">2023-02-21</time>
+  </span>
+  <span id="2023/02/20/C-Foundation/" class="item leancloud_visitors" data-flag-title="C语言基础" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Ailzr 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Ailzr 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="Ailzr 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ailzr <i class="ic i-at"><em>@</em></i>Ailzr's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/02/20/C-Foundation/" title="C语言基础">http://example.com/2023/02/20/C-Foundation/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/02/19/DataStructureAndAlgorithms/" itemprop="url" rel="prev" data-background-image="&#x2F;assets&#x2F;DataStructureCover.jpg" title="数据结构与算法">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>数据结构与算法</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2023/02/21/Linux-Foundation/" itemprop="url" rel="next" data-background-image="&#x2F;assets&#x2F;Linux.jpg" title="Linux基础">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Linux基础</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text"> 变量类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text"> 常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text"> 断点调试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text"> 运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#scanf%E4%B8%8Esprintf%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text"> scanf 与 sprintf 函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F%E4%B8%8E%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="toc-number">6.</span> <span class="toc-text"> C 语言执行方式与转义符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%85%AB%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="toc-number">7.</span> <span class="toc-text"> 二进制，八进制与十六进制转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.</span> <span class="toc-text"> 分支语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B-%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">9.</span> <span class="toc-text"> 浮点类型 字符类型与布尔类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="toc-number">10.</span> <span class="toc-text"> 函数指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%8E%E5%85%B1%E7%94%A8%E4%BD%93"><span class="toc-number">11.</span> <span class="toc-text"> 结构体与共用体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E5%87%BD%E6%95%B0%E4%B8%AD%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">12.</span> <span class="toc-text"> 静态数据，函数中局部变量注意点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">13.</span> <span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text"> 数据类型转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E4%B8%8E%E8%A1%A5%E7%A0%81"><span class="toc-number">15.</span> <span class="toc-text"> 位运算，原码，反码与补码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E5%A0%86%E4%B8%8E%E5%85%A8%E5%B1%80%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">16.</span> <span class="toc-text"> 栈，堆与全局，静态变量及动态内存分配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">17.</span> <span class="toc-text"> 指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">18.</span> <span class="toc-text"> 字符串与数相互转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%8C%87%E9%92%88"><span class="toc-number">19.</span> <span class="toc-text"> 字符数组与字符指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E4%B8%8E%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">20.</span> <span class="toc-text"> 写入与读取文件的函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E6%89%93%E5%BC%80%E4%B8%8E%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="toc-number">21.</span> <span class="toc-text"> C 语言打开与关闭文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stringtimemath%E5%A4%B4%E6%96%87%E4%BB%B6%E5%BA%94%E7%94%A8"><span class="toc-number">22.</span> <span class="toc-text"> string,time,math 头文件应用</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ailzr"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ailzr</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/02/19/DataStructureAndAlgorithms/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2023/02/21/Linux-Foundation/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2022 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ailzr @ Ailzr's Blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">37k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">33 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/02/20/C-Foundation/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,audio: "assets/bgm.mp3",fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
