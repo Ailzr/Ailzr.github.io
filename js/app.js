@@ -1,4 +1,4 @@
-var CONFIG = {"version":"0.2.5","hostname":"http://roridayo.github.io","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_scroll":true,"js":{"valine":"gh/amehime/MiniValine@4.2.2-beta10/dist/MiniValine.min.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"valine":"css/comment.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":true,"switch":true},"search":null,"valine":{"appId":"l4Dq9lpMxp11shkV9svLzBv2-gzGzoHsz","appKey":"uPnBcmbPIzZ6IeAr1sH90xCc","placeholder":"ヽ(○´∀`)ﾉ♪ 快写下你的评论吧!","avatar":"mp","pageSize":10,"lang":"zh-CN","visitor":true,"NoRecordIP":false,"serverURLs":"https://l4dq9lpm.lc-cn-n1-shared.com","powerMode":true,"tagMeta":{"visitor":"新朋友","master":"博主","friend":"小伙伴","investor":"金主粑粑"},"tagColor":{"master":"var(--color-orange)","friend":"var(--color-aqua)","investor":"var(--color-pink)"},"tagMember":{"master":["4ae76d53164fae8ddd9721fed59544fa"],"friend":null,"investor":null}},"quicklink":{"timeout":3000,"priority":true},"audio":["https://music.163.com/#/song?id=31861269","https://music.163.com/#/song?id=503141959","https://music.163.com/#/song?id=792446","https://music.163.com/#/song?id=863380","https://music.163.com/#/song?id=30251507"],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
+var CONFIG = {"version":"0.2.5","hostname":"https://www.ailzr.com","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_scroll":true,"js":{"valine":"gh/amehime/MiniValine@4.2.2-beta10/dist/MiniValine.min.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"valine":"css/comment.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":true,"switch":true},"search":null,"valine":{"appId":"l4Dq9lpMxp11shkV9svLzBv2-gzGzoHsz","appKey":"uPnBcmbPIzZ6IeAr1sH90xCc","placeholder":"ヽ(○´∀`)ﾉ♪ 快写下你的评论吧!","avatar":"mp","pageSize":10,"lang":"zh-CN","visitor":true,"NoRecordIP":false,"serverURLs":"https://l4dq9lpm.lc-cn-n1-shared.com","powerMode":true,"tagMeta":{"visitor":"新朋友","master":"博主","friend":"小伙伴","investor":"金主粑粑"},"tagColor":{"master":"var(--color-orange)","friend":"var(--color-aqua)","investor":"var(--color-pink)"},"tagMember":{"master":["4ae76d53164fae8ddd9721fed59544fa"],"friend":null,"investor":null}},"quicklink":{"timeout":3000,"priority":true},"audio":["https://music.163.com/#/song?id=31861269","https://music.163.com/#/song?id=503141959","https://music.163.com/#/song?id=792446","https://music.163.com/#/song?id=863380","https://music.163.com/#/song?id=30251507"],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -1131,6 +1131,7 @@ const quickBtn = $('#quick');
 const sideBar = $('#sidebar');
 const siteBrand = $('#brand');
 var toolBtn = $('#tool'), toolPlayer, backToTop, goToComment, showContents;
+var angleBtn = $('#angle'); //新增
 var siteSearch = $('#search');
 var siteNavHeight, headerHightInner, headerHight;
 var oWinHeight = window.innerHeight;
@@ -1623,6 +1624,10 @@ const goToBottomHandle = function () {
 const goToCommentHandle = function () {
   pageScroll($('#comments'));
 }
+
+const headertopdown = function () {
+  pageScroll($('#main'));
+}//新增
 
 const menuActive = function () {
   $.each('.menu .item:not(.title)', function (element) {
@@ -2216,6 +2221,14 @@ const domInit = function() {
       innerHTML: '<div class="item player"></div><div class="item contents"><i class="ic i-list-ol"></i></div><div class="item chat"><i class="ic i-comments"></i></div><div class="item back-to-top"><i class="ic i-arrow-up"></i><span>0%</span></div>'
     });
   }
+  
+  if(!angleBtn) {
+    angleBtn = siteHeader.createChild('div', {
+      id: 'angle',
+      innerHTML: '<span><i class="ic i-angle-down" aria-hidden="true"></i></span>'
+    });
+  }//新增
+  angleBtn.addEventListener('click',headertopdown);//新增
 
   toolPlayer = toolBtn.child('.player');
   backToTop = toolBtn.child('.back-to-top');
