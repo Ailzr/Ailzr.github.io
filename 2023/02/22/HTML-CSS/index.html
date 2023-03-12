@@ -162,9 +162,9 @@ Ailzr = Ailzr's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="1html的概念"><a class="markdownIt-Anchor" href="#1html的概念">#</a> 1.HTML 的概念</h1>
+    <h1 id="html的概念"><a class="markdownIt-Anchor" href="#html的概念">#</a> HTML 的概念</h1>
 <p>HTML (Hyper Text Markup Language)	超文本标记语言</p>
-<h1 id="2html语法"><a class="markdownIt-Anchor" href="#2html语法">#</a> <mark>2.HTML 语法</mark></h1>
+<h1 id="html语法"><a class="markdownIt-Anchor" href="#html语法">#</a> <mark>HTML 语法</mark></h1>
 <p><mark><strong>&lt;关键词&gt; 内容 &lt;/ 关键词 (结束)&gt;</strong></mark></p>
 <p><strong>例如：</strong></p>
 <p><strong>&lt;strong&gt; 加粗显示 &lt;/strong&gt;</strong></p>
@@ -663,12 +663,12 @@ Ailzr = Ailzr's Blog</title>
 </table>
 <p><mark>字符实体</mark></p>
 <p>注：网页不识别代码中连续的空格， 若要实现，需使用 &amp; nbsp</p>
-<h1 id="3html结构"><a class="markdownIt-Anchor" href="#3html结构">#</a> 3.HTML 结构</h1>
+<h1 id="html结构"><a class="markdownIt-Anchor" href="#html结构">#</a> HTML 结构</h1>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span>		<span class="comment">&lt;!--文档类型声明，告诉浏览器该网页的HTML版本--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span>	<span class="comment">&lt;!--语言，en为英文，中文为zh-CN--&gt;</span></span><br><span class="line">​	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>	<span class="comment">&lt;!--规定网页的字符编码.UTF-8(万国码),GB2312:6000+汉字，GBK:20000+汉字--&gt;</span> </span><br><span class="line">    </span><br><span class="line">    	<span class="comment">&lt;!--下面这行代码用于兼容IE浏览器--&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    	<span class="comment">&lt;!--content&quot;宽度=设备宽度&quot;，移动端需要设置--&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    	<span class="comment">&lt;!--title，description与Keywords为SEO三大标签(用于优化在搜索引擎中的排名)--&gt;</span></span><br><span class="line">​		<span class="tag">&lt;<span class="name">title</span>&gt;</span>网页标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;此处填写对网页的描述，用于提升在搜索引擎中的排名&quot;</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;Keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;此处填写网页关键词，用于提升在搜索引擎中的排名&quot;</span>&gt;</span></span><br><span class="line">    	</span><br><span class="line">    	<span class="comment">&lt;!--网站标题旁的小图标，通常放置于根目录--&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;shortcut icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;favicon.ico&quot;</span> <span class="attr">type</span>=<span class="string">&quot;image/x-icon&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"><span class="comment">/*Css内容*/</span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">​	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">​	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">​		网页内容主体</span><br><span class="line">​	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="4css的概念"><a class="markdownIt-Anchor" href="#4css的概念">#</a> 4.CSS 的概念</h1>
+<h1 id="css的概念"><a class="markdownIt-Anchor" href="#css的概念">#</a> CSS 的概念</h1>
 <p>CSS：层叠样式表 (Cascading style sheets)</p>
 <p>CSS 的作用：给页面中的 HTML 标签设置样式</p>
-<h1 id="5css语法"><a class="markdownIt-Anchor" href="#5css语法">#</a> <mark>5.CSS 语法</mark></h1>
+<h1 id="css语法"><a class="markdownIt-Anchor" href="#css语法">#</a> <mark>CSS 语法</mark></h1>
 <p><strong>内嵌式：将 CSS 写在 style 标签中，style 标签一般写在 head 标签内，title 标签下面</strong></p>
 <p><strong>外联式：将 CSS 写在一个单独的.css 文件中，在 title 标签下使用 link 标签引入</strong></p>
 <p><mark>注：link rel=“此处填入 html 与 css 的关系 (为：stylesheet  样式表)” href=“此处填写 css 文件路径”</mark></p>
@@ -864,7 +864,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>3. 文字样式</strong></p>
 <h3 id="css常用配置basecss"><a class="markdownIt-Anchor" href="#css常用配置basecss">#</a> <mark>CSS 常用配置 (base.css)</mark></h3>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*清除浏览器默认内外边距，设置为内减模式*/</span></span><br><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*设置网页统一的字体大小、行高、字体系列相关属性*/</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">16px</span>/<span class="number">1.5</span> <span class="string">&quot;Helvetica Neue&quot;</span>, Helvetica,Arial, <span class="string">&quot;Microsoft Yahei&quot;</span>, <span class="string">&quot;Hiragion Sans GB&quot;</span>, <span class="string">&quot;Heiti SC&quot;</span>, <span class="string">&quot;WenQuanYi Micro Hei&quot;</span>, sans-serif;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;<span class="comment">/*可改*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*清除超链接的下划线*/</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;<span class="comment">/*可改*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*去除默认的倾斜效果*/</span></span><br><span class="line"><span class="selector-tag">em</span>,</span><br><span class="line"><span class="selector-tag">i</span> &#123;</span><br><span class="line">    <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*清除列表的圆点*/</span></span><br><span class="line"><span class="selector-tag">ul</span>,</span><br><span class="line"><span class="selector-tag">ol</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*设置img的垂直对齐方式为居中对齐，去除img默认的下间隙*/</span></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*去除input默认样式*/</span></span><br><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;<span class="comment">/*可改*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*左右浮动*/</span></span><br><span class="line"><span class="selector-class">.fl</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fr</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*clearfix，用于修复塌陷与清除浮动影响*/</span></span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="6网页布局与vs-code使用技巧"><a class="markdownIt-Anchor" href="#6网页布局与vs-code使用技巧">#</a> 6. 网页布局与 Vs Code 使用技巧</h1>
+<h1 id="网页布局与vs-code使用技巧"><a class="markdownIt-Anchor" href="#网页布局与vs-code使用技巧">#</a> 网页布局与 Vs Code 使用技巧</h1>
 <h3 id="元素显示模式"><a class="markdownIt-Anchor" href="#元素显示模式">#</a> <mark>元素显示模式</mark></h3>
 <p><strong>块级元素：</strong></p>
 <p><strong>独占一行，宽度默认为父级标签的 100%，允许使用 width 和 height 调整宽高</strong></p>
@@ -950,7 +950,7 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h1 id="7css特性"><a class="markdownIt-Anchor" href="#7css特性">#</a> 7.CSS 特性</h1>
+<h1 id="css特性"><a class="markdownIt-Anchor" href="#css特性">#</a> CSS 特性</h1>
 <h3 id="继承性inherit"><a class="markdownIt-Anchor" href="#继承性inherit">#</a> 继承性 (inherit)</h3>
 <p><strong>子元素有默认继承父元素样式的特点</strong></p>
 <p><strong>可以继承的常见属性 (文字控制属性都可以继承)</strong></p>
@@ -963,7 +963,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>不同选择器具有不同的优先级，优先级高的选择器样式会覆盖优先级低的选择器样式</strong></p>
 <p><strong>优先级公式：继承 &lt; 通配符选择器 &lt; 标签选择器 &lt; 类选择器 &lt; id 选择器 &lt; 行内样式 &lt; !important</strong></p>
 <p><strong>注：!important 写在属性值的后面，分号的前面。!imoprtant 不能提升继承的优先级，继承的优先级永远最低。实际开发不推荐使用</strong></p>
-<h1 id="8盒子模型"><a class="markdownIt-Anchor" href="#8盒子模型">#</a> <mark>8. 盒子模型</mark></h1>
+<h1 id="盒子模型"><a class="markdownIt-Anchor" href="#盒子模型">#</a> <mark>盒子模型</mark></h1>
 <p><strong>盒子尺寸 = width/height + 内边距 + 边框线</strong></p>
 <table>
 <thead>
@@ -996,12 +996,12 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h1 id="9定位与装饰"><a class="markdownIt-Anchor" href="#9定位与装饰">#</a> <mark>9. 定位与装饰</mark></h1>
+<h1 id="定位与装饰"><a class="markdownIt-Anchor" href="#定位与装饰">#</a> <mark>定位与装饰</mark></h1>
 <h3 id="标准流-浮动-定位显示关系"><a class="markdownIt-Anchor" href="#标准流-浮动-定位显示关系">#</a> 标准流、浮动、定位显示关系</h3>
 <p><mark><strong>标准流 &lt; 浮动 &lt; 定位</strong></mark></p>
 <p><strong>默认情况下：同级定位下、后标签覆盖前标签</strong></p>
 <p><strong>使用 z-index: int; 改变定位层数，默认为 0，数字越大，覆盖级别越高</strong></p>
-<h3 id="一-写法"><a class="markdownIt-Anchor" href="#一-写法">#</a> <strong><mark>一、写法：</mark></strong></h3>
+<h3 id="写法"><a class="markdownIt-Anchor" href="#写法">#</a> <strong><mark>写法：</mark></strong></h3>
 <p><strong>属性名：<mark>position</mark></strong></p>
 <table>
 <thead>
@@ -1044,7 +1044,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>3. 位置随浏览器滚动而移动。</strong></p>
 <p><strong>4. 改变标签本身的显示模式、具备行内块的特点</strong></p>
 <p><strong>5.</strong></p>
-<h3 id="二-偏移值"><a class="markdownIt-Anchor" href="#二-偏移值">#</a> <strong>二、偏移值</strong></h3>
+<h3 id="偏移值"><a class="markdownIt-Anchor" href="#偏移值">#</a> <strong>偏移值</strong></h3>
 <table>
 <thead>
 <tr>
@@ -1082,8 +1082,8 @@ Ailzr = Ailzr's Blog</title>
 </tbody>
 </table>
 <p><strong>水平方向优先以 left 为准，垂直方向优先以 top 为准</strong></p>
-<h3 id="三-装饰"><a class="markdownIt-Anchor" href="#三-装饰">#</a> 三、装饰</h3>
-<h4 id="1对齐问题"><a class="markdownIt-Anchor" href="#1对齐问题">#</a> <mark><strong>1. 对齐问题：</strong></mark></h4>
+<h3 id="装饰"><a class="markdownIt-Anchor" href="#装饰">#</a> 装饰</h3>
+<h4 id="对齐问题"><a class="markdownIt-Anchor" href="#对齐问题">#</a> <mark><strong>对齐问题：</strong></mark></h4>
 <table>
 <thead>
 <tr>
@@ -1115,7 +1115,7 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h4 id="2光标指针"><a class="markdownIt-Anchor" href="#2光标指针">#</a> <strong>2. 光标指针：</strong></h4>
+<h4 id="光标指针"><a class="markdownIt-Anchor" href="#光标指针">#</a> <strong>光标指针：</strong></h4>
 <table>
 <thead>
 <tr>
@@ -1147,7 +1147,7 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h4 id="3圆角边框"><a class="markdownIt-Anchor" href="#3圆角边框">#</a> <strong>3. 圆角边框：</strong></h4>
+<h4 id="圆角边框"><a class="markdownIt-Anchor" href="#圆角边框">#</a> <strong>圆角边框：</strong></h4>
 <table>
 <thead>
 <tr>
@@ -1166,7 +1166,7 @@ Ailzr = Ailzr's Blog</title>
 </table>
 <p><strong>取值写 50% 为正圆 (盒子本身需要是正方形)、取值最大为 50%</strong></p>
 <p><strong>取值写盒子高度的一半为胶囊 (盒子本身需要是长方形)</strong></p>
-<h4 id="4溢出部分显示效果"><a class="markdownIt-Anchor" href="#4溢出部分显示效果">#</a> <strong>4. 溢出部分显示效果</strong></h4>
+<h4 id="溢出部分显示效果"><a class="markdownIt-Anchor" href="#溢出部分显示效果">#</a> <strong>溢出部分显示效果</strong></h4>
 <table>
 <thead>
 <tr>
@@ -1198,7 +1198,7 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h4 id="5元素本身隐藏"><a class="markdownIt-Anchor" href="#5元素本身隐藏">#</a> 5. 元素本身隐藏</h4>
+<h4 id="元素本身隐藏"><a class="markdownIt-Anchor" href="#元素本身隐藏">#</a> 元素本身隐藏</h4>
 <table>
 <thead>
 <tr>
@@ -1217,7 +1217,7 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h4 id="6元素整体透明度"><a class="markdownIt-Anchor" href="#6元素整体透明度">#</a> 6. 元素整体透明度</h4>
+<h4 id="元素整体透明度"><a class="markdownIt-Anchor" href="#元素整体透明度">#</a> 元素整体透明度</h4>
 <table>
 <thead>
 <tr>
@@ -1234,10 +1234,10 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h4 id="7精灵图"><a class="markdownIt-Anchor" href="#7精灵图">#</a> 7. 精灵图</h4>
+<h4 id="精灵图"><a class="markdownIt-Anchor" href="#精灵图">#</a> 精灵图</h4>
 <p><strong>作用：将多张小图合成为一张大图，一次发送给用户，减小服务器压力，提高页面加载速度</strong></p>
 <p>新建一个盒子，将精灵图设置为盒子的背景图，使用 background-position 改变位置</p>
-<h4 id="8盒子阴影"><a class="markdownIt-Anchor" href="#8盒子阴影">#</a> 8. 盒子阴影</h4>
+<h4 id="盒子阴影"><a class="markdownIt-Anchor" href="#盒子阴影">#</a> 盒子阴影</h4>
 <table>
 <thead>
 <tr>
@@ -1279,7 +1279,7 @@ Ailzr = Ailzr's Blog</title>
 </tr>
 </tbody>
 </table>
-<h4 id="9过渡"><a class="markdownIt-Anchor" href="#9过渡">#</a> 9. 过渡</h4>
+<h4 id="过渡"><a class="markdownIt-Anchor" href="#过渡">#</a> 过渡</h4>
 <p>作用：让元素样式缓慢变化，常配合 hover 使用，增强网页交互体验</p>
 <table>
 <thead>
@@ -1316,7 +1316,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-02-22 16:05:07" itemprop="dateModified" datetime="2023-02-22T16:05:07+08:00">2023-02-22</time>
+    <time title="修改时间：2023-03-12 15:47:26" itemprop="dateModified" datetime="2023-03-12T15:47:26+08:00">2023-03-12</time>
   </span>
   <span id="2023/02/22/HTML-CSS/" class="item leancloud_visitors" data-flag-title="HTML+CSS" title="阅读次数">
       <span class="icon">
@@ -1411,7 +1411,7 @@ Ailzr = Ailzr's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1html%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text"> 1.HTML 的概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2html%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> 2.HTML 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 关键词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 媒体标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 链接标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 列表标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 表格标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.6.</span> <span class="toc-text"> 表单标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.7.</span> <span class="toc-text"> 语义化标签</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3html%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text"> 3.HTML 结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4css%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">4.</span> <span class="toc-text"> 4.CSS 的概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5css%E8%AF%AD%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text"> 5.CSS 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E5%86%99%E6%B3%95"><span class="toc-number">5.0.1.</span> <span class="toc-text"> 选择器写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0"><span class="toc-number">5.0.2.</span> <span class="toc-text"> 伪元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8"><span class="toc-number">5.0.3.</span> <span class="toc-text"> 浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%B1%9E%E6%80%A7"><span class="toc-number">5.0.4.</span> <span class="toc-text"> CSS 属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#font%E7%B3%BB%E5%88%97"><span class="toc-number">5.0.4.1.</span> <span class="toc-text"> font 系列：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#text%E7%B3%BB%E5%88%97"><span class="toc-number">5.0.4.2.</span> <span class="toc-text"> text 系列：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#background%E7%B3%BB%E5%88%97"><span class="toc-number">5.0.4.3.</span> <span class="toc-text"> background 系列：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%B1%9E%E6%80%A7%E9%80%9A%E5%B8%B8%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="toc-number">5.0.5.</span> <span class="toc-text"> CSS 属性通常书写顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AEbasecss"><span class="toc-number">5.0.6.</span> <span class="toc-text"> CSS 常用配置 (base.css)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B8%8Evs-code%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">6.</span> <span class="toc-text"> 6. 网页布局与 Vs Code 使用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 元素显示模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emmet%E8%AF%AD%E6%B3%95vs-code%E5%BF%AB%E9%80%9F%E8%A1%A5%E5%85%85%E4%BB%A3%E7%A0%81"><span class="toc-number">6.0.2.</span> <span class="toc-text"> emmet 语法 (vs code 快速补充代码)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7css%E7%89%B9%E6%80%A7"><span class="toc-number">7.</span> <span class="toc-text"> 7.CSS 特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%80%A7inherit"><span class="toc-number">7.0.1.</span> <span class="toc-text"> 继承性 (inherit)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E5%8F%A0%E6%80%A7cascade"><span class="toc-number">7.0.2.</span> <span class="toc-text"> 层叠性 (cascade)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7priority"><span class="toc-number">7.0.3.</span> <span class="toc-text"> 优先级 (priority)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.</span> <span class="toc-text"> 8. 盒子模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%E5%AE%9A%E4%BD%8D%E4%B8%8E%E8%A3%85%E9%A5%B0"><span class="toc-number">9.</span> <span class="toc-text"> 9. 定位与装饰</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E6%B5%81-%E6%B5%AE%E5%8A%A8-%E5%AE%9A%E4%BD%8D%E6%98%BE%E7%A4%BA%E5%85%B3%E7%B3%BB"><span class="toc-number">9.0.1.</span> <span class="toc-text"> 标准流、浮动、定位显示关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E5%86%99%E6%B3%95"><span class="toc-number">9.0.2.</span> <span class="toc-text"> 一、写法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E5%81%8F%E7%A7%BB%E5%80%BC"><span class="toc-number">9.0.3.</span> <span class="toc-text"> 二、偏移值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E8%A3%85%E9%A5%B0"><span class="toc-number">9.0.4.</span> <span class="toc-text"> 三、装饰</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E5%AF%B9%E9%BD%90%E9%97%AE%E9%A2%98"><span class="toc-number">9.0.4.1.</span> <span class="toc-text"> 1. 对齐问题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%85%89%E6%A0%87%E6%8C%87%E9%92%88"><span class="toc-number">9.0.4.2.</span> <span class="toc-text"> 2. 光标指针：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86"><span class="toc-number">9.0.4.3.</span> <span class="toc-text"> 3. 圆角边框：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E6%BA%A2%E5%87%BA%E9%83%A8%E5%88%86%E6%98%BE%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">9.0.4.4.</span> <span class="toc-text"> 4. 溢出部分显示效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E5%85%83%E7%B4%A0%E6%9C%AC%E8%BA%AB%E9%9A%90%E8%97%8F"><span class="toc-number">9.0.4.5.</span> <span class="toc-text"> 5. 元素本身隐藏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E5%85%83%E7%B4%A0%E6%95%B4%E4%BD%93%E9%80%8F%E6%98%8E%E5%BA%A6"><span class="toc-number">9.0.4.6.</span> <span class="toc-text"> 6. 元素整体透明度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%E7%B2%BE%E7%81%B5%E5%9B%BE"><span class="toc-number">9.0.4.7.</span> <span class="toc-text"> 7. 精灵图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1"><span class="toc-number">9.0.4.8.</span> <span class="toc-text"> 8. 盒子阴影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9%E8%BF%87%E6%B8%A1"><span class="toc-number">9.0.4.9.</span> <span class="toc-text"> 9. 过渡</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#html%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text"> HTML 的概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#html%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> HTML 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 关键词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 媒体标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 链接标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 列表标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 表格标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.6.</span> <span class="toc-text"> 表单标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">2.0.7.</span> <span class="toc-text"> 语义化标签</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#html%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text"> HTML 结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#css%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">4.</span> <span class="toc-text"> CSS 的概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#css%E8%AF%AD%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text"> CSS 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E5%86%99%E6%B3%95"><span class="toc-number">5.0.1.</span> <span class="toc-text"> 选择器写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0"><span class="toc-number">5.0.2.</span> <span class="toc-text"> 伪元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8"><span class="toc-number">5.0.3.</span> <span class="toc-text"> 浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%B1%9E%E6%80%A7"><span class="toc-number">5.0.4.</span> <span class="toc-text"> CSS 属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#font%E7%B3%BB%E5%88%97"><span class="toc-number">5.0.4.1.</span> <span class="toc-text"> font 系列：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#text%E7%B3%BB%E5%88%97"><span class="toc-number">5.0.4.2.</span> <span class="toc-text"> text 系列：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#background%E7%B3%BB%E5%88%97"><span class="toc-number">5.0.4.3.</span> <span class="toc-text"> background 系列：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%B1%9E%E6%80%A7%E9%80%9A%E5%B8%B8%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="toc-number">5.0.5.</span> <span class="toc-text"> CSS 属性通常书写顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AEbasecss"><span class="toc-number">5.0.6.</span> <span class="toc-text"> CSS 常用配置 (base.css)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E4%B8%8Evs-code%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">6.</span> <span class="toc-text"> 网页布局与 Vs Code 使用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 元素显示模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emmet%E8%AF%AD%E6%B3%95vs-code%E5%BF%AB%E9%80%9F%E8%A1%A5%E5%85%85%E4%BB%A3%E7%A0%81"><span class="toc-number">6.0.2.</span> <span class="toc-text"> emmet 语法 (vs code 快速补充代码)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#css%E7%89%B9%E6%80%A7"><span class="toc-number">7.</span> <span class="toc-text"> CSS 特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%80%A7inherit"><span class="toc-number">7.0.1.</span> <span class="toc-text"> 继承性 (inherit)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E5%8F%A0%E6%80%A7cascade"><span class="toc-number">7.0.2.</span> <span class="toc-text"> 层叠性 (cascade)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7priority"><span class="toc-number">7.0.3.</span> <span class="toc-text"> 优先级 (priority)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.</span> <span class="toc-text"> 盒子模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E4%B8%8E%E8%A3%85%E9%A5%B0"><span class="toc-number">9.</span> <span class="toc-text"> 定位与装饰</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E6%B5%81-%E6%B5%AE%E5%8A%A8-%E5%AE%9A%E4%BD%8D%E6%98%BE%E7%A4%BA%E5%85%B3%E7%B3%BB"><span class="toc-number">9.0.1.</span> <span class="toc-text"> 标准流、浮动、定位显示关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%B3%95"><span class="toc-number">9.0.2.</span> <span class="toc-text"> 写法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E7%A7%BB%E5%80%BC"><span class="toc-number">9.0.3.</span> <span class="toc-text"> 偏移值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%85%E9%A5%B0"><span class="toc-number">9.0.4.</span> <span class="toc-text"> 装饰</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E9%BD%90%E9%97%AE%E9%A2%98"><span class="toc-number">9.0.4.1.</span> <span class="toc-text"> 对齐问题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E6%A0%87%E6%8C%87%E9%92%88"><span class="toc-number">9.0.4.2.</span> <span class="toc-text"> 光标指针：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86"><span class="toc-number">9.0.4.3.</span> <span class="toc-text"> 圆角边框：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BA%A2%E5%87%BA%E9%83%A8%E5%88%86%E6%98%BE%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">9.0.4.4.</span> <span class="toc-text"> 溢出部分显示效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E6%9C%AC%E8%BA%AB%E9%9A%90%E8%97%8F"><span class="toc-number">9.0.4.5.</span> <span class="toc-text"> 元素本身隐藏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E6%95%B4%E4%BD%93%E9%80%8F%E6%98%8E%E5%BA%A6"><span class="toc-number">9.0.4.6.</span> <span class="toc-text"> 元素整体透明度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B2%BE%E7%81%B5%E5%9B%BE"><span class="toc-number">9.0.4.7.</span> <span class="toc-text"> 精灵图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1"><span class="toc-number">9.0.4.8.</span> <span class="toc-text"> 盒子阴影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%B8%A1"><span class="toc-number">9.0.4.9.</span> <span class="toc-text"> 过渡</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -1530,16 +1530,27 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
+    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
   </li>
 
       
@@ -1556,10 +1567,9 @@ Ailzr = Ailzr's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
   </li>
 
       
@@ -1580,16 +1590,6 @@ Ailzr = Ailzr's Blog</title>
 </div>
 
     <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
   </li>
 
   </ul>
@@ -1614,13 +1614,13 @@ Ailzr = Ailzr's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">106k 字</span>
+    <span title="站点总字数">123k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:37</span>
+    <span title="站点阅读时长">1:52</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

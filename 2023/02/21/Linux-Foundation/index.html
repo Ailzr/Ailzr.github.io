@@ -213,7 +213,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>zip [选项] 压缩文件名 源文件 / 目录	压缩为.zip，-r 递归压缩 (压缩时保留源文件)</strong></p>
 <p><strong>unzip [选项] 指定目录 源文件.zip	将源文件.zip 解压到指定目录</strong></p>
 <p><strong>tar [选项] *.tar.gz [源文件 1 源文件 2]	打包指令，将源文件压缩成 *.tar.gz 文件。-c 产生打包文件，-v 显示详细信息，-f 指定压缩后的文件名，-z 打包同时压缩，-x 解包.tar 文件。注：zcvf (打包) 或 zxvf (解包) 通常同时使用</strong></p>
-<h1 id="1linux根目录下部分文件及其存储内容简单介绍"><a class="markdownIt-Anchor" href="#1linux根目录下部分文件及其存储内容简单介绍">#</a> 1.Linux 根目录下部分文件及其存储内容简单介绍</h1>
+<h1 id="linux根目录下部分文件及其存储内容简单介绍"><a class="markdownIt-Anchor" href="#linux根目录下部分文件及其存储内容简单介绍">#</a> Linux 根目录下部分文件及其存储内容简单介绍</h1>
 <p><strong><mark>加粗高亮为重要文件；高亮不加粗为操作难度较高的内核文件，不建议修改。</mark></strong></p>
 <p><strong><mark>boot</mark></strong>	// 存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件</p>
 <p><strong><mark>bin</mark></strong>	//Binary 的缩写，这个目录存放着最经常使用的命令</p>
@@ -241,7 +241,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>2.Linux 的各个目录存放的内容是规划好的，不要乱放文件。</strong></p>
 <p><strong>3.Linux 是以文件的形式管理设备的，因此 Liux 系统，一切皆文件。</strong></p>
 <p><strong>4.Linux 的各个文件目录下存放什么内容，必须有一个认识。</strong></p>
-<h1 id="2使用xshell和xftp"><a class="markdownIt-Anchor" href="#2使用xshell和xftp">#</a> 2. 使用 XSHELL 和 XFTP</h1>
+<h1 id="使用xshell和xftp"><a class="markdownIt-Anchor" href="#使用xshell和xftp">#</a> 使用 XSHELL 和 XFTP</h1>
 <p>1. 需要打开 Linux 的 SSHD 服务。服务器会开放默认端口 22 以供远程登录。</p>
 <p>SSHD 开启方法：</p>
 <p>Linux 系统下，使用 root 账户</p>
@@ -249,7 +249,7 @@ Ailzr = Ailzr's Blog</title>
 <p>System servers</p>
 <p><strong>XSHELL 设置：协议使用 SSH 协议，端口为默认端口 22，地址在服务器使用 ifconfig 查询</strong></p>
 <p><strong>XFTP 设置：协议使用 SFTP，端口为默认端口 22，地址同上</strong></p>
-<h1 id="3vi和vim编辑器"><a class="markdownIt-Anchor" href="#3vi和vim编辑器">#</a> 3.Vi 和 Vim 编辑器</h1>
+<h1 id="vi和vim编辑器"><a class="markdownIt-Anchor" href="#vi和vim编辑器">#</a> Vi 和 Vim 编辑器</h1>
 <p><strong>Vi 和 Vim 的三种常见模式：</strong></p>
 <p>1. 正常模式</p>
 <p>可使用快捷键</p>
@@ -265,7 +265,7 @@ Ailzr = Ailzr's Blog</title>
 <p>gg 前往首行，G 前往末行。注意这些都是在正常模式下的快捷键。</p>
 <p>输入 u 撤销编辑内容到上次正常模式。</p>
 <p>正常模式下，行号，shift+g 跳转到该行号</p>
-<h1 id="4linux的关机-重启指令与用户的登录与注销"><a class="markdownIt-Anchor" href="#4linux的关机-重启指令与用户的登录与注销">#</a> 4.Linux 的关机、重启指令与用户的登录与注销</h1>
+<h1 id="linux的关机-重启指令与用户的登录与注销"><a class="markdownIt-Anchor" href="#linux的关机-重启指令与用户的登录与注销">#</a> Linux 的关机、重启指令与用户的登录与注销</h1>
 <p>shutdown -h now	表示立即关机</p>
 <p>shutdown -h 1	表示 1 分钟后关机</p>
 <p>shutdown -r now	表示立即重启</p>
@@ -274,8 +274,8 @@ Ailzr = Ailzr's Blog</title>
 <p>sync	把内存数据同步到磁盘上（建议关机或重启前进行数据保存）</p>
 <p>Linux 系统下通常不使用 root 账户登录，而是使用普通用户登录，再使用 su - 用户名进行登录</p>
 <p>使用 logout 注销当前账户	logout 在图形运行级别无效，在运行级别 3 下有效</p>
-<h1 id="5用户管理"><a class="markdownIt-Anchor" href="#5用户管理">#</a> 5. 用户管理</h1>
-<h2 id="51部分指令"><a class="markdownIt-Anchor" href="#51部分指令">#</a> 5.1 部分指令</h2>
+<h1 id="用户管理"><a class="markdownIt-Anchor" href="#用户管理">#</a> 用户管理</h1>
+<h2 id="部分指令"><a class="markdownIt-Anchor" href="#部分指令">#</a> 部分指令</h2>
 <p>1.Linux 系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
 <p>2.Linux 的用户需要至少属于一个组。</p>
 <p><strong>添加用户 ([] 代表选填)：</strong></p>
@@ -293,15 +293,15 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>使用 su - 用户名	可以切换用户</strong></p>
 <p><strong>使用 exit 可以退回到原用户</strong></p>
 <p><strong>使用 whoami	可以查看当前使用的用户</strong></p>
-<h2 id="52用户组"><a class="markdownIt-Anchor" href="#52用户组">#</a> 5.2 用户组</h2>
+<h2 id="用户组"><a class="markdownIt-Anchor" href="#用户组">#</a> 用户组</h2>
 <p><strong>使用 groupadd 组名	来创建一个组</strong></p>
 <p><strong>使用 groupdel 组名	来删除一个组</strong></p>
 <p><strong>使用 usermod -g 组名 用户名	修改用户的组</strong></p>
-<h2 id="53用户信息和组信息的配置文件"><a class="markdownIt-Anchor" href="#53用户信息和组信息的配置文件">#</a> 5.3 用户信息和组信息的配置文件</h2>
+<h2 id="用户信息和组信息的配置文件"><a class="markdownIt-Anchor" href="#用户信息和组信息的配置文件">#</a> 用户信息和组信息的配置文件</h2>
 <p>用户配置文件	/etc/passwd</p>
 <p>组配置文件	/etc/group</p>
 <p>口令配置文件 (加密)	/etc/shadow</p>
-<h1 id="6运行级别共7级"><a class="markdownIt-Anchor" href="#6运行级别共7级">#</a> 6. 运行级别 (共 7 级)</h1>
+<h1 id="运行级别共7级"><a class="markdownIt-Anchor" href="#运行级别共7级">#</a> 运行级别 (共 7 级)</h1>
 <p>0：关机</p>
 <p>1：单用户 (找回丢失密码)</p>
 <p>2：多用户无网络服务</p>
@@ -313,8 +313,8 @@ Ailzr = Ailzr's Blog</title>
 <p>1. 进入到单用户模式（单用户模式登录不需要输入密码）</p>
 <p>2. 修改 root 密码</p>
 <p>在选择内核时输入 e，进入 GRUB 引导，选择 kernel 行，切换运行级别为 1，随后按 b</p>
-<h1 id="7组管理和权限管理"><a class="markdownIt-Anchor" href="#7组管理和权限管理">#</a> 7. 组管理和权限管理</h1>
-<h2 id="71组管理"><a class="markdownIt-Anchor" href="#71组管理">#</a> 7.1 组管理</h2>
+<h1 id="组管理和权限管理"><a class="markdownIt-Anchor" href="#组管理和权限管理">#</a> 组管理和权限管理</h1>
+<h2 id="组管理"><a class="markdownIt-Anchor" href="#组管理">#</a> 组管理</h2>
 <p>文件：</p>
 <p>所有者 (拥有者)</p>
 <p>所在组 (拥有组)</p>
@@ -324,7 +324,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>chgrp 组名 文件名	修改文件所在组，-R 递归修改</strong></p>
 <p><strong>usermod -g 组名 用户名	改变用户的组</strong></p>
 <p><strong>usermod -d 目录名 用户名	改变该用户的初始登录目录</strong></p>
-<h2 id="72权限管理重要"><a class="markdownIt-Anchor" href="#72权限管理重要">#</a> 7.2 权限管理 ==(重要！！)==</h2>
+<h2 id="权限管理重要"><a class="markdownIt-Anchor" href="#权限管理重要">#</a> 权限管理 ==(重要！！)==</h2>
 <p>查看一个文件时：</p>
 <p><strong><mark>-rw-r–r--. 1 root root 6 12 月 13 22:34 ok.txt</mark></strong></p>
 <p><strong>其中第 0 位 - 表示文件类型：- 普通文件，d: 目录，l: 软链接，c: 字符设备【键盘，鼠标】，b: 块文件【硬盘】</strong></p>
@@ -348,7 +348,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong>也可以使用数字更改权限</strong></p>
 <p><strong><mark>r=4	w=2	x=1	rwx=4+2+1=7</mark></strong></p>
 <p><strong>如：chmod 740 file	即给所有者 rwx，给所有组 r–，给其他组 —</strong></p>
-<h1 id="8crond任务调度"><a class="markdownIt-Anchor" href="#8crond任务调度">#</a> 8.crond 任务调度</h1>
+<h1 id="crond任务调度"><a class="markdownIt-Anchor" href="#crond任务调度">#</a> crond 任务调度</h1>
 <p><strong>crontab [选项]</strong></p>
 <p><strong>-e 编辑 crontab 定时任务</strong></p>
 <p><strong>-l 查询 crontab 任务</strong></p>
@@ -365,7 +365,7 @@ Ailzr = Ailzr's Blog</title>
 <p><strong><mark>,	代表不连续的时间，如 &quot;0 8,12,16 * * * 命令&quot;, 代表每天的 8 点 0 分，12 点 0 分，16 点 0 分都执行一次命令</mark></strong></p>
 <p><strong><mark>-	代表连续的时间范围，如 &quot;0 5 * * 1-6 命令&quot;, 代表周一到周六的 5 点 0 分执行命令</mark></strong></p>
 <p><strong><mark>*/n	代表每个多久执行一次，如 &quot;*/10 * * * * 命令&quot;, 代表每隔 10 分钟就执行一遍命令</mark></strong></p>
-<h1 id="9linux磁盘分区与挂载"><a class="markdownIt-Anchor" href="#9linux磁盘分区与挂载">#</a> 9.Linux 磁盘分区与挂载</h1>
+<h1 id="linux磁盘分区与挂载"><a class="markdownIt-Anchor" href="#linux磁盘分区与挂载">#</a> Linux 磁盘分区与挂载</h1>
 <p>分区方式包含:</p>
 <p>1.mbr 分区 (传统)</p>
 <p>最多支持 4 个主分区</p>
@@ -381,9 +381,9 @@ Ailzr = Ailzr's Blog</title>
 <p>对于 IDE 硬盘，驱动器标识符为 &quot;hdx~&quot;，其中 &quot;hd&quot; 表明分区所在设备的类型，这里指 IDE 硬盘，“x&quot;为盘号，(a 为基本盘，b 为基本从属盘，c 为辅助主盘，d 为辅助从属盘)，”~&quot; 代表分区，前四个分区用数字 1 到 4 表示，它们是主分区或扩展分区，从 5 开始就是逻辑分区。例，hda3 表示为第一个 IDE 硬盘上的第三个主分区或扩展分区，hdb2 表示为第二个 IDE 硬盘上的第二个主分区或扩展分区。</p>
 <p>对于 SCSI 硬盘则标识为 &quot;sdx~&quot;，SCSI 硬盘使用 &quot;sd&quot; 来表示分区所在设备的类型的，其余则和 IDE 硬盘一样</p>
 <p><strong>lsblk -f	查看系统的分区和挂载的情况</strong></p>
-<h1 id="10yum"><a class="markdownIt-Anchor" href="#10yum">#</a> 10.yum</h1>
+<h1 id="yum"><a class="markdownIt-Anchor" href="#yum">#</a> yum</h1>
 <p>yum 是一个 Shell 前端软件包管理器。基于 RPM 包管理，能够从指定的服务器自动下载 RPM 包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包。</p>
-<h1 id="11shell重要"><a class="markdownIt-Anchor" href="#11shell重要">#</a> 11.Shell**<mark>(重要！！)</mark>**</h1>
+<h1 id="shell重要"><a class="markdownIt-Anchor" href="#shell重要">#</a> Shell**<mark>(重要！！)</mark>**</h1>
 <p>Shell 是一个命令行解释器，它为用户提供了一个向 Linux 内核发送请求以便运行程序的界面系统级程序，用户可以用 Shell 来启动、挂起、停止甚至是编写一些程序。</p>
 <h2 id="shell脚本格式"><a class="markdownIt-Anchor" href="#shell脚本格式">#</a> Shell 脚本格式</h2>
 <p>1. 脚本以 #!/bin/bash 开头</p>
@@ -428,7 +428,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-02-22 16:05:15" itemprop="dateModified" datetime="2023-02-22T16:05:15+08:00">2023-02-22</time>
+    <time title="修改时间：2023-03-12 15:48:14" itemprop="dateModified" datetime="2023-03-12T15:48:14+08:00">2023-03-12</time>
   </span>
   <span id="2023/02/21/Linux-Foundation/" class="item leancloud_visitors" data-flag-title="Linux基础" title="阅读次数">
       <span class="icon">
@@ -523,7 +523,7 @@ Ailzr = Ailzr's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text"> 部分可能会查询的常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 杂项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text"> 文件目录类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text"> 时间日期类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%9F%A5%E6%89%BE%E7%B1%BB"><span class="toc-number">1.4.</span> <span class="toc-text"> 搜索查找类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9%E7%B1%BB"><span class="toc-number">1.5.</span> <span class="toc-text"> 压缩和解压缩类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E9%83%A8%E5%88%86%E6%96%87%E4%BB%B6%E5%8F%8A%E5%85%B6%E5%AD%98%E5%82%A8%E5%86%85%E5%AE%B9%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text"> 1.Linux 根目录下部分文件及其存储内容简单介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E4%BD%BF%E7%94%A8xshell%E5%92%8Cxftp"><span class="toc-number">3.</span> <span class="toc-text"> 2. 使用 XSHELL 和 XFTP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3vi%E5%92%8Cvim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text"> 3.Vi 和 Vim 编辑器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4linux%E7%9A%84%E5%85%B3%E6%9C%BA-%E9%87%8D%E5%90%AF%E6%8C%87%E4%BB%A4%E4%B8%8E%E7%94%A8%E6%88%B7%E7%9A%84%E7%99%BB%E5%BD%95%E4%B8%8E%E6%B3%A8%E9%94%80"><span class="toc-number">5.</span> <span class="toc-text"> 4.Linux 的关机、重启指令与用户的登录与注销</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text"> 5. 用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#51%E9%83%A8%E5%88%86%E6%8C%87%E4%BB%A4"><span class="toc-number">6.1.</span> <span class="toc-text"> 5.1 部分指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#52%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">6.2.</span> <span class="toc-text"> 5.2 用户组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#53%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E5%92%8C%E7%BB%84%E4%BF%A1%E6%81%AF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">6.3.</span> <span class="toc-text"> 5.3 用户信息和组信息的配置文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%85%B17%E7%BA%A7"><span class="toc-number">7.</span> <span class="toc-text"> 6. 运行级别 (共 7 级)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%E7%BB%84%E7%AE%A1%E7%90%86%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">8.</span> <span class="toc-text"> 7. 组管理和权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#71%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-number">8.1.</span> <span class="toc-text"> 7.1 组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E9%87%8D%E8%A6%81"><span class="toc-number">8.2.</span> <span class="toc-text"> 7.2 权限管理 &#x3D;&#x3D;(重要！！)&#x3D;&#x3D;</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8crond%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6"><span class="toc-number">9.</span> <span class="toc-text"> 8.crond 任务调度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%B8%8E%E6%8C%82%E8%BD%BD"><span class="toc-number">10.</span> <span class="toc-text"> 9.Linux 磁盘分区与挂载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10yum"><span class="toc-number">11.</span> <span class="toc-text"> 10.yum</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11shell%E9%87%8D%E8%A6%81"><span class="toc-number">12.</span> <span class="toc-text"> 11.Shell**(重要！！)**</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E8%84%9A%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">12.1.</span> <span class="toc-text"> Shell 脚本格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-number">12.2.</span> <span class="toc-text"> shell 的变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">12.3.</span> <span class="toc-text"> shell 变量的定义</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text"> 部分可能会查询的常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 杂项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text"> 文件目录类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text"> 时间日期类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%9F%A5%E6%89%BE%E7%B1%BB"><span class="toc-number">1.4.</span> <span class="toc-text"> 搜索查找类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9%E7%B1%BB"><span class="toc-number">1.5.</span> <span class="toc-text"> 压缩和解压缩类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E9%83%A8%E5%88%86%E6%96%87%E4%BB%B6%E5%8F%8A%E5%85%B6%E5%AD%98%E5%82%A8%E5%86%85%E5%AE%B9%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text"> Linux 根目录下部分文件及其存储内容简单介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8xshell%E5%92%8Cxftp"><span class="toc-number">3.</span> <span class="toc-text"> 使用 XSHELL 和 XFTP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vi%E5%92%8Cvim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text"> Vi 和 Vim 编辑器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E7%9A%84%E5%85%B3%E6%9C%BA-%E9%87%8D%E5%90%AF%E6%8C%87%E4%BB%A4%E4%B8%8E%E7%94%A8%E6%88%B7%E7%9A%84%E7%99%BB%E5%BD%95%E4%B8%8E%E6%B3%A8%E9%94%80"><span class="toc-number">5.</span> <span class="toc-text"> Linux 的关机、重启指令与用户的登录与注销</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text"> 用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E6%8C%87%E4%BB%A4"><span class="toc-number">6.1.</span> <span class="toc-text"> 部分指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">6.2.</span> <span class="toc-text"> 用户组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E5%92%8C%E7%BB%84%E4%BF%A1%E6%81%AF%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">6.3.</span> <span class="toc-text"> 用户信息和组信息的配置文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%85%B17%E7%BA%A7"><span class="toc-number">7.</span> <span class="toc-text"> 运行级别 (共 7 级)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E7%AE%A1%E7%90%86%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">8.</span> <span class="toc-text"> 组管理和权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E7%AE%A1%E7%90%86"><span class="toc-number">8.1.</span> <span class="toc-text"> 组管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E9%87%8D%E8%A6%81"><span class="toc-number">8.2.</span> <span class="toc-text"> 权限管理 &#x3D;&#x3D;(重要！！)&#x3D;&#x3D;</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#crond%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6"><span class="toc-number">9.</span> <span class="toc-text"> crond 任务调度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%B8%8E%E6%8C%82%E8%BD%BD"><span class="toc-number">10.</span> <span class="toc-text"> Linux 磁盘分区与挂载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#yum"><span class="toc-number">11.</span> <span class="toc-text"> yum</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shell%E9%87%8D%E8%A6%81"><span class="toc-number">12.</span> <span class="toc-text"> Shell**(重要！！)**</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E8%84%9A%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">12.1.</span> <span class="toc-text"> Shell 脚本格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-number">12.2.</span> <span class="toc-text"> shell 的变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">12.3.</span> <span class="toc-text"> shell 变量的定义</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -642,16 +642,6 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
     <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
   </li>
 
@@ -659,29 +649,10 @@ Ailzr = Ailzr's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
   </li>
 
       
@@ -701,7 +672,36 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
   </li>
 
   </ul>
@@ -726,13 +726,13 @@ Ailzr = Ailzr's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">106k 字</span>
+    <span title="站点总字数">123k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:37</span>
+    <span title="站点阅读时长">1:52</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
