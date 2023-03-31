@@ -1,0 +1,614 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Ailzr's Blog" href="https://www.ailzr.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Ailzr's Blog" href="https://www.ailzr.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Ailzr's Blog" href="https://www.ailzr.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Docker" />
+
+
+<link rel="canonical" href="https://www.ailzr.com/2023/03/31/Docker/">
+
+
+
+  <title>
+Docker - 开发环境 |
+Ailzr = Ailzr's Blog</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Docker
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-03-31 11:46:26">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-03-31T11:46:26+08:00">2023-03-31</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ailzr</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/assets/MySQL_Cover.png">
+      </div>
+    <!--header修改前位置-->
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+	</header><!--修改后位置-->
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="item" rel="index" title="分类于 开发环境"><span itemprop="name">开发环境</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://www.ailzr.com/2023/03/31/Docker/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ailzr">
+    <meta itemprop="description" content=", 我有时会想,在这里写点什么好呢">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ailzr's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="docker介绍"><a class="markdownIt-Anchor" href="#docker介绍">#</a> Docker 介绍</h1>
+<p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化，容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+<h1 id="docker命令"><a class="markdownIt-Anchor" href="#docker命令">#</a> Docker 命令</h1>
+<h2 id="服务相关命令"><a class="markdownIt-Anchor" href="#服务相关命令">#</a> 服务相关命令</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker		#--启动docker</span><br><span class="line">systemctl restart docker	#--重启docker</span><br><span class="line">systemctl status docker		#--查看docker状态</span><br><span class="line">systemctl enable docker		#--设置开机自启docker</span><br></pre></td></tr></table></figure>
+<h2 id="镜像相关命令"><a class="markdownIt-Anchor" href="#镜像相关命令">#</a> 镜像相关命令</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker images				#--查看所有已安装的docker镜像</span><br><span class="line">docker images -q			#--查看所有已安装的docker镜像的id</span><br><span class="line">docker search 镜像名	  	  #--从网络中查找需要的镜像</span><br><span class="line">docker pull 镜像名:镜像版本	#--拉去镜像，版本可不写，默认lastest</span><br><span class="line">docker rmi 镜像id			   #--通过id删除镜像</span><br><span class="line">docker rmi `docker images -q`#--删除所有已安装镜像</span><br></pre></td></tr></table></figure>
+<h2 id="容器相关命令"><a class="markdownIt-Anchor" href="#容器相关命令">#</a> 容器相关命令</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name=c1 centos:7 /bin/bash	</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">其中-i表示容器一直运行</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-t表示分配给该容器一个可供输入的后台终端</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">--name给容器起名字，其中=可以换成空格</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">centos:7选择镜像名与镜像版本</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">/bin/bash可不加，添加初始进入路径</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用-it创建的容器会直接进入，退出时直接关闭。it创建的容器一般称为交互式容器</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用-<span class="built_in">id</span>创建的容器会在后台挂起，退出时不会直接关闭。<span class="built_in">id</span>创建的容器一般称为守护式容器</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">docker <span class="built_in">exec</span> -it(或<span class="built_in">id</span>) c2 /bin/bash进入</span></span><br><span class="line"></span><br><span class="line">exit		#--退出容器</span><br><span class="line"></span><br><span class="line">docker ps -a		#--查看所有容器</span><br><span class="line"></span><br><span class="line">docker stop 容器名		#--停止容器</span><br><span class="line">docker start 容器名	#--启动容器</span><br><span class="line">docker rm 容器名(或id)	#--删除容器</span><br><span class="line">docker rm `docker ps -aq`	#--删除所有容器</span><br><span class="line">docker inspect 容器名	#--查看容器全部信息</span><br></pre></td></tr></table></figure>
+<h1 id="docker容器数据卷"><a class="markdownIt-Anchor" href="#docker容器数据卷">#</a> Docker 容器数据卷</h1>
+<p>宿主机：运行 docker 的机器</p>
+<p><strong>数据卷是宿主机中的一个目录或文件。</strong></p>
+<p><strong>将容器中的某个目录与宿主机的某个目录挂载时，宿主机中的该目录称为数据卷</strong></p>
+<p><strong>当容器目录和数据卷目录绑定后，双方的修改会立即同步。</strong></p>
+<ul>
+<li>一个数据卷可以被多个容器挂载</li>
+<li>一个容器也可以挂载多个数据卷</li>
+</ul>
+<p><strong>数据卷可以解决以下问题：</strong></p>
+<p>Docker 容器删除后，为了保留容器产生的数据，使用数据卷，则会在宿主机中保留数据</p>
+<p>Docker 容器与宿主机直接交换文件</p>
+<p>容器与容器之间的数据交互</p>
+<h2 id="配置数据卷"><a class="markdownIt-Anchor" href="#配置数据卷">#</a> <strong>配置数据卷：</strong></h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建启动容器时，使用-v参数设置数据卷</span></span><br><span class="line">docker run ... -v 宿主机目录(文件):容器内目录(文件) ...</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">注意：</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">1.目录必须是绝对路径</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">2.如果目录不存在，则会自动创建</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">3.可以挂载多个数据卷</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">例如：</span></span><br><span class="line">docker run -it --name=c1 -v /root/data:/root/data_container centos:7 /bin/bash</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">若是不写宿主机目录，则docker会自动创建</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">可以使用inspect指令查看</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据卷容器"><a class="markdownIt-Anchor" href="#数据卷容器">#</a> <strong>数据卷容器：</strong></h2>
+<p>创建一个容器挂载到数据卷，将其他容器挂载到该容器。</p>
+<p>则该容器被称为数据卷容器。</p>
+<p>数据卷容器用于管理多容器挂载交互。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">实现：</span></span><br><span class="line">docker run -it --name=c3 -v /volume centos:7</span><br><span class="line">docker run -it --name=c1 --volumes-from c3 centos:7</span><br><span class="line">docker run -it --name=c2 --volumes-from c3 centos:7</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建数据卷容器c3，并由docker自动创建数据卷挂载</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将c1与c2挂载到c3</span></span><br></pre></td></tr></table></figure>
+<h1 id="docker应用部署"><a class="markdownIt-Anchor" href="#docker应用部署">#</a> Docker 应用部署</h1>
+<h2 id="部署mysql"><a class="markdownIt-Anchor" href="#部署mysql">#</a> 部署 mysql</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">1.搜索镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">2.拉取镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">3.创建容器，设置端口映射，目录映射</span></span><br><span class="line">mkdir ~/mysql</span><br><span class="line">cd ~/mysql</span><br><span class="line">docker run -id \</span><br><span class="line">-p 3307:3306 \</span><br><span class="line">--name=c_mysql \</span><br><span class="line">-v $PWD/conf:/etc/mysql/conf.d \</span><br><span class="line">-v $PWD/logs:/logs \</span><br><span class="line">-v $PWD/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">mysql:5.6</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>-p 3307:3306	将容器的 3306 端口映射到宿主机的 3307 端口</li>
+<li>-v $PWD/conf:/etc/mysql/conf.d    挂载</li>
+<li>-v $PWD/logs:/logs \    挂载</li>
+<li>-v $PWD/data:/var/lib/mysql \    挂载</li>
+<li>-e MYSQL_ROOT_PASSWORD=123456 \    初始化 root 用户的密码</li>
+<li>登录 mysql：mysql -uroot -p;</li>
+</ul>
+<h2 id="部署tomcat"><a class="markdownIt-Anchor" href="#部署tomcat">#</a> 部署 tomcat</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">1.搜索镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">2.拉取镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">3.创建容器，设置端口映射，目录映射</span></span><br><span class="line">mkdir ~/tomcat</span><br><span class="line">cd ~/tomcat</span><br><span class="line">docker run -id --name=c_tomcat \</span><br><span class="line">-p 8080:8080 \</span><br><span class="line">-v $PWD:/usr/local/tomcat/webapps \</span><br><span class="line">tomcat</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>-p 8080:8080    将容器的 8080 端口映射到主机的 8080 端口</li>
+<li>-v $PWD:/usr/local/tomcat/webapps \    挂载</li>
+</ul>
+<h2 id="部署nginx"><a class="markdownIt-Anchor" href="#部署nginx">#</a> 部署 nginx</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">1.搜索镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">2.拉取镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">3.创建容器，设置端口映射，目录映射</span></span><br><span class="line">mkdir ~/nginx</span><br><span class="line">cd ~/nginx</span><br><span class="line">docker run -id --name=c_nginx \</span><br><span class="line">-p 80:80 \</span><br><span class="line">-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">-v $PWD/logs:/var/log/nginx \</span><br><span class="line">-v $PWD/html:/usr/share/nginx/html \</span><br><span class="line">nginx</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>-p 80:80 \    端口映射</li>
+<li>-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf \    挂载</li>
+<li>-v $PWD/logs:/var/log/nginx \    挂载</li>
+</ul>
+<h2 id="部署redis"><a class="markdownIt-Anchor" href="#部署redis">#</a> 部署 redis</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">1.搜索镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">2.拉取镜像</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">3.创建容器，设置端口映射，目录映射</span></span><br><span class="line">mkdir ~/redis</span><br><span class="line">cd ~/redis</span><br><span class="line">docker run -id --name=c_redis \</span><br><span class="line">-p 6379:6379 \</span><br><span class="line">redis:5.0</span><br></pre></td></tr></table></figure>
+<h1 id="dockerfile"><a class="markdownIt-Anchor" href="#dockerfile">#</a> Dockerfile</h1>
+<h2 id="docker镜像原理"><a class="markdownIt-Anchor" href="#docker镜像原理">#</a> Docker 镜像原理</h2>
+<ul>
+<li>Docker 镜像的本质是文件</li>
+<li>Docker 镜像是由特殊的文件系统叠加而成</li>
+<li>最低端是 bootfs，并使用宿主机的 bootfs</li>
+<li>第二层是 root 文件系统 rootfs，称为 base image</li>
+<li>然后再往上可以叠加其他的镜像文件</li>
+<li>统一文件系统 (Union File System) 技术能够将不同的层整合成一个文件系统，为这些层提供了一个统一的视角，这样就隐藏了多层的存在，在用户看来，只存在一个文件系统。</li>
+<li>一个镜像可以放在另一个镜像的上面。位于下面的镜像称为父镜像，最底部的镜像称为基础镜像。</li>
+<li>Docker 中的镜像都是只读镜像。</li>
+<li>当从一个镜像启动容器时，Docker 会在最顶层加载一个读写文件系统作为容器。</li>
+</ul>
+<h2 id="docker镜像制作"><a class="markdownIt-Anchor" href="#docker镜像制作">#</a> Docker 镜像制作</h2>
+<p><strong>1. 容器转为镜像：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker commit 容器id 镜像名称:版本号			#转为镜像</span><br><span class="line">docker save -o 压缩文件名称 镜像名称:版本号	  #将镜像压缩，便于发送给别人</span><br><span class="line">docker load -i 压缩文件名称				  #解压缩</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">需要注意，挂载的文件不会被commit转为镜像</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.dockerfile 关键字：</strong></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> <span class="comment">#指定父镜像  指定dockerfile基于哪个image构建</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> <span class="comment">#作者信息  用来标明这个dockerfile是谁写的</span></span><br><span class="line"><span class="keyword">LABEL</span><span class="language-bash"> <span class="comment">#标签  用来标明dockerfile的标签，可以使用Label代替Maintainer最终是在docker image基本信息中可以查看</span></span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="comment">#执行命令  执行一段命令，默认是/bin/sh格式:RUN command或者RUN[&quot;command&quot;,&quot;param1&quot;,&quot;param2&quot;]</span></span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> <span class="comment">#容器启动命令  提供启动容器时候的默认命令和ENTRYPOINT配合使用.格式 CMD command param1 param2  或者 CMD [&quot;command&quot;,&quot;param1&quot;,&quot;param2&quot;]</span></span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> <span class="comment">#入口  一般在制作一些执行就关闭的容器中会使用</span></span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> <span class="comment">#复制文件  build的时候复制文件到image中</span></span></span><br><span class="line"><span class="keyword">ADD</span><span class="language-bash"> <span class="comment">#添加文件  build的时候添加文件到image中，不仅仅局限于当前build上下文，可以来源于远程服务</span></span></span><br><span class="line"><span class="keyword">ENV</span> <span class="comment">#环境变量  指定build时候的环境变量，可以在启动的容器的时候通过-e覆盖，格式ENV name=value</span></span><br><span class="line"><span class="keyword">ARG</span> <span class="comment">#构建参数  构建参数只在构建的时候使用的参数，如果有ENV，那么ENV的相同名字的值始终覆盖ARG的参数</span></span><br><span class="line"><span class="keyword">VOLUME</span><span class="language-bash"> <span class="comment">#定义外部可以挂载的数据卷  指定build的image那些目录可以启动的时候挂载到文件系统中，启动容器的时候使用-v绑定格式 VOLUME [&quot;目录&quot;]</span></span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="comment">#暴露端口  定义容器运行的时候监听的端口，启动容器的使用-p来绑定暴露端口，格式：EXPOSE 8080或者EXPOSE 8080/udp</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> <span class="comment">#工作目录  指定容器内部的工作目录，如果没有则自动创建，如果指定/使用的是绝对地址，如果不是/开头那么是在上一条workdir的路径的相对路径</span></span></span><br><span class="line"><span class="keyword">USER</span> <span class="comment">#指定执行用户  指定build或者启动的时候用户在RUN CMD ENTRYPOINT执行的时候的用户</span></span><br><span class="line"><span class="keyword">HEALTHCHECK</span><span class="language-bash"> <span class="comment">#健康检查  指定检测当前容器的健康检测的命令，基本上没用</span></span></span><br><span class="line"><span class="keyword">ONBUILD</span> <span class="comment">#触发器  当存在ONBUILD关键字的镜像作为基础镜像的时候，当执行FROM完成之后，会执行ONBUILD的命令，但是不影响当前镜像，作用也不大</span></span><br><span class="line"><span class="keyword">STOPSIGNAL</span> <span class="comment">#发送信号量到主机  该STOPSIGNAL指令设置将发送到容器的系统调用信号以退出</span></span><br><span class="line"><span class="keyword">SHELL</span><span class="language-bash"> <span class="comment">#指定执行脚本的shell  指定RUN CMD ENTRYPOINT执行命令的时候使用过的shell</span></span></span><br></pre></td></tr></table></figure>
+
+      <div class="tags">
+          <a href="/tags/Docker/" rel="tag"><i class="ic i-tag"></i> Docker</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-03-31 11:48:44" itemprop="dateModified" datetime="2023-03-31T11:48:44+08:00">2023-03-31</time>
+  </span>
+  <span id="2023/03/31/Docker/" class="item leancloud_visitors" data-flag-title="Docker" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Ailzr 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Ailzr 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="Ailzr 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ailzr <i class="ic i-at"><em>@</em></i>Ailzr's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://www.ailzr.com/2023/03/31/Docker/" title="Docker">https://www.ailzr.com/2023/03/31/Docker/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/03/31/MySQL/" itemprop="url" rel="prev" data-background-image="&#x2F;assets&#x2F;MySQL_Cover.png" title="MySQL">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程笔记</span>
+  <h3>MySQL</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> Docker 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text"> Docker 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text"> 服务相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text"> 镜像相关命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.</span> <span class="toc-text"> 容器相关命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">3.</span> <span class="toc-text"> Docker 容器数据卷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">3.1.</span> <span class="toc-text"> 配置数据卷：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%B7%E5%AE%B9%E5%99%A8"><span class="toc-number">3.2.</span> <span class="toc-text"> 数据卷容器：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2"><span class="toc-number">4.</span> <span class="toc-text"> Docker 应用部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2mysql"><span class="toc-number">4.1.</span> <span class="toc-text"> 部署 mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2tomcat"><span class="toc-number">4.2.</span> <span class="toc-text"> 部署 tomcat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2nginx"><span class="toc-number">4.3.</span> <span class="toc-text"> 部署 nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2redis"><span class="toc-number">4.4.</span> <span class="toc-text"> 部署 redis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dockerfile"><span class="toc-number">5.</span> <span class="toc-text"> Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E9%95%9C%E5%83%8F%E5%8E%9F%E7%90%86"><span class="toc-number">5.1.</span> <span class="toc-text"> Docker 镜像原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C"><span class="toc-number">5.2.</span> <span class="toc-text"> Docker 镜像制作</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2023/03/31/Docker/" rel="bookmark" title="Docker">Docker</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ailzr"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ailzr</p>
+  <div class="description" itemprop="description">我有时会想,在这里写点什么好呢</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">9</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JvcmlkYXlv" title="https:&#x2F;&#x2F;github.com&#x2F;roridayo"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOndvZGVyZWdpc3RlckBwbS5tZQ==" title="mailto:woderegister@pm.me"><i class="ic i-envelope"></i></span>
+      <span class="exturl item bilibili" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMjAxMzAxNzg/c3BtX2lkX2Zyb209MzMzLjMzNy4wLjA=" title="https:&#x2F;&#x2F;space.bilibili.com&#x2F;20130178?spm_id_from&#x3D;333.337.0.0"><i class="ic i-bilibili"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
+</div>
+
+    <span><a href="/2023/03/31/Docker/" title="Docker">Docker</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-Ailzr"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ailzr @ Ailzr</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">182k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:45</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/03/31/Docker/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

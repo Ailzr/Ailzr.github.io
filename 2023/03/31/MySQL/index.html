@@ -1,0 +1,789 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Ailzr's Blog" href="https://www.ailzr.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Ailzr's Blog" href="https://www.ailzr.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Ailzr's Blog" href="https://www.ailzr.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="MySQL" />
+
+
+<link rel="canonical" href="https://www.ailzr.com/2023/03/31/MySQL/">
+
+
+
+  <title>
+MySQL - 编程笔记 |
+Ailzr = Ailzr's Blog</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">MySQL
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-03-31 11:44:12">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-03-31T11:44:12+08:00">2023-03-31</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.5k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ailzr</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/assets/MySQL_Cover.png">
+      </div>
+    <!--header修改前位置-->
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+	</header><!--修改后位置-->
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="分类于 编程笔记"><span itemprop="name">编程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://www.ailzr.com/2023/03/31/MySQL/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ailzr">
+    <meta itemprop="description" content=", 我有时会想,在这里写点什么好呢">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ailzr's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="mysql概述"><a class="markdownIt-Anchor" href="#mysql概述">#</a> MySQL 概述</h1>
+<p>数据库概念：</p>
+<p>数据库：<strong>存储数据的仓库，数据是有组织的进行存储</strong>，英文：DataBase (DB)</p>
+<p>数据库管理系统：操纵和管理数据库的大型软件，英文：DataBase Management System (DBMS)</p>
+<p>SQL：<strong>操作关系型数据库的编程语言，定义了一套操作关系型数据库的统一标准</strong>，英文：Structured Query Language (SQL)</p>
+<p>启动与停止：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net start mysql80 #启动</span><br><span class="line">net stop mysql80 #停止</span><br></pre></td></tr></table></figure>
+<p><strong>关系型数据库 (RDBMS):</strong></p>
+<p>概念：建立在关系模型基础上，由多张相互链接的二维表组成的数据库。(类似于 excel 表格)</p>
+<p>特点：</p>
+<p>1. 使用表存储数据，格式统一，便于维护</p>
+<p>2. 使用 SQL 语言操作，标准统一，使用方便</p>
+<h1 id="sql语言"><a class="markdownIt-Anchor" href="#sql语言">#</a> <mark>SQL 语言</mark></h1>
+<h2 id="基础内容"><a class="markdownIt-Anchor" href="#基础内容">#</a> 基础内容</h2>
+<p>SQL 语句可以单行或多行书写，以<strong>分号结尾</strong>。</p>
+<p>MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。</p>
+<p>注释：单行使用–或 #(MySQL 特有)，多行使用 /**/</p>
+<h2 id="sql分类"><a class="markdownIt-Anchor" href="#sql分类">#</a> SQL 分类</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">全称</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DDL</td>
+<td style="text-align:center">Data Definition Language</td>
+<td style="text-align:center">数据定义语言，用来定义数据库对象 (数据库，表，字段)</td>
+</tr>
+<tr>
+<td style="text-align:center">DML</td>
+<td style="text-align:center">Data Manipulation Language</td>
+<td style="text-align:center">数据操作语言，用来对数据库表种的数据进行增删改</td>
+</tr>
+<tr>
+<td style="text-align:center">DQL</td>
+<td style="text-align:center">Data Query Language</td>
+<td style="text-align:center">数据查询语言，用来查询数据库中表的记录</td>
+</tr>
+<tr>
+<td style="text-align:center">DCL</td>
+<td style="text-align:center">Data Control Language</td>
+<td style="text-align:center">数据控制语言，用来创建数据库用户、控制数据库的访问权限</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ddl"><a class="markdownIt-Anchor" href="#ddl">#</a> DDL</h2>
+<h3 id="ddl-数据库操作"><a class="markdownIt-Anchor" href="#ddl-数据库操作">#</a> DDL - 数据库操作</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#[]中是可写，可不写的内容 </span><br><span class="line">#查询</span><br><span class="line"><span class="keyword">show</span> databases; #查询所有数据库</span><br><span class="line"><span class="keyword">select</span> database(); #查询当前数据库</span><br><span class="line">#创建</span><br><span class="line"><span class="keyword">create</span> database [if <span class="keyword">not</span> <span class="keyword">exists</span>] 数据库名 [<span class="keyword">default</span> charset 字符集] [<span class="keyword">collate</span> 排序规则];</span><br><span class="line">#删除</span><br><span class="line"><span class="keyword">drop</span> database [if <span class="keyword">exists</span>] 数据库名;</span><br><span class="line">#使用，切换数据库</span><br><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
+<h3 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型">#</a> 数据类型</h3>
+<p><strong>数值类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">大小</th>
+<th style="text-align:center">有符号范围</th>
+<th style="text-align:center">无符号范围</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TINYINT</td>
+<td style="text-align:center">1byte</td>
+<td style="text-align:center">-2^7,2^7-1</td>
+<td style="text-align:center">0,2^8-1</td>
+<td style="text-align:center">微整型</td>
+</tr>
+<tr>
+<td style="text-align:center">SMALLINT</td>
+<td style="text-align:center">2bytes</td>
+<td style="text-align:center">-2^15,2^15-1</td>
+<td style="text-align:center">0,2^16-1</td>
+<td style="text-align:center">小整型</td>
+</tr>
+<tr>
+<td style="text-align:center">MEDIUMINT</td>
+<td style="text-align:center">3bytes</td>
+<td style="text-align:center">-2^23,2^23-1</td>
+<td style="text-align:center">0,2^24-1</td>
+<td style="text-align:center">中整型</td>
+</tr>
+<tr>
+<td style="text-align:center">INT 或 INTEGER</td>
+<td style="text-align:center">4bytes</td>
+<td style="text-align:center">-2^31,2^31-1</td>
+<td style="text-align:center">0,2^32-1</td>
+<td style="text-align:center">整型</td>
+</tr>
+<tr>
+<td style="text-align:center">BIGINT</td>
+<td style="text-align:center">8bytes</td>
+<td style="text-align:center">-2^63,2^63-1</td>
+<td style="text-align:center">0,2^64-1</td>
+<td style="text-align:center">长整型</td>
+</tr>
+<tr>
+<td style="text-align:center">FLOAT</td>
+<td style="text-align:center">4bytes</td>
+<td style="text-align:center">-3.402823466 E+38,3.402823466351 E+38</td>
+<td style="text-align:center">0 和 1.175494351 E-38, 3.402823466 E+38</td>
+<td style="text-align:center">单精度浮点型</td>
+</tr>
+<tr>
+<td style="text-align:center">DOUBLE</td>
+<td style="text-align:center">8bytes</td>
+<td style="text-align:center">-1.7976931348623157 E+308, 1.7976931348623157 E+308</td>
+<td style="text-align:center">0 和 2.2250738585072014 E-308, 1.7976931348623157 E+308</td>
+<td style="text-align:center">双精度浮点型</td>
+</tr>
+<tr>
+<td style="text-align:center">DECIMAL</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">依赖于 M (精度) 和 D (标度) 的值</td>
+<td style="text-align:center">依赖于 M (精度) 和 D (标度) 的值</td>
+<td style="text-align:center">小数值 (精确定点数)</td>
+</tr>
+</tbody>
+</table>
+<p>M：指数值总位数，D：指小数位数</p>
+<p><strong>字符串类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">大小</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CHAR</td>
+<td style="text-align:center">0-255 bytes</td>
+<td style="text-align:center">定长字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">VARCHAR</td>
+<td style="text-align:center">0-65535 bytes</td>
+<td style="text-align:center">变长字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">TINYBLOB</td>
+<td style="text-align:center">0-255 bytes</td>
+<td style="text-align:center">不超过 255 个字符的二进制数据</td>
+</tr>
+<tr>
+<td style="text-align:center">TINYTEXT</td>
+<td style="text-align:center">0-255 bytes</td>
+<td style="text-align:center">短文本字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">BLOB</td>
+<td style="text-align:center">0-65535 bytes</td>
+<td style="text-align:center">二进制形势的长文本数据</td>
+</tr>
+<tr>
+<td style="text-align:center">TEXT</td>
+<td style="text-align:center">0-65535 bytes</td>
+<td style="text-align:center">长文本数据</td>
+</tr>
+<tr>
+<td style="text-align:center">MEDIUMBLOB</td>
+<td style="text-align:center">0-2^24 - 1 bytes</td>
+<td style="text-align:center">二进制形势的中等长度文本数据</td>
+</tr>
+<tr>
+<td style="text-align:center">MEDIUMTEXT</td>
+<td style="text-align:center">0-2^24 - 1 bytes</td>
+<td style="text-align:center">中等长度文本数据</td>
+</tr>
+<tr>
+<td style="text-align:center">LONGBLOB</td>
+<td style="text-align:center">0-2^32 - 1 bytes</td>
+<td style="text-align:center">二进制形势的极大文本数据</td>
+</tr>
+<tr>
+<td style="text-align:center">LONGTEXT</td>
+<td style="text-align:center">0-2^32 - 1 bytes</td>
+<td style="text-align:center">极大文本数据</td>
+</tr>
+</tbody>
+</table>
+<p><strong>日期类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">大小</th>
+<th style="text-align:center">范围</th>
+<th style="text-align:center">格式</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DATE</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1000-01-01 至 9999-12-31</td>
+<td style="text-align:center">YYYY-MM-DD</td>
+<td style="text-align:center">日期值</td>
+</tr>
+<tr>
+<td style="text-align:center">TIME</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">-838:59:59 至 838:59:59</td>
+<td style="text-align:center">HH:MM:SS</td>
+<td style="text-align:center">时间值或持续时间</td>
+</tr>
+<tr>
+<td style="text-align:center">YEAR</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1901 至 2155</td>
+<td style="text-align:center">YYYY</td>
+<td style="text-align:center">年份值</td>
+</tr>
+<tr>
+<td style="text-align:center">DATETIME</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">1000-01-01 00:00:00 至 9999-12-31 23:59:59</td>
+<td style="text-align:center">YYYY-MM-DD HH:MM:SS</td>
+<td style="text-align:center">混合日期和时间值</td>
+</tr>
+<tr>
+<td style="text-align:center">TIMESTAMP</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1970-01-01 00:00:01 至 2038-01-19 03:14:07</td>
+<td style="text-align:center">YYYY-MM-DD HH:MM:SS</td>
+<td style="text-align:center">混合日期和时间值，时间戳</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ddl-表查询"><a class="markdownIt-Anchor" href="#ddl-表查询">#</a> DDL - 表查询</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#查询当前数据库所有表</span><br><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line">#查询表结构</span><br><span class="line"><span class="keyword">desc</span> 表名;</span><br><span class="line">#查询指定表的建表语句</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure>
+<h3 id="ddl-表创建"><a class="markdownIt-Anchor" href="#ddl-表创建">#</a> DDL - 表创建</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">    字段<span class="number">1</span> 字段<span class="number">1</span>类型[comment 字段<span class="number">1</span>注释],#<span class="keyword">sql</span>中的字符串类型是<span class="type">varchar</span>(size)</span><br><span class="line">    字段<span class="number">2</span> 字段<span class="number">2</span>类型[comment 字段<span class="number">2</span>注释],</span><br><span class="line">    字段<span class="number">3</span> 字段<span class="number">3</span>类型[comment 字段<span class="number">3</span>注释],</span><br><span class="line">    ...</span><br><span class="line">    字段n 字段n类型[comment 字段n注释]</span><br><span class="line">)[comment 表注释];</span><br><span class="line">#使用案例</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_usr(</span><br><span class="line">	id <span class="type">int</span> comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">    name <span class="type">varchar</span>(<span class="number">50</span>) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    age <span class="type">int</span> comment <span class="string">&#x27;年龄&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="ddl-表修改"><a class="markdownIt-Anchor" href="#ddl-表修改">#</a> DDL - 表修改</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#添加字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 字段类型(长度) [comment 注释][约束];</span><br><span class="line">#修改数据类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify 字段名 新数据类型(长度);</span><br><span class="line">#修改字段名和字段类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 旧字段名 新字段名 字段类型(长度) [comment 注释][约束];</span><br><span class="line">#删除字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名;</span><br><span class="line">#修改表名</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 rename <span class="keyword">to</span> 新表名;</span><br><span class="line">#删除表</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> [if <span class="keyword">exists</span>] 表名;</span><br><span class="line">#清空表数据</span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure>
+
+      <div class="tags">
+          <a href="/tags/MySQL/" rel="tag"><i class="ic i-tag"></i> MySQL</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-03-31 11:49:16" itemprop="dateModified" datetime="2023-03-31T11:49:16+08:00">2023-03-31</time>
+  </span>
+  <span id="2023/03/31/MySQL/" class="item leancloud_visitors" data-flag-title="MySQL" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Ailzr 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Ailzr 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="Ailzr 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ailzr <i class="ic i-at"><em>@</em></i>Ailzr's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://www.ailzr.com/2023/03/31/MySQL/" title="MySQL">https://www.ailzr.com/2023/03/31/MySQL/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/02/24/java/" itemprop="url" rel="prev" data-background-image="&#x2F;assets&#x2F;javaCover.jpg" title="Java笔记">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程笔记</span>
+  <h3>Java笔记</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2023/03/31/Docker/" itemprop="url" rel="next" data-background-image="&#x2F;assets&#x2F;MySQL_Cover.png" title="Docker">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 开发环境</span>
+  <h3>Docker</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> MySQL 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sql%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text"> SQL 语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 基础内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text"> SQL 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ddl"><span class="toc-number">2.3.</span> <span class="toc-text"> DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">2.3.1.</span> <span class="toc-text"> DDL - 数据库操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.3.3.</span> <span class="toc-text"> DDL - 表查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E5%88%9B%E5%BB%BA"><span class="toc-number">2.3.4.</span> <span class="toc-text"> DDL - 表创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E4%BF%AE%E6%94%B9"><span class="toc-number">2.3.5.</span> <span class="toc-text"> DDL - 表修改</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2023/02/19/DataStructureAndAlgorithms/" rel="bookmark" title="数据结构与算法">数据结构与算法</a></li><li><a href="/2023/02/20/C-Foundation/" rel="bookmark" title="C语言基础">C语言基础</a></li><li><a href="/2023/02/21/Linux-Foundation/" rel="bookmark" title="Linux基础">Linux基础</a></li><li><a href="/2023/02/22/HTML-CSS/" rel="bookmark" title="HTML+CSS">HTML+CSS</a></li><li><a href="/2023/02/23/CppLearn/" rel="bookmark" title="C++笔记">C++笔记</a></li><li><a href="/2023/02/24/java/" rel="bookmark" title="Java笔记">Java笔记</a></li><li class="active"><a href="/2023/03/31/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ailzr"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ailzr</p>
+  <div class="description" itemprop="description">我有时会想,在这里写点什么好呢</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">9</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JvcmlkYXlv" title="https:&#x2F;&#x2F;github.com&#x2F;roridayo"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOndvZGVyZWdpc3RlckBwbS5tZQ==" title="mailto:woderegister@pm.me"><i class="ic i-envelope"></i></span>
+      <span class="exturl item bilibili" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMjAxMzAxNzg/c3BtX2lkX2Zyb209MzMzLjMzNy4wLjA=" title="https:&#x2F;&#x2F;space.bilibili.com&#x2F;20130178?spm_id_from&#x3D;333.337.0.0"><i class="ic i-bilibili"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/02/24/java/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2023/03/31/Docker/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
+</div>
+
+    <span><a href="/2023/03/31/Docker/" title="Docker">Docker</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-Ailzr"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ailzr @ Ailzr</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">182k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:45</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/03/31/MySQL/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
