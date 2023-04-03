@@ -875,7 +875,7 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
     <content><![CDATA[<h1 id="数据结构与算法datastructureandalgorithms"><a class="markdownIt-Anchor" href="#数据结构与算法datastructureandalgorithms">#</a> 数据结构与算法 (DataStructureAndAlgorithms)</h1>
 <h2 id="注该笔记使用c"><a class="markdownIt-Anchor" href="#注该笔记使用c">#</a> 注：该笔记使用 C++</h2>
 <h2 id="testarrcreate"><a class="markdownIt-Anchor" href="#testarrcreate">#</a> TestArrCreate</h2>
-<p>作用：生成一个 vector&lt;int&gt; arr; 用于测试</p>
+<p>作用：生成一个测试数组，用于测试代码</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">testArr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">testArr</span>();</span><br><span class="line">	~<span class="built_in">testArr</span>();</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span>* arr;</span><br><span class="line">	<span class="type">int</span> arrLen;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">createArr</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">printArr</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//源文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;testArr.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">testArr::createArr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;arrLen = <span class="built_in">rand</span>() % <span class="number">5</span> + <span class="number">5</span>;<span class="comment">//长度为5-10</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;arr = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">this</span>-&gt;arrLen * <span class="number">4</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;arrLen; i++) &#123;</span><br><span class="line">		arr[i] = <span class="built_in">rand</span>() % <span class="number">300</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testArr::<span class="built_in">testArr</span>() &#123;</span><br><span class="line">	<span class="built_in">srand</span>((<span class="type">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">createArr</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testArr::~<span class="built_in">testArr</span>() &#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;arr != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="keyword">delete</span>[] <span class="keyword">this</span>-&gt;arr;</span><br><span class="line">		<span class="keyword">this</span>-&gt;arr = <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">testArr::printArr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;arrLen; i++) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="keyword">this</span>-&gt;arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="线性结构"><a class="markdownIt-Anchor" href="#线性结构">#</a> <mark>线性结构：</mark></h1>
@@ -2998,12 +2998,135 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">    字段<span class="number">1</span> 字段<span class="number">1</span>类型[comment 字段<span class="number">1</span>注释],#<span class="keyword">sql</span>中的字符串类型是<span class="type">varchar</span>(size)</span><br><span class="line">    字段<span class="number">2</span> 字段<span class="number">2</span>类型[comment 字段<span class="number">2</span>注释],</span><br><span class="line">    字段<span class="number">3</span> 字段<span class="number">3</span>类型[comment 字段<span class="number">3</span>注释],</span><br><span class="line">    ...</span><br><span class="line">    字段n 字段n类型[comment 字段n注释]</span><br><span class="line">)[comment 表注释];</span><br><span class="line">#使用案例</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_usr(</span><br><span class="line">	id <span class="type">int</span> comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">    name <span class="type">varchar</span>(<span class="number">50</span>) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    age <span class="type">int</span> comment <span class="string">&#x27;年龄&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="ddl-表修改"><a class="markdownIt-Anchor" href="#ddl-表修改">#</a> DDL - 表修改</h3>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#添加字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 字段类型(长度) [comment 注释][约束];</span><br><span class="line">#修改数据类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify 字段名 新数据类型(长度);</span><br><span class="line">#修改字段名和字段类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 旧字段名 新字段名 字段类型(长度) [comment 注释][约束];</span><br><span class="line">#删除字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名;</span><br><span class="line">#修改表名</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 rename <span class="keyword">to</span> 新表名;</span><br><span class="line">#删除表</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> [if <span class="keyword">exists</span>] 表名;</span><br><span class="line">#清空表数据</span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure>
+<h2 id="dml"><a class="markdownIt-Anchor" href="#dml">#</a> DML</h2>
+<p>DML (Data Manipulation Language)，数据操作语言，用来对数据库中表的数据记录进行增删改操作</p>
+<p>添加数据 (INSERT)</p>
+<p>修改数据 (UPDATE)</p>
+<p>删除数据 (DELETE)</p>
+<h3 id="dml-添加数据"><a class="markdownIt-Anchor" href="#dml-添加数据">#</a> DML - 添加数据</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#给指定字段添加数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,...) <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br><span class="line">#给全部字段添加数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br><span class="line">#批量添加数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,...) <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br></pre></td></tr></table></figure>
+<h3 id="dml-修改数据"><a class="markdownIt-Anchor" href="#dml-修改数据">#</a> DML - 修改数据</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> 表名 <span class="keyword">SET</span> 字段名<span class="number">1</span> <span class="operator">=</span> 值<span class="number">1</span>, 字段名<span class="number">2</span> <span class="operator">=</span> 值<span class="number">2</span>, ...[<span class="keyword">WHERE</span> 条件]</span><br><span class="line">#如果不写<span class="keyword">where</span>条件，则修改作用于整张表</span><br></pre></td></tr></table></figure>
+<h3 id="dml-删除数据"><a class="markdownIt-Anchor" href="#dml-删除数据">#</a> DML - 删除数据</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名 [<span class="keyword">WHERE</span> 条件]</span><br><span class="line">#如果不写<span class="keyword">where</span>条件，则删除整张表的所有数据</span><br></pre></td></tr></table></figure>
+<h2 id="dql"><a class="markdownIt-Anchor" href="#dql">#</a> DQL</h2>
+<p>DQL (Data Query Language) 数据查询语言，用来查询数据库中表的记录。</p>
+<p>查询关键字 (SELECT)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#基础查询</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	字段列表</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	表名列表</span><br><span class="line">#条件查询</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	条件列表</span><br><span class="line">#分组查询、通常配合聚合函数使用</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	分组字段列表</span><br><span class="line"><span class="keyword">HAVING</span></span><br><span class="line">	分组后条件列表</span><br><span class="line">#排序查询</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	排序字段列表</span><br><span class="line">#分页查询</span><br><span class="line">LIMIT</span><br><span class="line">	分页参数</span><br></pre></td></tr></table></figure>
+<h3 id="dql-基础查询"><a class="markdownIt-Anchor" href="#dql-基础查询">#</a> DQL - 基础查询</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#查询多个字段</span><br><span class="line"><span class="keyword">SELECT</span> 字段<span class="number">1</span>,字段<span class="number">2</span>,字段<span class="number">3.</span>.. <span class="keyword">FROM</span> 表名;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名;</span><br><span class="line">#设置别名</span><br><span class="line"><span class="keyword">SELECT</span> 字段<span class="number">1</span> [<span class="keyword">AS</span> 别名<span class="number">1</span>],字段<span class="number">2</span> [<span class="keyword">AS</span> 别名<span class="number">2</span>]... <span class="keyword">FROM</span> 表名;</span><br><span class="line">#去除返回结果中的重复记录</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> 字段列表 <span class="keyword">FROM</span> 表名;</span><br></pre></td></tr></table></figure>
+<h3 id="dql-条件查询"><a class="markdownIt-Anchor" href="#dql-条件查询">#</a> DQL - 条件查询</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 条件列表;</span><br><span class="line">#条件</span><br><span class="line">#可以使用比较运算符和逻辑运算符、比较运算符同C</span><br><span class="line">#MySQL特有：</span><br><span class="line"><span class="keyword">BETWEEN</span> ... <span class="keyword">AND</span> ...#在某个范围之内，包含最小值与最大值，<span class="keyword">between</span>后是最小值，不能互换</span><br><span class="line"><span class="keyword">IN</span>(...)#在<span class="keyword">in</span>之后的列表中的值，多选一</span><br><span class="line"><span class="keyword">LIKE</span> 占位符#模糊匹配（_匹配单个字符，<span class="operator">%</span>匹配任意字符）</span><br><span class="line"><span class="keyword">IS</span> <span class="keyword">NULL</span>#是<span class="keyword">NULL</span></span><br><span class="line"></span><br><span class="line">#mysql中判断等于的符号是<span class="operator">=</span>，而不是<span class="operator">=</span><span class="operator">=</span></span><br><span class="line"><span class="operator">&lt;&gt;</span> #相当于 <span class="operator">!=</span></span><br><span class="line"><span class="keyword">AND</span> #相当于 <span class="operator">&amp;&amp;</span></span><br><span class="line"><span class="keyword">OR</span> #相当于 <span class="operator">||</span></span><br><span class="line"><span class="keyword">NOT</span> #相当于 <span class="operator">!</span></span><br></pre></td></tr></table></figure>
+<h3 id="dql-聚合函数"><a class="markdownIt-Anchor" href="#dql-聚合函数">#</a> DQL - 聚合函数</h3>
+<p>聚合函数：将一列数据作为一个整体，进行纵向计算</p>
+<p>常见聚合函数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">count</td>
+<td style="text-align:center">统计数量</td>
+</tr>
+<tr>
+<td style="text-align:center">max</td>
+<td style="text-align:center">最大值</td>
+</tr>
+<tr>
+<td style="text-align:center">min</td>
+<td style="text-align:center">最小值</td>
+</tr>
+<tr>
+<td style="text-align:center">avg</td>
+<td style="text-align:center">平均值</td>
+</tr>
+<tr>
+<td style="text-align:center">sum</td>
+<td style="text-align:center">求和</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#注意：<span class="keyword">NULL</span>不参与聚合函数的计算</span><br><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 聚合函数(字段列表) <span class="keyword">FROM</span> 表名;</span><br></pre></td></tr></table></figure>
+<h3 id="dql-分组查询"><a class="markdownIt-Anchor" href="#dql-分组查询">#</a> DQL - 分组查询</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 [<span class="keyword">WHERE</span> 条件] <span class="keyword">GROUP</span> <span class="keyword">BY</span> 分组字段名 [<span class="keyword">HAVING</span> 分组后过滤条件];</span><br><span class="line">#<span class="keyword">where</span>和<span class="keyword">having</span>的区别</span><br><span class="line">#执行时机不同：<span class="keyword">where</span>是分组之前进行过滤，不满足<span class="keyword">where</span>条件，不参与分组，而<span class="keyword">having</span>是分组之后对结果过滤</span><br><span class="line">#判断条件不同：<span class="keyword">where</span>不能对聚合函数进行判断，而<span class="keyword">having</span>可以</span><br><span class="line">#执行顺序：<span class="keyword">where</span> <span class="operator">&gt;</span> 聚合函数 <span class="operator">&gt;</span> <span class="keyword">having</span></span><br></pre></td></tr></table></figure>
+<h3 id="dql-排序查询"><a class="markdownIt-Anchor" href="#dql-排序查询">#</a> DQL - 排序查询</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 <span class="keyword">ORDER</span> <span class="keyword">BY</span> 字段<span class="number">1</span> 排序方式<span class="number">1</span>, 字段<span class="number">2</span> 排序方式<span class="number">2</span>;</span><br><span class="line">#排序方式：</span><br><span class="line">#<span class="keyword">ASC</span>：升序(默认)</span><br><span class="line">#<span class="keyword">DESC</span>：降序</span><br></pre></td></tr></table></figure>
+<h3 id="dql-分页查询"><a class="markdownIt-Anchor" href="#dql-分页查询">#</a> DQL - 分页查询</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 LIMIT 起始索引,查询记录数;</span><br><span class="line">#注意：</span><br><span class="line">#起始索引从<span class="number">0</span>开始，起始索引<span class="operator">=</span>(查询页码<span class="number">-1</span>) <span class="operator">*</span> 每页显示记录数。起始索引即起始数据的下标</span><br><span class="line">#分页查询是数据库的方言，不同数据库有不同的实现，MySQL中是LIMIT</span><br><span class="line">#如果查询的是第一页数据，起始索引可以省略，直接简写为LIMIT <span class="number">10</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>编程笔记</category>
       </categories>
       <tags>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chaoXingCourse</title>
+    <url>/2023/04/03/chaoXingCourse/</url>
+    <content><![CDATA[<h1 id="注意"><a class="markdownIt-Anchor" href="#注意">#</a> 注意：</h1>
+<ul>
+<li>1. 此教程适用于超星学习通，本人并未在其他页面测试，其他学习网页请自行测试</li>
+<li>2. 推荐使用浏览器为 chrome (也可以用 fire fox 或者 Microsoft Edge)</li>
+<li>3. 此教程使用内容皆为免费内容</li>
+<li>4. 此教程仅用于交流学习，用户个人行为与本人无关</li>
+</ul>
+<h1 id="安装使用"><a class="markdownIt-Anchor" href="#安装使用">#</a> 安装使用：</h1>
+<h2 id="1安装油猴tampermonkey插件"><a class="markdownIt-Anchor" href="#1安装油猴tampermonkey插件">#</a> 1. 安装油猴 (Tampermonkey) 插件</h2>
+<p>首先点击浏览器右上方扩展程序</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031249183.png" alt="image-20230403124927110"></p>
+<p>点击管理扩展程序</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031250310.png" alt="image-20230403125029264"></p>
+<p>点击左上角三条线，在侧边栏最下方点击打开 chrome 应用商店。</p>
+<p><strong>注意：chrome 浏览器需要科学上网环境才可以使用 chrome 应用商店！</strong></p>
+<p>搜索并安装插件 Tampermonkey：</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031252041.png" alt="image-20230403125205986"></p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031252190.png" alt="image-20230403125240143"></p>
+<p>未安装用户会显示安装，点击安装即可。</p>
+<h2 id="2安装ocs网课助手"><a class="markdownIt-Anchor" href="#2安装ocs网课助手">#</a> 2. 安装 OCS 网课助手</h2>
+<p>点击右上方扩展程序，点击已经安装好的 Tampermonkey。</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031256022.png" alt="image-20230403125608979"></p>
+<p>点击获取新脚本，点击打开 GreasyFork (油叉)</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031257385.png" alt="image-20230403125748285"></p>
+<p>在网页右上角设置语言为简体中文</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031259856.png" alt="image-20230403125904825"></p>
+<p>搜索 OCS，安装 OCS 网课助手</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031321073.png" alt="image-20230403130003585"></p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031300271.png" alt="image-20230403130044220"></p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031301489.png" alt="image-20230403130125437"></p>
+<p>点击打开 Tampermonkey 菜单，选择管理面板，确认 OCS 为开启状态</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031303530.png" alt="image-20230403130322495"></p>
+<p>打开超星学习通，点击要学习的课程，打开任务点，即可使用。</p>
+<h2 id="3自动答题配置ocs题库"><a class="markdownIt-Anchor" href="#3自动答题配置ocs题库">#</a> 3. 自动答题，配置 OCS 题库</h2>
+<p>打开超星学习通个人空间，找到 OCS 菜单</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031305905.png" alt="image-20230403130515868"></p>
+<p>点击方框展开菜单</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031306617.png" alt="image-20230403130608583"></p>
+<p>点击通用，点击全局设置</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031306340.png" alt="image-20230403130646296"></p>
+<p>点击配置题库</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031321120.png" alt="image-20230403130706973"></p>
+<p>点击自动答题教程，根据教程配置题库，配置完成后如下图：</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031322766.png" alt="image-20230403130837638"></p>
+<p>其中言溪题库为收费题库，网课小工具题库为免费题库。收费题库有需要可以自行购买。</p>
+<p>配置提交设置：</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031310694.png" alt="image-20230403131010647"></p>
+<p>根据自己需要选择。</p>
+<h2 id="4安装考试脚本"><a class="markdownIt-Anchor" href="#4安装考试脚本">#</a> 4. 安装考试脚本</h2>
+<p>打开 GreasyFork (油叉)，搜索并安装脚本：【万能】全平台自动答题脚本</p>
+<p><img data-src="https://raw.githubusercontent.com/roridayo/picBed/master/202304031317433.png" alt="image-20230403131757378"></p>
+<p><strong>注意：OCS 和该脚本不能同时启动，使用时，请启用需要用的脚本，关闭另一个。</strong></p>
+<p>安装完成即可使用，此脚本主要用于考试。</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>chaoxing</tag>
       </tags>
   </entry>
 </search>

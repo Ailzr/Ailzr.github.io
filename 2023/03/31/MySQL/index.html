@@ -76,7 +76,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>2.5k</span>
+    <span>4.2k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>2 分钟</span>
+    <span>4 分钟</span>
   </span>
 </div>
 
@@ -403,6 +403,65 @@ Ailzr = Ailzr's Blog</title>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">    字段<span class="number">1</span> 字段<span class="number">1</span>类型[comment 字段<span class="number">1</span>注释],#<span class="keyword">sql</span>中的字符串类型是<span class="type">varchar</span>(size)</span><br><span class="line">    字段<span class="number">2</span> 字段<span class="number">2</span>类型[comment 字段<span class="number">2</span>注释],</span><br><span class="line">    字段<span class="number">3</span> 字段<span class="number">3</span>类型[comment 字段<span class="number">3</span>注释],</span><br><span class="line">    ...</span><br><span class="line">    字段n 字段n类型[comment 字段n注释]</span><br><span class="line">)[comment 表注释];</span><br><span class="line">#使用案例</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_usr(</span><br><span class="line">	id <span class="type">int</span> comment <span class="string">&#x27;编号&#x27;</span>,</span><br><span class="line">    name <span class="type">varchar</span>(<span class="number">50</span>) comment <span class="string">&#x27;姓名&#x27;</span>,</span><br><span class="line">    age <span class="type">int</span> comment <span class="string">&#x27;年龄&#x27;</span></span><br><span class="line">) comment <span class="string">&#x27;用户表&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="ddl-表修改"><a class="markdownIt-Anchor" href="#ddl-表修改">#</a> DDL - 表修改</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#添加字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 字段类型(长度) [comment 注释][约束];</span><br><span class="line">#修改数据类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify 字段名 新数据类型(长度);</span><br><span class="line">#修改字段名和字段类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 旧字段名 新字段名 字段类型(长度) [comment 注释][约束];</span><br><span class="line">#删除字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名;</span><br><span class="line">#修改表名</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 rename <span class="keyword">to</span> 新表名;</span><br><span class="line">#删除表</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> [if <span class="keyword">exists</span>] 表名;</span><br><span class="line">#清空表数据</span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名;</span><br></pre></td></tr></table></figure>
+<h2 id="dml"><a class="markdownIt-Anchor" href="#dml">#</a> DML</h2>
+<p>DML (Data Manipulation Language)，数据操作语言，用来对数据库中表的数据记录进行增删改操作</p>
+<p>添加数据 (INSERT)</p>
+<p>修改数据 (UPDATE)</p>
+<p>删除数据 (DELETE)</p>
+<h3 id="dml-添加数据"><a class="markdownIt-Anchor" href="#dml-添加数据">#</a> DML - 添加数据</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#给指定字段添加数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,...) <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br><span class="line">#给全部字段添加数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br><span class="line">#批量添加数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,...) <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br></pre></td></tr></table></figure>
+<h3 id="dml-修改数据"><a class="markdownIt-Anchor" href="#dml-修改数据">#</a> DML - 修改数据</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> 表名 <span class="keyword">SET</span> 字段名<span class="number">1</span> <span class="operator">=</span> 值<span class="number">1</span>, 字段名<span class="number">2</span> <span class="operator">=</span> 值<span class="number">2</span>, ...[<span class="keyword">WHERE</span> 条件]</span><br><span class="line">#如果不写<span class="keyword">where</span>条件，则修改作用于整张表</span><br></pre></td></tr></table></figure>
+<h3 id="dml-删除数据"><a class="markdownIt-Anchor" href="#dml-删除数据">#</a> DML - 删除数据</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名 [<span class="keyword">WHERE</span> 条件]</span><br><span class="line">#如果不写<span class="keyword">where</span>条件，则删除整张表的所有数据</span><br></pre></td></tr></table></figure>
+<h2 id="dql"><a class="markdownIt-Anchor" href="#dql">#</a> DQL</h2>
+<p>DQL (Data Query Language) 数据查询语言，用来查询数据库中表的记录。</p>
+<p>查询关键字 (SELECT)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#基础查询</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	字段列表</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	表名列表</span><br><span class="line">#条件查询</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	条件列表</span><br><span class="line">#分组查询、通常配合聚合函数使用</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	分组字段列表</span><br><span class="line"><span class="keyword">HAVING</span></span><br><span class="line">	分组后条件列表</span><br><span class="line">#排序查询</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	排序字段列表</span><br><span class="line">#分页查询</span><br><span class="line">LIMIT</span><br><span class="line">	分页参数</span><br></pre></td></tr></table></figure>
+<h3 id="dql-基础查询"><a class="markdownIt-Anchor" href="#dql-基础查询">#</a> DQL - 基础查询</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#查询多个字段</span><br><span class="line"><span class="keyword">SELECT</span> 字段<span class="number">1</span>,字段<span class="number">2</span>,字段<span class="number">3.</span>.. <span class="keyword">FROM</span> 表名;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名;</span><br><span class="line">#设置别名</span><br><span class="line"><span class="keyword">SELECT</span> 字段<span class="number">1</span> [<span class="keyword">AS</span> 别名<span class="number">1</span>],字段<span class="number">2</span> [<span class="keyword">AS</span> 别名<span class="number">2</span>]... <span class="keyword">FROM</span> 表名;</span><br><span class="line">#去除返回结果中的重复记录</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> 字段列表 <span class="keyword">FROM</span> 表名;</span><br></pre></td></tr></table></figure>
+<h3 id="dql-条件查询"><a class="markdownIt-Anchor" href="#dql-条件查询">#</a> DQL - 条件查询</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 条件列表;</span><br><span class="line">#条件</span><br><span class="line">#可以使用比较运算符和逻辑运算符、比较运算符同C</span><br><span class="line">#MySQL特有：</span><br><span class="line"><span class="keyword">BETWEEN</span> ... <span class="keyword">AND</span> ...#在某个范围之内，包含最小值与最大值，<span class="keyword">between</span>后是最小值，不能互换</span><br><span class="line"><span class="keyword">IN</span>(...)#在<span class="keyword">in</span>之后的列表中的值，多选一</span><br><span class="line"><span class="keyword">LIKE</span> 占位符#模糊匹配（_匹配单个字符，<span class="operator">%</span>匹配任意字符）</span><br><span class="line"><span class="keyword">IS</span> <span class="keyword">NULL</span>#是<span class="keyword">NULL</span></span><br><span class="line"></span><br><span class="line">#mysql中判断等于的符号是<span class="operator">=</span>，而不是<span class="operator">=</span><span class="operator">=</span></span><br><span class="line"><span class="operator">&lt;&gt;</span> #相当于 <span class="operator">!=</span></span><br><span class="line"><span class="keyword">AND</span> #相当于 <span class="operator">&amp;&amp;</span></span><br><span class="line"><span class="keyword">OR</span> #相当于 <span class="operator">||</span></span><br><span class="line"><span class="keyword">NOT</span> #相当于 <span class="operator">!</span></span><br></pre></td></tr></table></figure>
+<h3 id="dql-聚合函数"><a class="markdownIt-Anchor" href="#dql-聚合函数">#</a> DQL - 聚合函数</h3>
+<p>聚合函数：将一列数据作为一个整体，进行纵向计算</p>
+<p>常见聚合函数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">count</td>
+<td style="text-align:center">统计数量</td>
+</tr>
+<tr>
+<td style="text-align:center">max</td>
+<td style="text-align:center">最大值</td>
+</tr>
+<tr>
+<td style="text-align:center">min</td>
+<td style="text-align:center">最小值</td>
+</tr>
+<tr>
+<td style="text-align:center">avg</td>
+<td style="text-align:center">平均值</td>
+</tr>
+<tr>
+<td style="text-align:center">sum</td>
+<td style="text-align:center">求和</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#注意：<span class="keyword">NULL</span>不参与聚合函数的计算</span><br><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 聚合函数(字段列表) <span class="keyword">FROM</span> 表名;</span><br></pre></td></tr></table></figure>
+<h3 id="dql-分组查询"><a class="markdownIt-Anchor" href="#dql-分组查询">#</a> DQL - 分组查询</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 [<span class="keyword">WHERE</span> 条件] <span class="keyword">GROUP</span> <span class="keyword">BY</span> 分组字段名 [<span class="keyword">HAVING</span> 分组后过滤条件];</span><br><span class="line">#<span class="keyword">where</span>和<span class="keyword">having</span>的区别</span><br><span class="line">#执行时机不同：<span class="keyword">where</span>是分组之前进行过滤，不满足<span class="keyword">where</span>条件，不参与分组，而<span class="keyword">having</span>是分组之后对结果过滤</span><br><span class="line">#判断条件不同：<span class="keyword">where</span>不能对聚合函数进行判断，而<span class="keyword">having</span>可以</span><br><span class="line">#执行顺序：<span class="keyword">where</span> <span class="operator">&gt;</span> 聚合函数 <span class="operator">&gt;</span> <span class="keyword">having</span></span><br></pre></td></tr></table></figure>
+<h3 id="dql-排序查询"><a class="markdownIt-Anchor" href="#dql-排序查询">#</a> DQL - 排序查询</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 <span class="keyword">ORDER</span> <span class="keyword">BY</span> 字段<span class="number">1</span> 排序方式<span class="number">1</span>, 字段<span class="number">2</span> 排序方式<span class="number">2</span>;</span><br><span class="line">#排序方式：</span><br><span class="line">#<span class="keyword">ASC</span>：升序(默认)</span><br><span class="line">#<span class="keyword">DESC</span>：降序</span><br></pre></td></tr></table></figure>
+<h3 id="dql-分页查询"><a class="markdownIt-Anchor" href="#dql-分页查询">#</a> DQL - 分页查询</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#语法</span><br><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表名 LIMIT 起始索引,查询记录数;</span><br><span class="line">#注意：</span><br><span class="line">#起始索引从<span class="number">0</span>开始，起始索引<span class="operator">=</span>(查询页码<span class="number">-1</span>) <span class="operator">*</span> 每页显示记录数。起始索引即起始数据的下标</span><br><span class="line">#分页查询是数据库的方言，不同数据库有不同的实现，MySQL中是LIMIT</span><br><span class="line">#如果查询的是第一页数据，起始索引可以省略，直接简写为LIMIT <span class="number">10</span></span><br></pre></td></tr></table></figure>
 
       <div class="tags">
           <a href="/tags/MySQL/" rel="tag"><i class="ic i-tag"></i> MySQL</a>
@@ -417,7 +476,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-03-31 11:49:16" itemprop="dateModified" datetime="2023-03-31T11:49:16+08:00">2023-03-31</time>
+    <time title="修改时间：2023-04-03 12:40:04" itemprop="dateModified" datetime="2023-04-03T12:40:04+08:00">2023-04-03</time>
   </span>
   <span id="2023/03/31/MySQL/" class="item leancloud_visitors" data-flag-title="MySQL" title="阅读次数">
       <span class="icon">
@@ -512,7 +571,7 @@ Ailzr = Ailzr's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> MySQL 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sql%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text"> SQL 语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 基础内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text"> SQL 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ddl"><span class="toc-number">2.3.</span> <span class="toc-text"> DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">2.3.1.</span> <span class="toc-text"> DDL - 数据库操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.3.3.</span> <span class="toc-text"> DDL - 表查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E5%88%9B%E5%BB%BA"><span class="toc-number">2.3.4.</span> <span class="toc-text"> DDL - 表创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E4%BF%AE%E6%94%B9"><span class="toc-number">2.3.5.</span> <span class="toc-text"> DDL - 表修改</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> MySQL 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sql%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text"> SQL 语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 基础内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text"> SQL 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ddl"><span class="toc-number">2.3.</span> <span class="toc-text"> DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">2.3.1.</span> <span class="toc-text"> DDL - 数据库操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text"> 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.3.3.</span> <span class="toc-text"> DDL - 表查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E5%88%9B%E5%BB%BA"><span class="toc-number">2.3.4.</span> <span class="toc-text"> DDL - 表创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ddl-%E8%A1%A8%E4%BF%AE%E6%94%B9"><span class="toc-number">2.3.5.</span> <span class="toc-text"> DDL - 表修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dml"><span class="toc-number">2.4.</span> <span class="toc-text"> DML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dml-%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">2.4.1.</span> <span class="toc-text"> DML - 添加数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dml-%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-number">2.4.2.</span> <span class="toc-text"> DML - 修改数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dml-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">2.4.3.</span> <span class="toc-text"> DML - 删除数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dql"><span class="toc-number">2.5.</span> <span class="toc-text"> DQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dql-%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.5.1.</span> <span class="toc-text"> DQL - 基础查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dql-%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.5.2.</span> <span class="toc-text"> DQL - 条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dql-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">2.5.3.</span> <span class="toc-text"> DQL - 聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dql-%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.5.4.</span> <span class="toc-text"> DQL - 分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dql-%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.5.5.</span> <span class="toc-text"> DQL - 排序查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dql-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.5.6.</span> <span class="toc-text"> DQL - 分页查询</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -530,19 +589,19 @@ Ailzr = Ailzr's Blog</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">9</span>
+        <span class="count">10</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">2</span>
+        <span class="count">3</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">9</span>
+        <span class="count">10</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -628,19 +687,10 @@ Ailzr = Ailzr's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
 </div>
 
-    <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
+    <span><a href="/2023/04/03/chaoXingCourse/" title="chaoXingCourse">chaoXingCourse</a></span>
   </li>
 
       
@@ -660,7 +710,26 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+    <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/02/19/My-first-Post/" title="这是我的第一个帖子">这是我的第一个帖子</a></span>
   </li>
 
       
@@ -700,7 +769,7 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
   </li>
 
       
@@ -710,7 +779,7 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
   </li>
 
   </ul>
@@ -735,13 +804,13 @@ Ailzr = Ailzr's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">182k 字</span>
+    <span title="站点总字数">184k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:45</span>
+    <span title="站点阅读时长">2:48</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

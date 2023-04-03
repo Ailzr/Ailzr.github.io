@@ -165,7 +165,7 @@ Ailzr = Ailzr's Blog</title>
     <h1 id="数据结构与算法datastructureandalgorithms"><a class="markdownIt-Anchor" href="#数据结构与算法datastructureandalgorithms">#</a> 数据结构与算法 (DataStructureAndAlgorithms)</h1>
 <h2 id="注该笔记使用c"><a class="markdownIt-Anchor" href="#注该笔记使用c">#</a> 注：该笔记使用 C++</h2>
 <h2 id="testarrcreate"><a class="markdownIt-Anchor" href="#testarrcreate">#</a> TestArrCreate</h2>
-<p>作用：生成一个 vector&lt;int&gt; arr; 用于测试</p>
+<p>作用：生成一个测试数组，用于测试代码</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//头文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">testArr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">testArr</span>();</span><br><span class="line">	~<span class="built_in">testArr</span>();</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span>* arr;</span><br><span class="line">	<span class="type">int</span> arrLen;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">createArr</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">printArr</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//源文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;testArr.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">testArr::createArr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;arrLen = <span class="built_in">rand</span>() % <span class="number">5</span> + <span class="number">5</span>;<span class="comment">//长度为5-10</span></span><br><span class="line">	<span class="keyword">this</span>-&gt;arr = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">this</span>-&gt;arrLen * <span class="number">4</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;arrLen; i++) &#123;</span><br><span class="line">		arr[i] = <span class="built_in">rand</span>() % <span class="number">300</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testArr::<span class="built_in">testArr</span>() &#123;</span><br><span class="line">	<span class="built_in">srand</span>((<span class="type">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">createArr</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testArr::~<span class="built_in">testArr</span>() &#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;arr != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="keyword">delete</span>[] <span class="keyword">this</span>-&gt;arr;</span><br><span class="line">		<span class="keyword">this</span>-&gt;arr = <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">testArr::printArr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;arrLen; i++) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="keyword">this</span>-&gt;arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="线性结构"><a class="markdownIt-Anchor" href="#线性结构">#</a> <mark>线性结构：</mark></h1>
@@ -432,7 +432,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-03-31 11:50:18" itemprop="dateModified" datetime="2023-03-31T11:50:18+08:00">2023-03-31</time>
+    <time title="修改时间：2023-03-31 12:01:07" itemprop="dateModified" datetime="2023-03-31T12:01:07+08:00">2023-03-31</time>
   </span>
   <span id="2023/02/19/DataStructureAndAlgorithms/" class="item leancloud_visitors" data-flag-title="数据结构与算法" title="阅读次数">
       <span class="icon">
@@ -545,19 +545,19 @@ Ailzr = Ailzr's Blog</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">9</span>
+        <span class="count">10</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">2</span>
+        <span class="count">3</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">9</span>
+        <span class="count">10</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -646,36 +646,6 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
-</div>
-
-    <span><a href="/2023/03/31/Docker/" title="Docker">Docker</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
     <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
   </li>
 
@@ -696,7 +666,17 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
+    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
+</div>
+
+    <span><a href="/2023/04/03/chaoXingCourse/" title="chaoXingCourse">chaoXingCourse</a></span>
   </li>
 
       
@@ -715,7 +695,7 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
   </li>
 
       
@@ -725,7 +705,37 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
+</div>
+
+    <span><a href="/2023/03/31/Docker/" title="Docker">Docker</a></span>
   </li>
 
   </ul>
@@ -750,13 +760,13 @@ Ailzr = Ailzr's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">182k 字</span>
+    <span title="站点总字数">184k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:45</span>
+    <span title="站点阅读时长">2:48</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
