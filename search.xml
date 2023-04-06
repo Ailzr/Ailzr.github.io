@@ -505,13 +505,13 @@
 <p>C 是我第一门系统性学习的高级语言，学习中笔记比较混乱，现在对编程有了更深的理解，所以我决定重置 C 语言的笔记，尽量写成一个零基础可以看着入门的笔记。</p>
 <p>本笔记开发环境为 Visual Studio 2022</p>
 <h2 id="开发环境部署"><a class="markdownIt-Anchor" href="#开发环境部署">#</a> <strong>开发环境部署：</strong></h2>
-<p>开发时所使用的工具被称为 IDE (Integrated Development Environment)，集成开发环境。</p>
+<p>开发时所使用的工具被称为<strong> IDE (Integrated Development Environment)</strong>，集成开发环境。</p>
 <p>之所以叫集成开发环境，是因为其一般集成了，代码编辑，测试运行等多项功能。</p>
-<p>搜索并安装 Visual Studio 2022 社区版，获取到 Visual Studio Installer</p>
+<p>搜索并安装<strong> Visual Studio 2022 社区版</strong>，获取到 Visual Studio Installer</p>
 <p>点击勾选 (使用 C++ 的桌面开发)，点击安装</p>
 <h1 id="c语言简介"><a class="markdownIt-Anchor" href="#c语言简介">#</a> C 语言简介</h1>
 <p>C 语言是一种高级语言，相较于 C 语言，还有更贴近底层的汇编语言，与底层的机器语言。</p>
-<p>C 语言是由丹尼斯・麦卡利斯泰尔・里奇 (Dennis MacAlistair Ritchie) 在贝尔电话实验室工作时设计的。</p>
+<p>C 语言是由 ** 丹尼斯・麦卡利斯泰尔・里奇 (Dennis MacAlistair Ritchie)** 在贝尔电话实验室工作时设计的。</p>
 <p>C 语言是一门面向过程式的计算机程序设计语言。</p>
 <h1 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world">#</a> Hello World</h1>
 <p>打开安装好的 VS2022，点击创建新项目</p>
@@ -522,7 +522,7 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>按下 F5，或者点击窗口上方的本地 Windows 调试器运行第一个程序。</p>
 <p><mark><strong>！！注意！！</strong></mark></p>
-<p><strong>代码中所有的符号，都需要使用英文输入法输入！(以后所有代码都是)</strong></p>
+<p><mark><strong>代码中所有的符号，都需要使用英文输入法输入！(以后所有代码都是！)</strong></mark></p>
 <h2 id="注释"><a class="markdownIt-Anchor" href="#注释">#</a> 注释</h2>
 <p>注释，即对代码的注解，以第一个程序为例：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释1</span></span><br><span class="line"><span class="comment">多行注释2</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Hello World&quot;</span>);<span class="comment">//在控制窗口打印字符串&quot;Hello World&quot;</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -533,7 +533,7 @@
 <p>第二种为 /**/ 的多行注释，如上面代码的多行注释</p>
 <h1 id="位bit与字节byte"><a class="markdownIt-Anchor" href="#位bit与字节byte">#</a> 位 (bit) 与字节 (byte)</h1>
 <p>在日常使用计算机的时候，我们通常会看到一些数据单位，如 kb,MB,GB 等</p>
-<p>其中<strong> kb</strong> 指的是 kilo byte (千字节)，<strong>mb</strong> 指的是 mega byte (兆字节)。诸如此类的还有 TB,PB,EB 等。</p>
+<p>其中 kb 指的是 kilo byte (千字节)，mb 指的是 mega byte (兆字节)。诸如此类的还有 TB,PB,EB 等。</p>
 <p>计算机是电子产品，对其来说，只存在开路 (0) 与闭路 (1)</p>
 <p>我们将一个最基础的单位 (0 或 1) 称为位 (bit)，将 8 个位合在一起称为一个字节 (byte)。</p>
 <p>当我需要将整数 8 存入计算机时，8 会被转换为二进制数 100 被存入到内存中。</p>
@@ -623,7 +623,7 @@
 <p>指针类型通常占用 4 个字节，存储十六进制数，用于保存地址值，具体会在指针的部分讲到。</p>
 <h2 id="空类型"><a class="markdownIt-Anchor" href="#空类型">#</a> 空类型</h2>
 <p>型如其名，空 (void)</p>
-<h1 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> 变量</h1>
+<h1 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> <mark>变量</mark></h1>
 <h2 id="声明变量与赋值"><a class="markdownIt-Anchor" href="#声明变量与赋值">#</a> 声明变量与赋值：</h2>
 <p>创建一个新的源文件，并将先前的第一个程序全部注释掉：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> var1;<span class="comment">//声明一个整型变量</span></span><br><span class="line">    var1 = <span class="number">0</span>;<span class="comment">//给var1赋值</span></span><br><span class="line">    <span class="type">float</span> var2 = <span class="number">0.123f</span>;<span class="comment">//声明并初始化一个单精度浮点型变量</span></span><br><span class="line">    <span class="type">double</span> var3 = <span class="number">0.123456</span>;<span class="comment">//声明并初始化一个双精度浮点型变量</span></span><br><span class="line">    <span class="type">char</span> var4 = <span class="string">&#x27;c&#x27;</span>;<span class="comment">//声明并初始化一个字符型变量</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,%f,%lf,%c&quot;</span>, var1, var2, var3, var4);<span class="comment">//使用占位符%d,%f,%lf与%c输出相应变量。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -652,7 +652,7 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//例如</span></span><br><span class="line"><span class="type">int</span> var;<span class="comment">//var是variety(变量)的缩写</span></span><br><span class="line"><span class="type">int</span> count;<span class="comment">//count(计数)，通常用于计数</span></span><br><span class="line"><span class="type">int</span> sum;<span class="comment">//sum(和)，通常用于求和</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//上面的变量名，看到名字便知道其作用。</span></span><br><span class="line"><span class="comment">//需要使用两个及以上的单词去描述变量时，通常使用驼峰法或下划线法命名</span></span><br><span class="line"><span class="comment">//驼峰法即：单词的首字母大写，如：</span></span><br><span class="line"><span class="type">int</span> studentId;<span class="comment">//学号</span></span><br><span class="line"><span class="type">char</span> studentAddress;<span class="comment">//学生家庭地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//下划线法即：使用下划线分割单词，如：</span></span><br><span class="line"><span class="type">int</span> student_name;<span class="comment">//学生姓名</span></span><br><span class="line"><span class="type">int</span> student_class;<span class="comment">//学生班级</span></span><br></pre></td></tr></table></figure>
 <p>驼峰法与下划线法的选择看个人喜好。</p>
-<h1 id="运算符"><a class="markdownIt-Anchor" href="#运算符">#</a> 运算符</h1>
+<h1 id="运算符"><a class="markdownIt-Anchor" href="#运算符">#</a> <mark>运算符</mark></h1>
 <p>需要注意，运算符区分优先级，大致为：</p>
 <p>数值运算符 &gt; 比较运算符 &gt; 逻辑运算符 (不绝对)</p>
 <p>其中逻辑运算符中！&gt; &amp;&amp; &gt; ||</p>
@@ -861,7 +861,7 @@
 <p><strong>逻辑或：一真即真，全假才假。</strong></p>
 <h1 id="数据类型转换"><a class="markdownIt-Anchor" href="#数据类型转换">#</a> 数据类型转换</h1>
 <p>将低精度值赋值给高精度值时，数据会自动转换类型，示例代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span> c = <span class="string">&#x27;a&#x27;</span>;<span class="comment">//声明并初始化字符型变量c</span></span><br><span class="line">    <span class="type">int</span> number1 = <span class="number">10</span>;<span class="comment">//声明并初始化整型变量number1</span></span><br><span class="line">    <span class="type">float</span> number2 = <span class="number">10.10</span>;<span class="comment">//声明并初始化单精度浮点型变量number2</span></span><br><span class="line">    <span class="type">double</span> number3 = <span class="number">100.100</span>;<span class="comment">//声明并初始化双精度浮点型变量number3</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当把高精度的数值，赋给低精度的变量时，会导致警告，例如：</span></span><br><span class="line">    number1 = number2;</span><br><span class="line">    <span class="comment">//因为整型并不存在小数部分，所以将浮点型赋值给整型时，会导致小数部分的数据丢失，因此会被警告</span></span><br><span class="line">    <span class="comment">//将高精度数值赋值给低精度变量时，可以强制转换其数据类型，例如：</span></span><br><span class="line">    number1 = (<span class="type">int</span>)number2;<span class="comment">//在前面使用(数据类型)，来强制转换变量的数据类型</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//而当低精度的数值，赋给高精度的变量时，则会自动转换其数据类型，例如：</span></span><br><span class="line">    number2 = number1;<span class="comment">//并不需要强制转换</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//基本数据类型中，可以自动转换的数据类型级别，大致如下：</span></span><br><span class="line">    <span class="comment">//double = float = int = char</span></span><br><span class="line">    number3 = number2 = number1 = c;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf&quot;</span>, number3);<span class="comment">//打印结果应为97.000000</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span> c = <span class="string">&#x27;a&#x27;</span>;<span class="comment">//声明并初始化字符型变量c</span></span><br><span class="line">    <span class="type">int</span> number1 = <span class="number">10</span>;<span class="comment">//声明并初始化整型变量number1</span></span><br><span class="line">    <span class="type">float</span> number2 = <span class="number">10.10</span>;<span class="comment">//声明并初始化单精度浮点型变量number2</span></span><br><span class="line">    <span class="type">double</span> number3 = <span class="number">100.100</span>;<span class="comment">//声明并初始化双精度浮点型变量number3</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当把高精度的数值，赋给低精度的变量时，会导致警告，例如：</span></span><br><span class="line">    number1 = number2;</span><br><span class="line">    <span class="comment">//因为整型并不存在小数部分，所以将浮点型赋值给整型时，会导致小数部分的数据丢失，因此会被警告</span></span><br><span class="line">    <span class="comment">//将高精度数值赋值给低精度变量时，可以强制转换其数据类型，例如：</span></span><br><span class="line">    number1 = (<span class="type">int</span>)number2;<span class="comment">//在前面使用(数据类型)，来强制转换变量的数据类型</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//而当低精度的数值，赋给高精度的变量时，则会自动转换其数据类型，例如：</span></span><br><span class="line">    number2 = number1;<span class="comment">//并不需要强制转换</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//基本数据类型中，可以自动转换的数据类型级别，大致如下：</span></span><br><span class="line">    <span class="comment">//double &gt; float &gt; unsigned long &gt; long &gt; unsigned int &gt; int &gt; short</span></span><br><span class="line">    number3 = number2 = number1 = c;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf&quot;</span>, number3);<span class="comment">//打印结果应为97.000000</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>需要注意的是：</strong></p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">当浮点型被转换为整型时，并不会采取四舍五入的方式，而是截断。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">即var = 1.1得到的结果为var = 1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">var = 1.6得到的结果也为var = 1</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> var1 = <span class="number">1.1</span>;</span><br><span class="line">    <span class="type">int</span> var2 = <span class="number">1.6</span>;</span><br><span class="line">    <span class="type">float</span> var3 = <span class="number">3</span> / <span class="number">5</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,%d,%f&quot;</span>, var1, var2, var3);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>得到结果为 1，1，0.000000</p>
@@ -1054,23 +1054,6 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
 <p>因此若要用函数将其中局部变量返还于主函数，须用 static 修饰。</p>
 <p>如 static int n = 100;// 在 func 函数中改写成这样</p>
 <p>表示整型 n 是一个静态数据，将被存于静态数据区（类似于全局变量）。</p>
-<h1 id="数据类型-2"><a class="markdownIt-Anchor" href="#数据类型-2">#</a> 数据类型</h1>
-<p>C 语言中数据类型包括</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">基本类型</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">​	数值类型</span><br><span class="line"></span><br><span class="line">​	&#123;</span><br><span class="line"></span><br><span class="line">​		整型</span><br><span class="line"></span><br><span class="line">​		&#123;</span><br><span class="line"></span><br><span class="line">​			短整型	<span class="type">short</span></span><br><span class="line"></span><br><span class="line">​			整型	<span class="type">int</span></span><br><span class="line"></span><br><span class="line">​			长整型	<span class="type">long</span></span><br><span class="line"></span><br><span class="line">​		&#125;</span><br><span class="line"></span><br><span class="line">​		浮点型</span><br><span class="line"></span><br><span class="line">​		&#123;</span><br><span class="line"></span><br><span class="line">​			单精度型	<span class="type">float</span></span><br><span class="line"></span><br><span class="line">​			双精度型	<span class="type">double</span></span><br><span class="line"></span><br><span class="line">​		&#125;</span><br><span class="line"></span><br><span class="line">​	&#125;</span><br><span class="line"></span><br><span class="line">​	字符类型	<span class="type">char</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">构造类型</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">​	数组</span><br><span class="line"></span><br><span class="line">​	结构体	<span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">​	共用体	<span class="title">union</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">​	枚举类型	<span class="title">enum</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#125;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">指针类型</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">空类型	<span class="title">void</span></span></span><br></pre></td></tr></table></figure>
-<h1 id="数据类型转换-2"><a class="markdownIt-Anchor" href="#数据类型转换-2">#</a> 数据类型转换</h1>
-<p>精度从低到高顺序</p>
-<p>short	int	unsigned int	long	unsigned long	float	double	long double</p>
-<p>C 程序在进行赋值或者运算时，精度小的类型自动转换为精度大的数据类型</p>
-<p>强制类型转换符（）  格式：	（类型名）表达式</p>
-<p>例：	（若浮点型强行转换为整型，则会将小数点后部分直接截断）</p>
-<p>#include&lt;stdio.h&gt;</p>
-<p>void main()</p>
-<p>{</p>
-<p>​	double d1 = 1.234;</p>
-<p>​	int num = (int)d1;</p>
-<p>}</p>
-<p>// 这种强制类型转换，并不会使操作数（d1）发生类型改变</p>
-<p>// 强制转换符只针对最近的操作数有效，若希望针对更多的表达式转换，须使用小括号</p>
 <h1 id="位运算原码反码与补码"><a class="markdownIt-Anchor" href="#位运算原码反码与补码">#</a> 位运算，原码，反码与补码</h1>
 <p>对于有符号的数而言：</p>
 <p>1) 二进制的最高位是符号位，0 表示正数，1 表示负数</p>
