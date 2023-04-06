@@ -1,0 +1,618 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/hexo-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Ailzr's Blog" href="https://michaelmaugustus.gitee.io/hexo-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Ailzr's Blog" href="https://michaelmaugustus.gitee.io/hexo-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="Ailzr's Blog" href="https://michaelmaugustus.gitee.io/hexo-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/hexo-blog/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Git" />
+
+
+<link rel="canonical" href="https://michaelmaugustus.gitee.io/hexo-blog/2023/04/06/GitNote/">
+
+
+
+  <title>
+Git - 编程笔记 |
+Ailzr = Ailzr's Blog</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Git
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-04-06 13:05:18">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-04-06T13:05:18+08:00">2023-04-06</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/hexo-blog/" rel="start">Ailzr</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/hexo-blog/assets/gitCover.png">
+      </div>
+    <!--header修改前位置-->
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+	</header><!--修改后位置-->
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/hexo-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="分类于 编程笔记"><span itemprop="name">编程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://michaelmaugustus.gitee.io/hexo-blog/2023/04/06/GitNote/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/hexo-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Ailzr">
+    <meta itemprop="description" content=", 我有时会想,在这里写点什么好呢">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ailzr's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="基本配置"><a class="markdownIt-Anchor" href="#基本配置">#</a> 基本配置</h1>
+<p>1. 打开 Git Bash</p>
+<p>2. 设置用户信息</p>
+<p>git config --global <span class="exturl" data-url="aHR0cDovL3VzZXIubmFtZQ==">user.name</span> “userName”</p>
+<p>git config --global user.email “<span class="exturl" data-url="bWFpbHRvOmhlbGxvV29ybGRAZXhhbXBsZS5jb20=">helloWorld@example.com</span>”</p>
+<p>查看配置信息：</p>
+<p>git config --global <span class="exturl" data-url="aHR0cDovL3VzZXIubmFtZQ==">user.name</span></p>
+<p>git config --global user.email</p>
+<h1 id="常用指令配置别名可选"><a class="markdownIt-Anchor" href="#常用指令配置别名可选">#</a> 常用指令配置别名 (可选)</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.打开用户目录，创建.bashrc文件</span></span><br><span class="line"><span class="built_in">touch</span> ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.添加如下内容</span></span><br><span class="line"><span class="comment">#用于输出git提交日志</span></span><br><span class="line"><span class="built_in">alias</span> git-log=<span class="string">&#x27;git log --pretty=oneline --all --graph --abbrev-commit&#x27;</span></span><br><span class="line"><span class="comment">#用于输出当前目录所有文件及基本信息</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">&#x27;ls -al&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#3.打开gitBash，执行source ~/.bashrc</span></span><br></pre></td></tr></table></figure>
+<h1 id="获取本地仓库"><a class="markdownIt-Anchor" href="#获取本地仓库">#</a> 获取本地仓库</h1>
+<p>1. 在电脑的任意位置创建一个空目录，作为本地 Git 仓库</p>
+<p>2. 进入该目录，右键打开 Git Bash</p>
+<p>3. 执行命令 git init</p>
+<p>4. 如果创建成功后，可在文件夹下看到隐藏的.git 目录</p>
+<h1 id="常用git指令"><a class="markdownIt-Anchor" href="#常用git指令">#</a> 常用 Git 指令</h1>
+<h2 id="工作区-暂存区-仓库add与commit"><a class="markdownIt-Anchor" href="#工作区-暂存区-仓库add与commit">#</a> 工作区、暂存区、仓库 | add 与 commit</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将新建或修改的文件加入到暂存区</span></span><br><span class="line">git add FileName||通配符</span><br><span class="line"><span class="comment">#将所有修改加入到暂存区：git add .</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#提交暂存区的内容到本地仓库</span></span><br><span class="line">git commit -m <span class="string">&quot;注释内容&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看提交日志</span></span><br><span class="line">git <span class="built_in">log</span> [options]</span><br><span class="line">options：</span><br><span class="line">    --all				<span class="comment">#显示所有分支</span></span><br><span class="line">    --pretty=oneline	<span class="comment">#将提交信息显示为一行</span></span><br><span class="line">    --abbrev-commit		<span class="comment">#使得输出的commitId更简短</span></span><br><span class="line">    --graph				<span class="comment">#以图的形式显示</span></span><br></pre></td></tr></table></figure>
+<h2 id="版本回退"><a class="markdownIt-Anchor" href="#版本回退">#</a> 版本回退</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commitID</span><br><span class="line"><span class="comment">#commitID使用git log查看</span></span><br><span class="line"><span class="comment">#或使用git reflog查看历史操作，找到历史Id</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加文件至忽略列表"><a class="markdownIt-Anchor" href="#添加文件至忽略列表">#</a> 添加文件至忽略列表</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建.gitignore文件</span></span><br><span class="line"><span class="built_in">touch</span> .gitignore</span><br><span class="line"><span class="comment">#在其中写入需要忽略的文件，例如</span></span><br><span class="line">.gitignore	<span class="comment">#忽略.gitignore文件</span></span><br><span class="line">*.a			<span class="comment">#忽略所有后缀为.a的文件</span></span><br><span class="line">file.txt	<span class="comment">#忽略file.txt文件</span></span><br></pre></td></tr></table></figure>
+<h2 id="git分支"><a class="markdownIt-Anchor" href="#git分支">#</a> Git 分支</h2>
+<p>Git 允许创建多个分支 (branch) 进行开发，分支之间互不干扰，最后合并 (merge)</p>
+<p>1.master (生产) 分支</p>
+<p>线上分支，主分支，中小规模项目作为线上运行的应用对应的分支；</p>
+<p>2.develop (开发) 分支</p>
+<p>是从 master 创建的分支，一般作为开发部门的主要开发分支，如果没有其他并行开发不同期上线要求，都可以在此版本进行开发，阶段开发完成后，需要合并到 master 分支，准备上线</p>
+<p>3.feature/xxxx 分支</p>
+<p>从 develop 创建的分支，一般是同期并行开发，但不同期上线时创建的分支，分支上的研发任务完成后合并到 develop 分支</p>
+<p>4.hotfix/xxxx 分支</p>
+<p>从 master 派生的分支，一般作为线上 bug 修复使用，修复完成后需要合并到 master、test、develop 分支。</p>
+<p>5. 其他分支，如 test 分支 (代码测试)，pre 分支 (预上线) 等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看分支</span></span><br><span class="line">git branch</span><br><span class="line"><span class="comment">#创建分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line"><span class="comment">#切换分支</span></span><br><span class="line">git checkout 分支名</span><br><span class="line"><span class="comment">#创建并切换到分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line"><span class="comment">#合并分支</span></span><br><span class="line">git merge 分支名<span class="comment">#将分支合并</span></span><br><span class="line"><span class="comment">#删除分支</span></span><br><span class="line">git branch -d 分支名 <span class="comment">#删除分支时，需要做各种间插</span></span><br><span class="line">git branch -D 分支名 <span class="comment">#强制删除，不做检查</span></span><br></pre></td></tr></table></figure>
+<h1 id="解决冲突"><a class="markdownIt-Anchor" href="#解决冲突">#</a> 解决冲突</h1>
+<p>当两个分支上对同一个文件修改同一行内容，合并时会造成冲突，需要手动解决冲突。</p>
+<ul>
+<li>手动处理文件中冲突的地方</li>
+<li>将解决完冲突的文件加入到暂存区</li>
+<li>提交到仓库</li>
+</ul>
+<h1 id="git配置远程仓库"><a class="markdownIt-Anchor" href="#git配置远程仓库">#</a> Git 配置远程仓库</h1>
+<h2 id="创建并设置远程仓库"><a class="markdownIt-Anchor" href="#创建并设置远程仓库">#</a> 创建并设置远程仓库</h2>
+<ol>
+<li>建立远程仓库，使用 Github 或者 Gitee 创建远程仓库 (这里使用 Gitee 为例)</li>
+<li>配置 SSH 公钥，创建 SSH 密钥：<strong>ssh-keygen -t rsa</strong></li>
+<li>查看公钥：<strong>cat ~/.ssh/id_rsa.pub</strong></li>
+<li>将公钥复制到个人设置中的 SSH 公钥</li>
+<li>使用 ssh -T git@gitee.com 测试公钥是否配置成功</li>
+<li>公钥配置成功后，将本地仓库与远程仓库绑定：<strong>git remote add origin ssh 链接</strong></li>
+<li>使用：<strong>git remote</strong>  查看是否绑定成功</li>
+</ol>
+<h2 id="将本地仓库内容推送到远端仓库"><a class="markdownIt-Anchor" href="#将本地仓库内容推送到远端仓库">#</a> 将本地仓库内容推送到远端仓库</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push [-f] [--set-upstream] [远端名] [本地分支名]:[远端分支名]</span><br><span class="line"><span class="comment">#如果本地分支名与远端分支名相同，则可以只写本地分支</span></span><br><span class="line"><span class="comment">#-f表示本地代码强制覆盖远端代码</span></span><br><span class="line"><span class="comment">#--set-upstream表示关联本地分支与远端分支，关联后可以省略远端名和分支名</span></span><br></pre></td></tr></table></figure>
+<h2 id="将远端仓库的内容克隆到本地仓库"><a class="markdownIt-Anchor" href="#将远端仓库的内容克隆到本地仓库">#</a> 将远端仓库的内容克隆到本地仓库</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远端链接 [目标路径]</span><br></pre></td></tr></table></figure>
+<h2 id="从远端仓库抓取与拉取"><a class="markdownIt-Anchor" href="#从远端仓库抓取与拉取">#</a> 从远端仓库抓取与拉取</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#抓取：从远端获取更新，然后使用merge将远端分支合并到本地分支</span></span><br><span class="line">git fetch</span><br><span class="line">git merge</span><br><span class="line"><span class="comment">#拉取：抓取合并二合一</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<h1 id="在ide中使用git"><a class="markdownIt-Anchor" href="#在ide中使用git">#</a> 在 IDE 中使用 Git</h1>
+<p>这里以 Pycharm 为例</p>
+<p><strong>使用步骤：</strong></p>
+<ol>
+<li>打开设置，搜索 Git</li>
+<li>检查 Git 路径是否自动识别，若未自动识别，需手动配置 Git 路径</li>
+<li>创建并设置远程仓库 (参考<strong> Git 配置远程仓库</strong>一节)</li>
+<li>点击 VCS，创建 Git 仓库 (Create Git Repositry…)，选择要建仓库的项目目录</li>
+<li>创建本地仓库后，VSC 按钮会变成 Git 按钮，可在 Git 选项中提交</li>
+<li>点击 Git，选择推送，定义远程仓库，复制 Gitee 的 URL，确认推送</li>
+</ol>
+
+      <div class="tags">
+          <a href="/hexo-blog/tags/Git/" rel="tag"><i class="ic i-tag"></i> Git</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-04-06 13:09:02" itemprop="dateModified" datetime="2023-04-06T13:09:02+08:00">2023-04-06</time>
+  </span>
+  <span id="2023/04/06/GitNote/" class="item leancloud_visitors" data-flag-title="Git" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/hexo-blog/images/wechatpay.png" alt="Ailzr 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/hexo-blog/images/alipay.png" alt="Ailzr 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/hexo-blog/images/paypal.png" alt="Ailzr 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ailzr <i class="ic i-at"><em>@</em></i>Ailzr's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://michaelmaugustus.gitee.io/hexo-blog/2023/04/06/GitNote/" title="Git">https://michaelmaugustus.gitee.io/hexo-blog/2023/04/06/GitNote/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/hexo-blog/2023/04/03/chaoXingCourse/" itemprop="url" rel="prev" data-background-image="&#x2F;hexo-blog&#x2F;assets&#x2F;chaoXingCover.jpg" title="超星刷课脚本安装教程">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 教程</span>
+  <h3>超星刷课脚本安装教程</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text"> 基本配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D%E5%8F%AF%E9%80%89"><span class="toc-number">2.</span> <span class="toc-text"> 常用指令配置别名 (可选)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text"> 获取本地仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8git%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text"> 常用 Git 指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA-%E6%9A%82%E5%AD%98%E5%8C%BA-%E4%BB%93%E5%BA%93add%E4%B8%8Ecommit"><span class="toc-number">4.1.</span> <span class="toc-text"> 工作区、暂存区、仓库 | add 与 commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-number">4.2.</span> <span class="toc-text"> 版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E8%87%B3%E5%BF%BD%E7%95%A5%E5%88%97%E8%A1%A8"><span class="toc-number">4.3.</span> <span class="toc-text"> 添加文件至忽略列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%88%86%E6%94%AF"><span class="toc-number">4.4.</span> <span class="toc-text"> Git 分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="toc-number">5.</span> <span class="toc-text"> 解决冲突</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text"> Git 配置远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E8%AE%BE%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">6.1.</span> <span class="toc-text"> 创建并设置远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%86%85%E5%AE%B9%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="toc-number">6.2.</span> <span class="toc-text"> 将本地仓库内容推送到远端仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E7%9A%84%E5%86%85%E5%AE%B9%E5%85%8B%E9%9A%86%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">6.3.</span> <span class="toc-text"> 将远端仓库的内容克隆到本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E6%8A%93%E5%8F%96%E4%B8%8E%E6%8B%89%E5%8F%96"><span class="toc-number">6.4.</span> <span class="toc-text"> 从远端仓库抓取与拉取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8ide%E4%B8%AD%E4%BD%BF%E7%94%A8git"><span class="toc-number">7.</span> <span class="toc-text"> 在 IDE 中使用 Git</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/hexo-blog/2023/02/09/C-DataStructure/" rel="bookmark" title="数据结构(C版)">数据结构(C版)</a></li><li><a href="/hexo-blog/2023/02/19/DataStructureAndAlgorithms/" rel="bookmark" title="数据结构与算法">数据结构与算法</a></li><li><a href="/hexo-blog/2023/02/20/C-Foundation/" rel="bookmark" title="C语言基础">C语言基础</a></li><li><a href="/hexo-blog/2023/02/21/Linux-Foundation/" rel="bookmark" title="Linux基础">Linux基础</a></li><li><a href="/hexo-blog/2023/02/22/HTML-CSS/" rel="bookmark" title="HTML+CSS">HTML+CSS</a></li><li><a href="/hexo-blog/2023/02/23/CppLearn/" rel="bookmark" title="C++笔记">C++笔记</a></li><li><a href="/hexo-blog/2023/02/24/java/" rel="bookmark" title="Java笔记">Java笔记</a></li><li><a href="/hexo-blog/2023/03/31/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li><li class="active"><a href="/hexo-blog/2023/04/06/GitNote/" rel="bookmark" title="Git">Git</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ailzr"
+      data-src="/hexo-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Ailzr</p>
+  <div class="description" itemprop="description">我有时会想,在这里写点什么好呢</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/hexo-blog/archives/">
+        <span class="count">11</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/hexo-blog/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/hexo-blog/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JvcmlkYXlv" title="https:&#x2F;&#x2F;github.com&#x2F;roridayo"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOndvZGVyZWdpc3RlckBwbS5tZQ==" title="mailto:woderegister@pm.me"><i class="ic i-envelope"></i></span>
+      <span class="exturl item bilibili" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMjAxMzAxNzg/c3BtX2lkX2Zyb209MzMzLjMzNy4wLjA=" title="https:&#x2F;&#x2F;space.bilibili.com&#x2F;20130178?spm_id_from&#x3D;333.337.0.0"><i class="ic i-bilibili"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/hexo-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/hexo-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/hexo-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/hexo-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/hexo-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/hexo-blog/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/02/09/C-DataStructure/" title="数据结构(C版)">数据结构(C版)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/04/06/GitNote/" title="Git">Git</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/03/31/Docker/" title="Docker">Docker</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/hexo-blog/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-Ailzr"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ailzr @ Ailzr</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">201k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:03</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/04/06/GitNote/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/hexo-blog/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
