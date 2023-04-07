@@ -76,7 +76,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>15k</span>
+    <span>19k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>14 分钟</span>
+    <span>18 分钟</span>
   </span>
 </div>
 
@@ -530,6 +530,122 @@ Ailzr = Ailzr's Blog</title>
 <p>这是因为参与计算的数值均为整型，即 3 / 5，运算出来的返回结果也只能是整型，得到的结果是被截断过后的整型 0，最后打印出的结果是 0.000000</p>
 <p>若要返回结果为浮点型，则需要使用浮点型数值参与运算，比如改为</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> var3 = <span class="number">3.0</span> / <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="分支语句语句"><a class="markdownIt-Anchor" href="#分支语句语句">#</a> 分支语句语句</h1>
+<h2 id="if-else-if-else语句"><a class="markdownIt-Anchor" href="#if-else-if-else语句">#</a> if、else if、else 语句</h2>
+<p>在生活中，我们经常会遇到分支情况，例如：</p>
+<p>如果沙县小吃比大盘鸡更便宜，我今天就去吃沙县小吃，否则的话就去吃大盘鸡。</p>
+<p>我们注意到，在这句话里出现了两条分支：</p>
+<ol>
+<li>去吃沙县小吃</li>
+<li>去吃大盘鸡</li>
+</ol>
+<p>而我们根据：哪个更便宜？这个条件对我们要做的选择进行判断。</p>
+<p>在编程中，我们也可以实现类似的分支情况，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃沙县&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃大盘鸡&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这部分代码，相信许多人只是读一遍，便能够理解，接下来我要详细介绍 if 语句的细节，首先是语法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型) &#123;需要执行的代码块&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个 if 语句的语法，如果 if 后的代码块仅仅只有 1 句 (1 个分号为 1 句)，那么可以不写大括号，如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;只有一句代码时，可以不写大括号&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>当括号内的布尔类型为真时，执行这条 if 语句，为假时，则不会执行。</p>
+<p>可以使用上面提到的比较运算符来获得布尔类型，如上面的沙县、大盘鸡比较代码。</p>
+<p>需要注意的是，if 语句可以单独使用，而 else 语句不可以，else 语句必须要有对应的 if 语句。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这样写是正确的</span></span><br><span class="line"><span class="keyword">if</span> (布尔类型)&#123;需要执行的代码块&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;需要执行的代码块&#125;</span><br><span class="line"><span class="comment">//---------------------------------</span></span><br><span class="line"><span class="comment">//这样写是错误的</span></span><br><span class="line"><span class="keyword">else</span> &#123;代码块&#125;</span><br></pre></td></tr></table></figure>
+<p>当 if 内的布尔类型为假时，程序便会不执行 if 语句，直接进入 else 语句</p>
+<p>如果 else 后面的语句仅仅只有 1 句，也可以不写大括号</p>
+<p>else 语句的匹配规则遵循就近原则：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型) &#123;代码块&#125;<span class="comment">//这个if语句没有else</span></span><br><span class="line"><span class="keyword">if</span> (布尔类型) &#123;代码块&#125;<span class="comment">//下面的else语句会匹配离它最近的这个if语句</span></span><br><span class="line"><span class="keyword">else</span> &#123;代码块&#125;</span><br></pre></td></tr></table></figure>
+<p>回到上面的沙县与大盘鸡案例，我们可以想到，其价格的比较结果并非一定只有两种，还会有相同的情况：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃沙县&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (sha_xian == da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;吃哪个都可以&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃大盘鸡&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以在 if 的下面添加 else if 语句来判断这种情况，else if 语句的作用类似于 if 语句，但是不能单独使用</p>
+<p><strong>else if 可以存在不止一句</strong></p>
+<p>同样的，当 else if 语句后面只有一条语句时，可以不写大括号。</p>
+<h2 id="switch语句"><a class="markdownIt-Anchor" href="#switch语句">#</a> switch 语句</h2>
+<p>在生活中，除了如同 if、else 这种分支，还存在多分支的情况，例如：</p>
+<ul>
+<li>如果今天是周一，我就去学 C 语言</li>
+<li>如果今天是周二，我就去学 C++</li>
+<li>如果今天是周三，我就去学 Java</li>
+<li>如果今天是周四，我就去学 Python</li>
+<li>如果今天是周五，我就去学 C#</li>
+<li>如果今天是周六，我就出去玩</li>
+<li>如果今天是周日，我就睡懒觉</li>
+</ul>
+<p>当然，这种多分支的情况可以使用多个 else if 去实现，但是当分支过多，if 语句的效率通常不如 switch 语句。</p>
+<p>首先介绍一下 switch 语句的语法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(变量)&#123;</span><br><span class="line"><span class="keyword">case</span> 值<span class="number">1</span>:</span><br><span class="line">	执行代码块;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> 值<span class="number">2</span>:</span><br><span class="line">	执行代码块;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> 值<span class="number">3</span>:</span><br><span class="line">	执行代码块;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    执行代码块;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>switch 后面的括号中的变量可以是整型或者字符型。</p>
+<p>当变量的值等于值 1 时，便会执行 case 值 1: 后面的代码块。</p>
+<p>需要注意的时，case 语句后面的是冒号而不是分号。</p>
+<p>当 case 语句后的代码块被执行完后，如果有 break 语句，则会终止 switch，如果没有 break 语句，则会继续向下执行。</p>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(key)&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;2&quot;</span>);</span><br><span class="line"><span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;3&quot;</span>);        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于上面的这个 switch 语句来说，如果 key 的值为 1，则最后的打印结果会是 123</p>
+<p>如果 key 的值为 2，则最后的打印结果会是 23，这种现象被称为穿透效果</p>
+<p>default 语句并非必要，可以不写</p>
+<p>default 语句类似于 if 语句中的 else，当所有情况都不被匹配到时，会被执行。</p>
+<p>如果 default 上面的语句并没有写 break；那么 default 也会被穿透。</p>
+<hr>
+<p>接着我们回到上面的问题，如果使用 switch 语句实现，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> date = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">switch</span> (date) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周一，我去学C语言&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周二，我去学C++&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周三，我去学Java&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周四，我去学Python&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周五，我去学C#&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周六，我出去玩&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周日，我睡懒觉&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天周几都不是，什么都不干&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们通过另一个案例来感受一下穿透效果：</p>
+<p>小明的爸爸许诺给小明：</p>
+<ul>
+<li>如果小明的期末成绩高于 60 分，便给他 100 元钱</li>
+<li>如果高于 80 分，便给他买手机、和给他 100 元钱</li>
+<li>如果高于 100 分，便给他买电脑、手机，而且给他 100 元钱</li>
+</ul>
+<p>使用 switch 实现的代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> score = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">switch</span> (score / <span class="number">10</span>) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;给小明买电脑\n&quot;</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;给小明买手机\n&quot;</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;给小明100元钱\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过这个代码，我们很轻松的实现了小明爸爸的许诺这个案例。</p>
+<h1 id="printf与scanf"><a class="markdownIt-Anchor" href="#printf与scanf">#</a> printf 与 scanf</h1>
+<p>printf 与 scanf 是 C 语言的输出和输入函数，其中 printf 已经被我们使用过很多次了，我这里将详细的介绍这两个函数。</p>
+<h2 id="printf函数"><a class="markdownIt-Anchor" href="#printf函数">#</a> printf 函数</h2>
+<p>printf 函数是 C 语言的输出函数，其语法是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;打印内容(占位符)&quot;</span>, 顶替占位符);</span><br></pre></td></tr></table></figure>
+<p>printf 是我们已经很熟悉的一个函数，它的全称是 print function，打印函数，f 是 function 的缩写。</p>
+<p>可以在 printf 的双引号里面写下占位符，从而打印变量。其中比较常用的占位符有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">%d</th>
+<th style="text-align:center">%f</th>
+<th style="text-align:center">%c</th>
+<th style="text-align:center">%i</th>
+<th style="text-align:center">%s</th>
+<th style="text-align:center">%%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">整型</td>
+<td style="text-align:center">浮点型</td>
+<td style="text-align:center">字符型</td>
+<td style="text-align:center">十进制、八进制、十六进制数</td>
+<td style="text-align:center">字符串</td>
+<td style="text-align:center">输出 %</td>
+</tr>
+</tbody>
+</table>
+<p>浮点型占位符 % f 的细节：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%6.3f&quot;</span>, floatNumber);</span><br></pre></td></tr></table></figure>
+<p>在上面这条 printf 语句中，<strong>小数点前的 6 表示输出位宽为 6 的浮点型，小数点后面保留 3 位小数。</strong></p>
+<p>位宽即输出内容所占据的格数，如果 floatNumber 的值为 3.14，那么输出的结果会是：空格 3.140</p>
+<p>为了避免看不出效果，我这里将空格直接写出来，其中空格占 1 位，小数点占 1 位，四个数字占 4 位，总共为 6</p>
+<p><strong>当输出内容不足位宽时，便会使用空格补足，如果输出内容超过位宽限制，那么会全部输出，不再受位宽限制</strong></p>
+<p>浮点型输出时默认保留六位小数。</p>
+<h2 id="scanf函数"><a class="markdownIt-Anchor" href="#scanf函数">#</a> scanf 函数</h2>
+<p>scanf 函数 (scan function  扫描函数) 是 C 语言的输入函数，其语法是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;占位符&quot;</span>, &amp;对应变量)</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，C 语言的 scanf 函数有严格的格式控制，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d,%d&quot;</span>, &amp;intNumber1, &amp;intNumber2);</span><br></pre></td></tr></table></figure>
+<p>则在控制台输入的时候，必须以 1,2 的形式输入，中间的逗号不能缺少！</p>
+<p>变量前面的 &amp; 不能少！该符号为取地址符，地址的具体意义会在指针部分讲到。</p>
+<p>占位符与 printf 相似，区别点在于 scanf 使用 % lf 来接收精度更高的数值到 double 变量</p>
+<p>通常使用 printf 函数输出提示输入语句来配合 scanf 函数使用，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;请输入一个整数：&quot;</span>);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;intNumber);</span><br></pre></td></tr></table></figure>
+<h1 id="define与const"><a class="markdownIt-Anchor" href="#define与const">#</a> define 与 const</h1>
+<p>使用 define 可以进行宏定义，使用案例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_SIZE 100</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>未重置部分</strong></p>
 <h1 id="常量"><a class="markdownIt-Anchor" href="#常量">#</a> 常量</h1>
@@ -884,7 +1000,7 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-04-05 17:15:07" itemprop="dateModified" datetime="2023-04-05T17:15:07+08:00">2023-04-05</time>
+    <time title="修改时间：2023-04-07 21:08:14" itemprop="dateModified" datetime="2023-04-07T21:08:14+08:00">2023-04-07</time>
   </span>
   <span id="2023/02/20/C-Foundation/" class="item leancloud_visitors" data-flag-title="C语言基础" title="阅读次数">
       <span class="icon">
@@ -979,11 +1095,11 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.</span> <span class="toc-text"> 开发环境部署：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text"> C 语言简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hello-world"><span class="toc-number">3.</span> <span class="toc-text"> Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">3.1.</span> <span class="toc-text"> 注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8Dbit%E4%B8%8E%E5%AD%97%E8%8A%82byte"><span class="toc-number">4.</span> <span class="toc-text"> 位 (bit) 与字节 (byte)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text"> 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text"> 基本数据类型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.2.</span> <span class="toc-text"> 布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.3.</span> <span class="toc-text"> 构造类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.4.</span> <span class="toc-text"> 指针类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.5.</span> <span class="toc-text"> 空类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">6.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E4%B8%8E%E8%B5%8B%E5%80%BC"><span class="toc-number">6.1.</span> <span class="toc-text"> 声明变量与赋值：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D"><span class="toc-number">6.2.</span> <span class="toc-text"> 变量名：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.</span> <span class="toc-text"> 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.1.</span> <span class="toc-text"> 数值运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.2.</span> <span class="toc-text"> 比较运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.3.</span> <span class="toc-text"> 逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">8.</span> <span class="toc-text"> 数据类型转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">9.</span> <span class="toc-text"> 常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95"><span class="toc-number">10.</span> <span class="toc-text"> 断点调试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6-2"><span class="toc-number">11.</span> <span class="toc-text"> 运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#scanf%E4%B8%8Esprintf%E5%87%BD%E6%95%B0"><span class="toc-number">12.</span> <span class="toc-text"> scanf 与 sprintf 函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F%E4%B8%8E%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="toc-number">13.</span> <span class="toc-text"> C 语言执行方式与转义符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%85%AB%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text"> 二进制，八进制与十六进制转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">15.</span> <span class="toc-text"> 分支语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B-%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">16.</span> <span class="toc-text"> 浮点类型 字符类型与布尔类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="toc-number">17.</span> <span class="toc-text"> 函数指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%8E%E5%85%B1%E7%94%A8%E4%BD%93"><span class="toc-number">18.</span> <span class="toc-text"> 结构体与共用体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E5%87%BD%E6%95%B0%E4%B8%AD%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">19.</span> <span class="toc-text"> 静态数据，函数中局部变量注意点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E4%B8%8E%E8%A1%A5%E7%A0%81"><span class="toc-number">20.</span> <span class="toc-text"> 位运算，原码，反码与补码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E5%A0%86%E4%B8%8E%E5%85%A8%E5%B1%80%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">21.</span> <span class="toc-text"> 栈，堆与全局，静态变量及动态内存分配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">22.</span> <span class="toc-text"> 指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">23.</span> <span class="toc-text"> 字符串与数相互转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%8C%87%E9%92%88"><span class="toc-number">24.</span> <span class="toc-text"> 字符数组与字符指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E4%B8%8E%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">25.</span> <span class="toc-text"> 写入与读取文件的函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E6%89%93%E5%BC%80%E4%B8%8E%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="toc-number">26.</span> <span class="toc-text"> C 语言打开与关闭文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stringtimemath%E5%A4%B4%E6%96%87%E4%BB%B6%E5%BA%94%E7%94%A8"><span class="toc-number">27.</span> <span class="toc-text"> string,time,math 头文件应用</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.</span> <span class="toc-text"> 开发环境部署：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text"> C 语言简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hello-world"><span class="toc-number">3.</span> <span class="toc-text"> Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">3.1.</span> <span class="toc-text"> 注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8Dbit%E4%B8%8E%E5%AD%97%E8%8A%82byte"><span class="toc-number">4.</span> <span class="toc-text"> 位 (bit) 与字节 (byte)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text"> 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text"> 基本数据类型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.2.</span> <span class="toc-text"> 布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.3.</span> <span class="toc-text"> 构造类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.4.</span> <span class="toc-text"> 指针类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.5.</span> <span class="toc-text"> 空类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">6.</span> <span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E4%B8%8E%E8%B5%8B%E5%80%BC"><span class="toc-number">6.1.</span> <span class="toc-text"> 声明变量与赋值：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D"><span class="toc-number">6.2.</span> <span class="toc-text"> 变量名：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.</span> <span class="toc-text"> 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.1.</span> <span class="toc-text"> 数值运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.2.</span> <span class="toc-text"> 比较运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">7.3.</span> <span class="toc-text"> 逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">8.</span> <span class="toc-text"> 数据类型转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E8%AF%AD%E5%8F%A5"><span class="toc-number">9.</span> <span class="toc-text"> 分支语句语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else-if-else%E8%AF%AD%E5%8F%A5"><span class="toc-number">9.1.</span> <span class="toc-text"> if、else if、else 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="toc-number">9.2.</span> <span class="toc-text"> switch 语句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#printf%E4%B8%8Escanf"><span class="toc-number">10.</span> <span class="toc-text"> printf 与 scanf</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#printf%E5%87%BD%E6%95%B0"><span class="toc-number">10.1.</span> <span class="toc-text"> printf 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scanf%E5%87%BD%E6%95%B0"><span class="toc-number">10.2.</span> <span class="toc-text"> scanf 函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#define%E4%B8%8Econst"><span class="toc-number">11.</span> <span class="toc-text"> define 与 const</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">12.</span> <span class="toc-text"> 常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95"><span class="toc-number">13.</span> <span class="toc-text"> 断点调试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6-2"><span class="toc-number">14.</span> <span class="toc-text"> 运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#scanf%E4%B8%8Esprintf%E5%87%BD%E6%95%B0"><span class="toc-number">15.</span> <span class="toc-text"> scanf 与 sprintf 函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F%E4%B8%8E%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="toc-number">16.</span> <span class="toc-text"> C 语言执行方式与转义符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%85%AB%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="toc-number">17.</span> <span class="toc-text"> 二进制，八进制与十六进制转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">18.</span> <span class="toc-text"> 分支语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B-%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">19.</span> <span class="toc-text"> 浮点类型 字符类型与布尔类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="toc-number">20.</span> <span class="toc-text"> 函数指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%8E%E5%85%B1%E7%94%A8%E4%BD%93"><span class="toc-number">21.</span> <span class="toc-text"> 结构体与共用体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E5%87%BD%E6%95%B0%E4%B8%AD%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">22.</span> <span class="toc-text"> 静态数据，函数中局部变量注意点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E4%B8%8E%E8%A1%A5%E7%A0%81"><span class="toc-number">23.</span> <span class="toc-text"> 位运算，原码，反码与补码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E5%A0%86%E4%B8%8E%E5%85%A8%E5%B1%80%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%8F%8A%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-number">24.</span> <span class="toc-text"> 栈，堆与全局，静态变量及动态内存分配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">25.</span> <span class="toc-text"> 指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">26.</span> <span class="toc-text"> 字符串与数相互转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%8C%87%E9%92%88"><span class="toc-number">27.</span> <span class="toc-text"> 字符数组与字符指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E4%B8%8E%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">28.</span> <span class="toc-text"> 写入与读取文件的函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E8%A8%80%E6%89%93%E5%BC%80%E4%B8%8E%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="toc-number">29.</span> <span class="toc-text"> C 语言打开与关闭文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stringtimemath%E5%A4%B4%E6%96%87%E4%BB%B6%E5%BA%94%E7%94%A8"><span class="toc-number">30.</span> <span class="toc-text"> string,time,math 头文件应用</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2023/02/09/C-DataStructure/" rel="bookmark" title="数据结构(C版)">数据结构(C版)</a></li><li><a href="/2023/02/19/DataStructureAndAlgorithms/" rel="bookmark" title="数据结构与算法">数据结构与算法</a></li><li class="active"><a href="/2023/02/20/C-Foundation/" rel="bookmark" title="C语言基础">C语言基础</a></li><li><a href="/2023/02/21/Linux-Foundation/" rel="bookmark" title="Linux基础">Linux基础</a></li><li><a href="/2023/02/22/HTML-CSS/" rel="bookmark" title="HTML+CSS">HTML+CSS</a></li><li><a href="/2023/02/23/CppLearn/" rel="bookmark" title="C++笔记">C++笔记</a></li><li><a href="/2023/02/24/java/" rel="bookmark" title="Java笔记">Java笔记</a></li><li><a href="/2023/03/31/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li><li><a href="/2023/04/06/GitNote/" rel="bookmark" title="Git">Git</a></li>
+          <li><a href="/2023/02/09/C-DataStructure/" rel="bookmark" title="数据结构与算法(C版)">数据结构与算法(C版)</a></li><li><a href="/2023/02/19/DataStructureAndAlgorithms/" rel="bookmark" title="数据结构与算法">数据结构与算法</a></li><li class="active"><a href="/2023/02/20/C-Foundation/" rel="bookmark" title="C语言基础">C语言基础</a></li><li><a href="/2023/02/21/Linux-Foundation/" rel="bookmark" title="Linux基础">Linux基础</a></li><li><a href="/2023/02/22/HTML-CSS/" rel="bookmark" title="HTML+CSS">HTML+CSS</a></li><li><a href="/2023/02/23/CppLearn/" rel="bookmark" title="C++笔记">C++笔记</a></li><li><a href="/2023/02/24/java/" rel="bookmark" title="Java笔记">Java笔记</a></li><li><a href="/2023/03/31/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li><li><a href="/2023/04/06/GitNote/" rel="bookmark" title="Git">Git</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -1095,40 +1211,10 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
 </div>
 
-    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/09/C-DataStructure/" title="数据结构(C版)">数据结构(C版)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/04/06/GitNote/" title="Git">Git</a></span>
+    <span><a href="/2023/04/03/chaoXingCourse/" title="超星刷课脚本安装教程">超星刷课脚本安装教程</a></span>
   </li>
 
       
@@ -1148,6 +1234,26 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
+    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
+</div>
+
+    <span><a href="/2023/03/31/Docker/" title="Docker">Docker</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
     <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
   </li>
 
@@ -1158,7 +1264,37 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+    <span><a href="/2023/04/06/GitNote/" title="Git">Git</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/09/C-DataStructure/" title="数据结构与算法(C版)">数据结构与算法(C版)</a></span>
   </li>
 
       
@@ -1169,26 +1305,6 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
 </div>
 
     <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
-</div>
-
-    <span><a href="/2023/04/03/chaoXingCourse/" title="超星刷课脚本安装教程">超星刷课脚本安装教程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
   </li>
 
   </ul>
@@ -1213,13 +1329,13 @@ double 双精度  占用 8 字节  精度为 15 位小数  值范围 2.3E-308 �
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">201k 字</span>
+    <span title="站点总字数">211k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:03</span>
+    <span title="站点阅读时长">3:12</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
