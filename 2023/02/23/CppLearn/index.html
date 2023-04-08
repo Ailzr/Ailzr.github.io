@@ -8,26 +8,26 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#FFF">
-  <link rel="apple-touch-icon" sizes="180x180" href="/hexo-blog/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-<link rel="icon" type="image/ico" sizes="32x32" href="/hexo-blog/images/favicon.ico">
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
   <meta http-equiv="Cache-Control" content="no-transform">
   <meta http-equiv="Cache-Control" content="no-siteapp">
 
 
-<link rel="alternate" type="application/rss+xml" title="Ailzr's Blog" href="https://michaelmaugustus.gitee.io/hexo-blog/rss.xml" />
-<link rel="alternate" type="application/atom+xml" title="Ailzr's Blog" href="https://michaelmaugustus.gitee.io/hexo-blog/atom.xml" />
-<link rel="alternate" type="application/json" title="Ailzr's Blog" href="https://michaelmaugustus.gitee.io/hexo-blog/feed.json" />
+<link rel="alternate" type="application/rss+xml" title="Ailzr's Blog" href="https://www.ailzr.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Ailzr's Blog" href="https://www.ailzr.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Ailzr's Blog" href="https://www.ailzr.com/feed.json" />
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="/hexo-blog/css/app.css?v=0.2.5">
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
   <meta name="keywords" content="C++" />
 
 
-<link rel="canonical" href="https://michaelmaugustus.gitee.io/hexo-blog/2023/02/23/CppLearn/">
+<link rel="canonical" href="https://www.ailzr.com/2023/02/23/CppLearn/">
 
 
 
@@ -76,7 +76,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>124k</span>
+    <span>127k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>1:53</span>
+    <span>1:55</span>
   </span>
 </div>
 
@@ -101,7 +101,7 @@ Ailzr = Ailzr's Blog</title>
       </div>
     </div>
     <ul class="menu">
-      <li class="item title"><a href="/hexo-blog/" rel="start">Ailzr</a></li>
+      <li class="item title"><a href="/" rel="start">Ailzr</a></li>
     </ul>
     <ul class="right">
       <li class="item theme">
@@ -116,7 +116,7 @@ Ailzr = Ailzr's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/hexo-blog/assets/CppCover.jpg">
+          <img src="/assets/CppCover.jpg">
       </div>
     <!--header修改前位置-->
     <div id="waves">
@@ -141,16 +141,16 @@ Ailzr = Ailzr's Blog</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/hexo-blog/">首页</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="分类于 编程笔记"><span itemprop="name">编程笔记</span></a>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="分类于 编程笔记"><span itemprop="name">编程笔记</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://michaelmaugustus.gitee.io/hexo-blog/2023/02/23/CppLearn/">
+  <link itemprop="mainEntityOfPage" href="https://www.ailzr.com/2023/02/23/CppLearn/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="image" content="/hexo-blog/images/avatar.jpg">
+    <meta itemprop="image" content="/images/avatar.jpg">
     <meta itemprop="name" content="Ailzr">
     <meta itemprop="description" content=", 我有时会想,在这里写点什么好呢">
   </span>
@@ -170,7 +170,73 @@ Ailzr = Ailzr's Blog</title>
 <h1 id="c语法"><a class="markdownIt-Anchor" href="#c语法">#</a> C++ 语法</h1>
 <h2 id="注释"><a class="markdownIt-Anchor" href="#注释">#</a> 注释</h2>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="if-while-switch等结构请参考c语言笔记"><a class="markdownIt-Anchor" href="#if-while-switch等结构请参考c语言笔记">#</a> if、while、switch 等结构请参考 C 语言笔记</h2>
+<h2 id="分支语句语句"><a class="markdownIt-Anchor" href="#分支语句语句">#</a> 分支语句语句</h2>
+<h3 id="if-else-if-else语句"><a class="markdownIt-Anchor" href="#if-else-if-else语句">#</a> if、else if、else 语句</h3>
+<p>在生活中，我们经常会遇到分支情况，例如：</p>
+<p>如果沙县小吃比大盘鸡更便宜，我今天就去吃沙县小吃，否则的话就去吃大盘鸡。</p>
+<p>我们注意到，在这句话里出现了两条分支：</p>
+<ol>
+<li>去吃沙县小吃</li>
+<li>去吃大盘鸡</li>
+</ol>
+<p>而我们根据：哪个更便宜？这个条件对我们要做的选择进行判断。</p>
+<p>在编程中，我们也可以实现类似的分支情况，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃沙县&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃大盘鸡&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这部分代码，相信许多人只是读一遍，便能够理解，接下来我要详细介绍 if 语句的细节，首先是语法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型) &#123;需要执行的代码块&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个 if 语句的语法，如果 if 后的代码块仅仅只有 1 句 (1 个分号为 1 句)，那么可以不写大括号，如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;只有一句代码时，可以不写大括号&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>当括号内的布尔类型为真时，执行这条 if 语句，为假时，则不会执行。</p>
+<p>可以使用上面提到的比较运算符来获得布尔类型，如上面的沙县、大盘鸡比较代码。</p>
+<p>需要注意的是，if 语句可以单独使用，而 else 语句不可以，else 语句必须要有对应的 if 语句。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这样写是正确的</span></span><br><span class="line"><span class="keyword">if</span> (布尔类型)&#123;需要执行的代码块&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;需要执行的代码块&#125;</span><br><span class="line"><span class="comment">//---------------------------------</span></span><br><span class="line"><span class="comment">//这样写是错误的</span></span><br><span class="line"><span class="keyword">else</span> &#123;代码块&#125;</span><br></pre></td></tr></table></figure>
+<p>当 if 内的布尔类型为假时，程序便会不执行 if 语句，直接进入 else 语句</p>
+<p>如果 else 后面的语句仅仅只有 1 句，也可以不写大括号</p>
+<p>else 语句的匹配规则遵循就近原则：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型) &#123;代码块&#125;<span class="comment">//这个if语句没有else</span></span><br><span class="line"><span class="keyword">if</span> (布尔类型) &#123;代码块&#125;<span class="comment">//下面的else语句会匹配离它最近的这个if语句</span></span><br><span class="line"><span class="keyword">else</span> &#123;代码块&#125;</span><br></pre></td></tr></table></figure>
+<p>回到上面的沙县与大盘鸡案例，我们可以想到，其价格的比较结果并非一定只有两种，还会有相同的情况：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃沙县&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (sha_xian == da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;吃哪个都可以&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃大盘鸡&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以在 if 的下面添加 else if 语句来判断这种情况，else if 语句的作用类似于 if 语句，但是不能单独使用</p>
+<p><strong>else if 可以存在不止一句</strong></p>
+<p>同样的，当 else if 语句后面只有一条语句时，可以不写大括号。</p>
+<h3 id="switch语句"><a class="markdownIt-Anchor" href="#switch语句">#</a> switch 语句</h3>
+<p>在生活中，除了如同 if、else 这种分支，还存在多分支的情况，例如：</p>
+<ul>
+<li>如果今天是周一，我就去学 C 语言</li>
+<li>如果今天是周二，我就去学 C++</li>
+<li>如果今天是周三，我就去学 Java</li>
+<li>如果今天是周四，我就去学 Python</li>
+<li>如果今天是周五，我就去学 C#</li>
+<li>如果今天是周六，我就出去玩</li>
+<li>如果今天是周日，我就睡懒觉</li>
+</ul>
+<p>当然，这种多分支的情况可以使用多个 else if 去实现，但是当分支过多，if 语句的效率通常不如 switch 语句。</p>
+<p>首先介绍一下 switch 语句的语法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(变量)&#123;</span><br><span class="line"><span class="keyword">case</span> 值<span class="number">1</span>:</span><br><span class="line">	执行代码块;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> 值<span class="number">2</span>:</span><br><span class="line">	执行代码块;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> 值<span class="number">3</span>:</span><br><span class="line">	执行代码块;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    执行代码块;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>switch 后面的括号中的变量可以是整型或者字符型。</p>
+<p>当变量的值等于值 1 时，便会执行 case 值 1: 后面的代码块。</p>
+<p>需要注意的时，case 语句后面的是冒号而不是分号。</p>
+<p>当 case 语句后的代码块被执行完后，如果有 break 语句，则会终止 switch，如果没有 break 语句，则会继续向下执行。</p>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(key)&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;2&quot;</span>);</span><br><span class="line"><span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;3&quot;</span>);        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于上面的这个 switch 语句来说，如果 key 的值为 1，则最后的打印结果会是 123</p>
+<p>如果 key 的值为 2，则最后的打印结果会是 23，这种现象被称为穿透效果</p>
+<p>default 语句并非必要，可以不写</p>
+<p>default 语句类似于 if 语句中的 else，当所有情况都不被匹配到时，会被执行。</p>
+<p>如果 default 上面的语句并没有写 break；那么 default 也会被穿透。</p>
+<hr>
+<p>接着我们回到上面的问题，如果使用 switch 语句实现，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> date = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">switch</span> (date) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周一，我去学C语言&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周二，我去学C++&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周三，我去学Java&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周四，我去学Python&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周五，我去学C#&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周六，我出去玩&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天是周日，我睡懒觉&quot;</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今天周几都不是，什么都不干&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们通过另一个案例来感受一下穿透效果：</p>
+<p>小明的爸爸许诺给小明：</p>
+<ul>
+<li>如果小明的期末成绩高于 60 分，便给他 100 元钱</li>
+<li>如果高于 80 分，便给他买手机、和给他 100 元钱</li>
+<li>如果高于 100 分，便给他买电脑、手机，而且给他 100 元钱</li>
+</ul>
+<p>使用 switch 实现的代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> score = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">switch</span> (score / <span class="number">10</span>) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;给小明买电脑\n&quot;</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;给小明买手机\n&quot;</span>);</span><br><span class="line">	<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;给小明100元钱\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过这个代码，我们很轻松的实现了小明爸爸的许诺这个案例。</p>
 <h2 id="指针请参考c语言笔记"><a class="markdownIt-Anchor" href="#指针请参考c语言笔记">#</a> 指针请参考 C 语言笔记</h2>
 <h2 id="const修饰词对指针的使用"><a class="markdownIt-Anchor" href="#const修饰词对指针的使用">#</a> const 修饰词对指针的使用</h2>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.const修饰指针  --常量指针</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* p = &amp;a;</span><br><span class="line"><span class="comment">//特点：指针的指向可以改，指针指向的值不可以改</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.const修饰常量  --指针常量</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> p = &amp;a;</span><br><span class="line"><span class="comment">//特点：指针的指向不可以改，指针指向的值可以改</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.const既修饰指针，又修饰常量</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p = &amp;a;</span><br><span class="line"><span class="comment">//特点：指针的指向和指针指向的值都不可以修改</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//const修饰词可以在函数之间传递地址时，锁定数据，防止误操作</span></span><br></pre></td></tr></table></figure>
@@ -651,7 +717,7 @@ Ailzr = Ailzr's Blog</title>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ReservationRecord.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ReservationRecord.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">divide</span><span class="params">(map&lt;string, string&gt;&amp; m, string data)</span> </span>&#123;</span><br><span class="line">	string key, value;</span><br><span class="line">	<span class="type">int</span> pos = data.<span class="built_in">find</span>(<span class="string">&quot;:&quot;</span>);</span><br><span class="line">	<span class="keyword">if</span> (pos != <span class="number">-1</span>) &#123;</span><br><span class="line">		key = data.<span class="built_in">substr</span>(<span class="number">0</span>, pos);</span><br><span class="line">		value = data.<span class="built_in">substr</span>(pos + <span class="number">1</span>, data.<span class="built_in">size</span>() - pos - <span class="number">1</span>);</span><br><span class="line">		m.<span class="built_in">insert</span>(<span class="built_in">pair</span>&lt;string, string&gt;(key, value));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReservationRecord::LoadFile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;m_Size = <span class="number">0</span>;</span><br><span class="line">	string date;</span><br><span class="line">	string time;</span><br><span class="line">	string stuId;</span><br><span class="line">	string stuName;</span><br><span class="line">	string roomId;</span><br><span class="line">	string status;</span><br><span class="line"></span><br><span class="line">	ifstream ifs;</span><br><span class="line">	ifs.<span class="built_in">open</span>(RESERVATION_PATH, ios::in);</span><br><span class="line">	<span class="keyword">if</span> (!ifs.<span class="built_in">is_open</span>()) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;file open failed&quot;</span> &lt;&lt; endl;</span><br><span class="line">		ifs.<span class="built_in">close</span>();</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!<span class="keyword">this</span>-&gt;resRec.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;resRec.<span class="built_in">clear</span>();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (ifs &gt;&gt; date &amp;&amp; ifs &gt;&gt; time &amp;&amp; ifs &gt;&gt; stuId &amp;&amp; ifs &gt;&gt; stuName &amp;&amp; ifs &gt;&gt; roomId &amp;&amp; ifs &gt;&gt; status) &#123;</span><br><span class="line">		map&lt;string, string&gt; m;</span><br><span class="line">		<span class="built_in">divide</span>(m, date);</span><br><span class="line">		<span class="built_in">divide</span>(m, time);</span><br><span class="line">		<span class="built_in">divide</span>(m, stuId);</span><br><span class="line">		<span class="built_in">divide</span>(m, stuName);</span><br><span class="line">		<span class="built_in">divide</span>(m, roomId);</span><br><span class="line">		<span class="built_in">divide</span>(m, status);</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_Size++;</span><br><span class="line">		<span class="keyword">this</span>-&gt;resRec.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="keyword">this</span>-&gt;m_Size, m));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ifs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReservationRecord::<span class="built_in">ReservationRecord</span>() &#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">LoadFile</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReservationRecord::~<span class="built_in">ReservationRecord</span>() &#123;</span><br><span class="line">	<span class="keyword">if</span> (!<span class="keyword">this</span>-&gt;resRec.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;resRec.<span class="built_in">clear</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ReservationRecord::update</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ofstream ofs;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;m_Size == <span class="number">0</span>) &#123;</span><br><span class="line">		ofs.<span class="built_in">open</span>(RESERVATION_PATH, ios::out | ios::trunc);</span><br><span class="line">		ofs.<span class="built_in">close</span>();</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ofs.<span class="built_in">open</span>(RESERVATION_PATH, ios::out | ios::trunc);</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="type">int</span>, map&lt;string, string&gt;&gt;::iterator it = <span class="keyword">this</span>-&gt;resRec.<span class="built_in">begin</span>(); it != <span class="keyword">this</span>-&gt;resRec.<span class="built_in">end</span>();it++) &#123;</span><br><span class="line">		ofs &lt;&lt; <span class="string">&quot;date:&quot;</span> &lt;&lt; it-&gt;second[<span class="string">&quot;date&quot;</span>] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">&quot;time:&quot;</span> &lt;&lt; it-&gt;second[<span class="string">&quot;time&quot;</span>] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">&quot;stuId:&quot;</span> &lt;&lt; it-&gt;second[<span class="string">&quot;stuId&quot;</span>] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">&quot;stuName:&quot;</span> &lt;&lt; it-&gt;second[<span class="string">&quot;stuName&quot;</span>] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">&quot;roomId:&quot;</span> &lt;&lt; it-&gt;second[<span class="string">&quot;roomId&quot;</span>] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		ofs &lt;&lt; <span class="string">&quot;status:&quot;</span> &lt;&lt; it-&gt;second[<span class="string">&quot;status&quot;</span>] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	ofs.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">this</span>-&gt;<span class="built_in">LoadFile</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="tags">
-          <a href="/hexo-blog/tags/C/" rel="tag"><i class="ic i-tag"></i> C++</a>
+          <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C++</a>
       </div>
   </div>
 
@@ -663,7 +729,7 @@ Ailzr = Ailzr's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-03-29 13:27:00" itemprop="dateModified" datetime="2023-03-29T13:27:00+08:00">2023-03-29</time>
+    <time title="修改时间：2023-04-08 21:08:30" itemprop="dateModified" datetime="2023-04-08T21:08:30+08:00">2023-04-08</time>
   </span>
   <span id="2023/02/23/CppLearn/" class="item leancloud_visitors" data-flag-title="C++笔记" title="阅读次数">
       <span class="icon">
@@ -682,17 +748,17 @@ Ailzr = Ailzr's Blog</title>
   <div id="qr">
       
       <div>
-        <img data-src="/hexo-blog/images/wechatpay.png" alt="Ailzr 微信支付">
+        <img data-src="/images/wechatpay.png" alt="Ailzr 微信支付">
         <p>微信支付</p>
       </div>
       
       <div>
-        <img data-src="/hexo-blog/images/alipay.png" alt="Ailzr 支付宝">
+        <img data-src="/images/alipay.png" alt="Ailzr 支付宝">
         <p>支付宝</p>
       </div>
       
       <div>
-        <img data-src="/hexo-blog/images/paypal.png" alt="Ailzr 贝宝">
+        <img data-src="/images/paypal.png" alt="Ailzr 贝宝">
         <p>贝宝</p>
       </div>
   </div>
@@ -707,7 +773,7 @@ Ailzr = Ailzr's Blog</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://michaelmaugustus.gitee.io/hexo-blog/2023/02/23/CppLearn/" title="C++笔记">https://michaelmaugustus.gitee.io/hexo-blog/2023/02/23/CppLearn/</a>
+    <a href="https://www.ailzr.com/2023/02/23/CppLearn/" title="C++笔记">https://www.ailzr.com/2023/02/23/CppLearn/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -726,7 +792,7 @@ Ailzr = Ailzr's Blog</title>
     <div class="item left">
       
 
-  <a href="/hexo-blog/2023/02/22/HTML-CSS/" itemprop="url" rel="prev" data-background-image="&#x2F;hexo-blog&#x2F;assets&#x2F;HTMLCSS.png" title="HTML+CSS">
+  <a href="/2023/02/22/HTML-CSS/" itemprop="url" rel="prev" data-background-image="&#x2F;assets&#x2F;HTMLCSS.png" title="HTML+CSS">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 编程笔记</span>
   <h3>HTML+CSS</h3>
@@ -736,7 +802,7 @@ Ailzr = Ailzr's Blog</title>
     <div class="item right">
       
 
-  <a href="/hexo-blog/2023/02/24/java/" itemprop="url" rel="next" data-background-image="&#x2F;hexo-blog&#x2F;assets&#x2F;javaCover.jpg" title="Java笔记">
+  <a href="/2023/02/24/java/" itemprop="url" rel="next" data-background-image="&#x2F;assets&#x2F;javaCover.jpg" title="Java笔记">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 编程笔记</span>
   <h3>Java笔记</h3>
@@ -758,36 +824,36 @@ Ailzr = Ailzr's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> C++ 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> C++ 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">2.1.</span> <span class="toc-text"> 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if-while-switch%E7%AD%89%E7%BB%93%E6%9E%84%E8%AF%B7%E5%8F%82%E8%80%83c%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0"><span class="toc-number">2.2.</span> <span class="toc-text"> if、while、switch 等结构请参考 C 语言笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E8%AF%B7%E5%8F%82%E8%80%83c%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0"><span class="toc-number">2.3.</span> <span class="toc-text"> 指针请参考 C 语言笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const%E4%BF%AE%E9%A5%B0%E8%AF%8D%E5%AF%B9%E6%8C%87%E9%92%88%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.4.</span> <span class="toc-text"> const 修饰词对指针的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">2.5.</span> <span class="toc-text"> 结构体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8C%BA%E5%BC%80%E8%BE%9F%E6%95%B0%E6%8D%AEnew%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">2.6.</span> <span class="toc-text"> 堆区开辟数据 (new 关键字)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E8%B5%B7%E5%88%AB%E5%90%8D"><span class="toc-number">2.7.</span> <span class="toc-text"> 引用 (起别名)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">2.7.1.</span> <span class="toc-text"> 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8"><span class="toc-number">2.7.2.</span> <span class="toc-text"> 本质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.8.</span> <span class="toc-text"> 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82%E9%BB%98%E8%AE%A4%E5%80%BC%E4%B8%8E%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0"><span class="toc-number">2.8.1.</span> <span class="toc-text"> 形参默认值与占位参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-number">2.8.2.</span> <span class="toc-text"> 函数重载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.9.</span> <span class="toc-text"> 类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">2.9.1.</span> <span class="toc-text"> 封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-number">2.9.2.</span> <span class="toc-text"> 构造函数与析构函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-number">2.9.3.</span> <span class="toc-text"> 深拷贝与浅拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="toc-number">2.9.4.</span> <span class="toc-text"> 初始化列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-number">2.9.5.</span> <span class="toc-text"> 静态成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%8E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E5%AD%98%E5%82%A8"><span class="toc-number">2.9.6.</span> <span class="toc-text"> 成员变量与成员函数分开存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E6%8C%87%E9%92%88"><span class="toc-number">2.9.7.</span> <span class="toc-text"> this 指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const%E4%BF%AE%E9%A5%B0%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">2.9.8.</span> <span class="toc-text"> const 修饰成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83"><span class="toc-number">2.9.9.</span> <span class="toc-text"> 友元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.</span> <span class="toc-text"> 运算符重载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.1.</span> <span class="toc-text"> 加号运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.2.</span> <span class="toc-text"> 左移运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.3.</span> <span class="toc-text"> 递增运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.4.</span> <span class="toc-text"> 赋值运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.5.</span> <span class="toc-text"> 关系运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.9.10.6.</span> <span class="toc-text"> 重载函数运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">2.9.11.</span> <span class="toc-text"> 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%9D%83%E9%99%90"><span class="toc-number">2.9.11.1.</span> <span class="toc-text"> 继承语法与权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%97%B6%E5%AD%90%E7%B1%BB%E4%B8%8E%E7%88%B6%E7%B1%BB%E7%9A%84%E5%90%8C%E5%90%8D%E6%88%90%E5%91%98"><span class="toc-number">2.9.11.2.</span> <span class="toc-text"> 继承时子类与父类的同名成员</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-number">2.9.12.</span> <span class="toc-text"> 多态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%AF%E8%99%9A%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">2.9.12.1.</span> <span class="toc-text"> 纯虚函数与抽象类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%9E%90%E6%9E%84%E4%B8%8E%E7%BA%AF%E8%99%9A%E6%9E%90%E6%9E%84"><span class="toc-number">2.9.12.2.</span> <span class="toc-text"> 虚析构与纯虚析构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8Bcomputer%E7%B1%BB"><span class="toc-number">2.9.13.</span> <span class="toc-text"> 案例：Computer 类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.10.</span> <span class="toc-text"> 模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-number">2.10.1.</span> <span class="toc-text"> 调用规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">2.10.2.</span> <span class="toc-text"> 函数模板语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">2.10.3.</span> <span class="toc-text"> 类模板语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E9%87%8D%E8%BD%BD"><span class="toc-number">2.10.4.</span> <span class="toc-text"> 模板重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E7%BB%A7%E6%89%BF"><span class="toc-number">2.10.5.</span> <span class="toc-text"> 类模板与继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E6%A1%88%E4%BE%8B"><span class="toc-number">2.10.6.</span> <span class="toc-text"> 类模板案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl"><span class="toc-number">2.11.</span> <span class="toc-text"> STL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.11.1.</span> <span class="toc-text"> STL 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vector%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.2.</span> <span class="toc-text"> Vector 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vector%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.2.1.</span> <span class="toc-text"> Vector 容器语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vector%E5%AE%B9%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.11.2.2.</span> <span class="toc-text"> Vector 容器的使用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#string%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.3.</span> <span class="toc-text"> String 容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deque%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.4.</span> <span class="toc-text"> Deque 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#deque%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.4.1.</span> <span class="toc-text"> Deque 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stack%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.5.</span> <span class="toc-text"> Stack 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stack%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.5.1.</span> <span class="toc-text"> Stack 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#queue%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.6.</span> <span class="toc-text"> Queue 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#queue%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.6.1.</span> <span class="toc-text"> Queue 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.7.</span> <span class="toc-text"> list 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#list%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.7.1.</span> <span class="toc-text"> list 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setmultiset%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.8.</span> <span class="toc-text"> set&#x2F;multiset 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setmultiset%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.8.1.</span> <span class="toc-text"> set&#x2F;multiset 容器语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set%E5%AE%B9%E5%99%A8%E6%8E%92%E5%BA%8F"><span class="toc-number">2.11.8.2.</span> <span class="toc-text"> set 容器排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pair%E5%AF%B9%E7%BB%84"><span class="toc-number">2.11.9.</span> <span class="toc-text"> pair (对组)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pair%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.9.1.</span> <span class="toc-text"> pair 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pair%E4%B8%8Eset"><span class="toc-number">2.11.9.2.</span> <span class="toc-text"> pair 与 set</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mapmultimap%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.10.</span> <span class="toc-text"> map&#x2F;multimap 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.11.10.1.</span> <span class="toc-text"> 简介：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8-2"><span class="toc-number">2.11.10.2.</span> <span class="toc-text"> 本质：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">2.11.10.3.</span> <span class="toc-text"> 优点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map%E5%92%8Cmultimap%E5%8C%BA%E5%88%AB"><span class="toc-number">2.11.10.4.</span> <span class="toc-text"> map 和 multimap 区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mapmultimap%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.10.5.</span> <span class="toc-text"> map&#x2F;multimap 容器语法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map%E5%AE%B9%E5%99%A8%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99%E9%87%8D%E8%BD%BD"><span class="toc-number">2.11.10.6.</span> <span class="toc-text"> map 容器排序规则重载：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">2.11.11.</span> <span class="toc-text"> 迭代器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl-%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.</span> <span class="toc-text"> STL - 函数对象 (仿函数)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BF%E5%87%BD%E6%95%B0%E6%A6%82%E5%BF%B5"><span class="toc-number">2.12.1.</span> <span class="toc-text"> 仿函数概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%93%E8%AF%8D"><span class="toc-number">2.12.2.</span> <span class="toc-text"> 谓词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.12.3.</span> <span class="toc-text"> STL 内建函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.3.1.</span> <span class="toc-text"> 算术仿函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.3.2.</span> <span class="toc-text"> 关系仿函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.3.3.</span> <span class="toc-text"> 逻辑仿函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.</span> <span class="toc-text"> STL 常用算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for_each"><span class="toc-number">2.13.1.</span> <span class="toc-text"> for_each</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transform"><span class="toc-number">2.13.2.</span> <span class="toc-text"> transform</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.3.</span> <span class="toc-text"> 查找算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find"><span class="toc-number">2.13.3.1.</span> <span class="toc-text"> find：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find_if"><span class="toc-number">2.13.3.2.</span> <span class="toc-text"> find_if：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#adjacent_find"><span class="toc-number">2.13.3.3.</span> <span class="toc-text"> adjacent_find：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#binary_search"><span class="toc-number">2.13.3.4.</span> <span class="toc-text"> binary_search：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#count"><span class="toc-number">2.13.3.5.</span> <span class="toc-text"> count：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#count_if"><span class="toc-number">2.13.3.6.</span> <span class="toc-text"> count_if：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.4.</span> <span class="toc-text"> 排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sort"><span class="toc-number">2.13.4.1.</span> <span class="toc-text"> sort：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#random_shuffle"><span class="toc-number">2.13.4.2.</span> <span class="toc-text"> random_shuffle：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reverse"><span class="toc-number">2.13.4.3.</span> <span class="toc-text"> reverse：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.5.</span> <span class="toc-text"> 拷贝与替换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#copy"><span class="toc-number">2.13.5.1.</span> <span class="toc-text"> copy：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace"><span class="toc-number">2.13.5.2.</span> <span class="toc-text"> replace：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace_if"><span class="toc-number">2.13.5.3.</span> <span class="toc-text"> replace_if：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#swap"><span class="toc-number">2.13.5.4.</span> <span class="toc-text"> swap：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95numeric"><span class="toc-number">2.13.6.</span> <span class="toc-text"> 算术生成算法 (numeric)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#accumulate"><span class="toc-number">2.13.6.1.</span> <span class="toc-text"> accumulate：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.7.</span> <span class="toc-text"> 常用集合算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#set_intersection"><span class="toc-number">2.13.7.1.</span> <span class="toc-text"> set_intersection：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set_union"><span class="toc-number">2.13.7.2.</span> <span class="toc-text"> set_union：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set_difference"><span class="toc-number">2.13.7.3.</span> <span class="toc-text"> set_difference：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-number">2.14.</span> <span class="toc-text"> 文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F"><span class="toc-number">2.14.1.</span> <span class="toc-text"> 文件打开方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="toc-number">2.14.2.</span> <span class="toc-text"> 写文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="toc-number">2.14.3.</span> <span class="toc-text"> 读文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BD%A2%E5%BC%8F%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6"><span class="toc-number">2.14.4.</span> <span class="toc-text"> 二进制形式读写文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text"> 案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 职工管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E6%A1%88%E4%BE%8B"><span class="toc-number">3.2.</span> <span class="toc-text"> STL 案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E6%A1%88%E4%BE%8B1%E8%AF%84%E5%A7%94%E6%89%93%E5%88%86"><span class="toc-number">3.2.1.</span> <span class="toc-text"> STL 案例 1：评委打分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E6%A1%88%E4%BE%8B2%E5%91%98%E5%B7%A5%E5%88%86%E7%BB%84"><span class="toc-number">3.2.2.</span> <span class="toc-text"> STL 案例 2：员工分组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B%E6%B5%81%E7%A8%8B%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.3.</span> <span class="toc-text"> 演讲比赛流程管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.4.</span> <span class="toc-text"> 机房预约系统</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text"> C++ 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> C++ 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">2.1.</span> <span class="toc-text"> 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.2.</span> <span class="toc-text"> 分支语句语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-else-if-else%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.2.1.</span> <span class="toc-text"> if、else if、else 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.2.2.</span> <span class="toc-text"> switch 语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E8%AF%B7%E5%8F%82%E8%80%83c%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0"><span class="toc-number">2.3.</span> <span class="toc-text"> 指针请参考 C 语言笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const%E4%BF%AE%E9%A5%B0%E8%AF%8D%E5%AF%B9%E6%8C%87%E9%92%88%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.4.</span> <span class="toc-text"> const 修饰词对指针的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">2.5.</span> <span class="toc-text"> 结构体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8C%BA%E5%BC%80%E8%BE%9F%E6%95%B0%E6%8D%AEnew%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">2.6.</span> <span class="toc-text"> 堆区开辟数据 (new 关键字)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E8%B5%B7%E5%88%AB%E5%90%8D"><span class="toc-number">2.7.</span> <span class="toc-text"> 引用 (起别名)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">2.7.1.</span> <span class="toc-text"> 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8"><span class="toc-number">2.7.2.</span> <span class="toc-text"> 本质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.8.</span> <span class="toc-text"> 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82%E9%BB%98%E8%AE%A4%E5%80%BC%E4%B8%8E%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0"><span class="toc-number">2.8.1.</span> <span class="toc-text"> 形参默认值与占位参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-number">2.8.2.</span> <span class="toc-text"> 函数重载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.9.</span> <span class="toc-text"> 类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">2.9.1.</span> <span class="toc-text"> 封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-number">2.9.2.</span> <span class="toc-text"> 构造函数与析构函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-number">2.9.3.</span> <span class="toc-text"> 深拷贝与浅拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="toc-number">2.9.4.</span> <span class="toc-text"> 初始化列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-number">2.9.5.</span> <span class="toc-text"> 静态成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%8E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E5%AD%98%E5%82%A8"><span class="toc-number">2.9.6.</span> <span class="toc-text"> 成员变量与成员函数分开存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E6%8C%87%E9%92%88"><span class="toc-number">2.9.7.</span> <span class="toc-text"> this 指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const%E4%BF%AE%E9%A5%B0%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">2.9.8.</span> <span class="toc-text"> const 修饰成员函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E5%85%83"><span class="toc-number">2.9.9.</span> <span class="toc-text"> 友元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.</span> <span class="toc-text"> 运算符重载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.1.</span> <span class="toc-text"> 加号运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.2.</span> <span class="toc-text"> 左移运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.3.</span> <span class="toc-text"> 递增运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.4.</span> <span class="toc-text"> 赋值运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">2.9.10.5.</span> <span class="toc-text"> 关系运算符重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.9.10.6.</span> <span class="toc-text"> 重载函数运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">2.9.11.</span> <span class="toc-text"> 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E8%AF%AD%E6%B3%95%E4%B8%8E%E6%9D%83%E9%99%90"><span class="toc-number">2.9.11.1.</span> <span class="toc-text"> 继承语法与权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%97%B6%E5%AD%90%E7%B1%BB%E4%B8%8E%E7%88%B6%E7%B1%BB%E7%9A%84%E5%90%8C%E5%90%8D%E6%88%90%E5%91%98"><span class="toc-number">2.9.11.2.</span> <span class="toc-text"> 继承时子类与父类的同名成员</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-number">2.9.12.</span> <span class="toc-text"> 多态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%AF%E8%99%9A%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-number">2.9.12.1.</span> <span class="toc-text"> 纯虚函数与抽象类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%9E%90%E6%9E%84%E4%B8%8E%E7%BA%AF%E8%99%9A%E6%9E%90%E6%9E%84"><span class="toc-number">2.9.12.2.</span> <span class="toc-text"> 虚析构与纯虚析构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8Bcomputer%E7%B1%BB"><span class="toc-number">2.9.13.</span> <span class="toc-text"> 案例：Computer 类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.10.</span> <span class="toc-text"> 模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-number">2.10.1.</span> <span class="toc-text"> 调用规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">2.10.2.</span> <span class="toc-text"> 函数模板语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">2.10.3.</span> <span class="toc-text"> 类模板语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E9%87%8D%E8%BD%BD"><span class="toc-number">2.10.4.</span> <span class="toc-text"> 模板重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E7%BB%A7%E6%89%BF"><span class="toc-number">2.10.5.</span> <span class="toc-text"> 类模板与继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E6%A1%88%E4%BE%8B"><span class="toc-number">2.10.6.</span> <span class="toc-text"> 类模板案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl"><span class="toc-number">2.11.</span> <span class="toc-text"> STL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.11.1.</span> <span class="toc-text"> STL 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vector%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.2.</span> <span class="toc-text"> Vector 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vector%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.2.1.</span> <span class="toc-text"> Vector 容器语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vector%E5%AE%B9%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.11.2.2.</span> <span class="toc-text"> Vector 容器的使用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#string%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.3.</span> <span class="toc-text"> String 容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deque%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.4.</span> <span class="toc-text"> Deque 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#deque%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.4.1.</span> <span class="toc-text"> Deque 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stack%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.5.</span> <span class="toc-text"> Stack 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stack%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.5.1.</span> <span class="toc-text"> Stack 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#queue%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.6.</span> <span class="toc-text"> Queue 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#queue%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.6.1.</span> <span class="toc-text"> Queue 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.7.</span> <span class="toc-text"> list 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#list%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.7.1.</span> <span class="toc-text"> list 容器语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setmultiset%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.8.</span> <span class="toc-text"> set&#x2F;multiset 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setmultiset%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.8.1.</span> <span class="toc-text"> set&#x2F;multiset 容器语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set%E5%AE%B9%E5%99%A8%E6%8E%92%E5%BA%8F"><span class="toc-number">2.11.8.2.</span> <span class="toc-text"> set 容器排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pair%E5%AF%B9%E7%BB%84"><span class="toc-number">2.11.9.</span> <span class="toc-text"> pair (对组)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pair%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.9.1.</span> <span class="toc-text"> pair 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pair%E4%B8%8Eset"><span class="toc-number">2.11.9.2.</span> <span class="toc-text"> pair 与 set</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mapmultimap%E5%AE%B9%E5%99%A8"><span class="toc-number">2.11.10.</span> <span class="toc-text"> map&#x2F;multimap 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.11.10.1.</span> <span class="toc-text"> 简介：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8-2"><span class="toc-number">2.11.10.2.</span> <span class="toc-text"> 本质：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">2.11.10.3.</span> <span class="toc-text"> 优点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map%E5%92%8Cmultimap%E5%8C%BA%E5%88%AB"><span class="toc-number">2.11.10.4.</span> <span class="toc-text"> map 和 multimap 区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mapmultimap%E5%AE%B9%E5%99%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">2.11.10.5.</span> <span class="toc-text"> map&#x2F;multimap 容器语法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map%E5%AE%B9%E5%99%A8%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99%E9%87%8D%E8%BD%BD"><span class="toc-number">2.11.10.6.</span> <span class="toc-text"> map 容器排序规则重载：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">2.11.11.</span> <span class="toc-text"> 迭代器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl-%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.</span> <span class="toc-text"> STL - 函数对象 (仿函数)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BF%E5%87%BD%E6%95%B0%E6%A6%82%E5%BF%B5"><span class="toc-number">2.12.1.</span> <span class="toc-text"> 仿函数概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%93%E8%AF%8D"><span class="toc-number">2.12.2.</span> <span class="toc-text"> 谓词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.12.3.</span> <span class="toc-text"> STL 内建函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.3.1.</span> <span class="toc-text"> 算术仿函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.3.2.</span> <span class="toc-text"> 关系仿函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%BF%E5%87%BD%E6%95%B0"><span class="toc-number">2.12.3.3.</span> <span class="toc-text"> 逻辑仿函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.</span> <span class="toc-text"> STL 常用算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for_each"><span class="toc-number">2.13.1.</span> <span class="toc-text"> for_each</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transform"><span class="toc-number">2.13.2.</span> <span class="toc-text"> transform</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.3.</span> <span class="toc-text"> 查找算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find"><span class="toc-number">2.13.3.1.</span> <span class="toc-text"> find：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find_if"><span class="toc-number">2.13.3.2.</span> <span class="toc-text"> find_if：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#adjacent_find"><span class="toc-number">2.13.3.3.</span> <span class="toc-text"> adjacent_find：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#binary_search"><span class="toc-number">2.13.3.4.</span> <span class="toc-text"> binary_search：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#count"><span class="toc-number">2.13.3.5.</span> <span class="toc-text"> count：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#count_if"><span class="toc-number">2.13.3.6.</span> <span class="toc-text"> count_if：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.4.</span> <span class="toc-text"> 排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sort"><span class="toc-number">2.13.4.1.</span> <span class="toc-text"> sort：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#random_shuffle"><span class="toc-number">2.13.4.2.</span> <span class="toc-text"> random_shuffle：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reverse"><span class="toc-number">2.13.4.3.</span> <span class="toc-text"> reverse：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.5.</span> <span class="toc-text"> 拷贝与替换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#copy"><span class="toc-number">2.13.5.1.</span> <span class="toc-text"> copy：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace"><span class="toc-number">2.13.5.2.</span> <span class="toc-text"> replace：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace_if"><span class="toc-number">2.13.5.3.</span> <span class="toc-text"> replace_if：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#swap"><span class="toc-number">2.13.5.4.</span> <span class="toc-text"> swap：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95numeric"><span class="toc-number">2.13.6.</span> <span class="toc-text"> 算术生成算法 (numeric)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#accumulate"><span class="toc-number">2.13.6.1.</span> <span class="toc-text"> accumulate：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%9B%86%E5%90%88%E7%AE%97%E6%B3%95"><span class="toc-number">2.13.7.</span> <span class="toc-text"> 常用集合算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#set_intersection"><span class="toc-number">2.13.7.1.</span> <span class="toc-text"> set_intersection：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set_union"><span class="toc-number">2.13.7.2.</span> <span class="toc-text"> set_union：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set_difference"><span class="toc-number">2.13.7.3.</span> <span class="toc-text"> set_difference：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-number">2.14.</span> <span class="toc-text"> 文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F"><span class="toc-number">2.14.1.</span> <span class="toc-text"> 文件打开方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="toc-number">2.14.2.</span> <span class="toc-text"> 写文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="toc-number">2.14.3.</span> <span class="toc-text"> 读文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BD%A2%E5%BC%8F%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6"><span class="toc-number">2.14.4.</span> <span class="toc-text"> 二进制形式读写文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text"> 案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 职工管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stl%E6%A1%88%E4%BE%8B"><span class="toc-number">3.2.</span> <span class="toc-text"> STL 案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E6%A1%88%E4%BE%8B1%E8%AF%84%E5%A7%94%E6%89%93%E5%88%86"><span class="toc-number">3.2.1.</span> <span class="toc-text"> STL 案例 1：评委打分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stl%E6%A1%88%E4%BE%8B2%E5%91%98%E5%B7%A5%E5%88%86%E7%BB%84"><span class="toc-number">3.2.2.</span> <span class="toc-text"> STL 案例 2：员工分组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%94%E8%AE%B2%E6%AF%94%E8%B5%9B%E6%B5%81%E7%A8%8B%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.3.</span> <span class="toc-text"> 演讲比赛流程管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E6%88%BF%E9%A2%84%E7%BA%A6%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.4.</span> <span class="toc-text"> 机房预约系统</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/hexo-blog/2023/02/09/C-DataStructure/" rel="bookmark" title="数据结构与算法(C版)">数据结构与算法(C版)</a></li><li><a href="/hexo-blog/2023/02/19/DataStructureAndAlgorithms/" rel="bookmark" title="数据结构与算法">数据结构与算法</a></li><li><a href="/hexo-blog/2023/02/20/C-Foundation/" rel="bookmark" title="C语言基础">C语言基础</a></li><li><a href="/hexo-blog/2023/02/21/Linux-Foundation/" rel="bookmark" title="Linux基础">Linux基础</a></li><li><a href="/hexo-blog/2023/02/22/HTML-CSS/" rel="bookmark" title="HTML+CSS">HTML+CSS</a></li><li class="active"><a href="/hexo-blog/2023/02/23/CppLearn/" rel="bookmark" title="C++笔记">C++笔记</a></li><li><a href="/hexo-blog/2023/02/24/java/" rel="bookmark" title="Java笔记">Java笔记</a></li><li><a href="/hexo-blog/2023/03/31/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li><li><a href="/hexo-blog/2023/04/06/GitNote/" rel="bookmark" title="Git">Git</a></li>
+          <li><a href="/2023/02/09/C-DataStructure/" rel="bookmark" title="数据结构与算法(C版)">数据结构与算法(C版)</a></li><li><a href="/2023/02/19/DataStructureAndAlgorithms/" rel="bookmark" title="数据结构与算法">数据结构与算法</a></li><li><a href="/2023/02/20/C-Foundation/" rel="bookmark" title="C语言基础">C语言基础</a></li><li><a href="/2023/02/21/Linux-Foundation/" rel="bookmark" title="Linux基础">Linux基础</a></li><li><a href="/2023/02/22/HTML-CSS/" rel="bookmark" title="HTML+CSS">HTML+CSS</a></li><li class="active"><a href="/2023/02/23/CppLearn/" rel="bookmark" title="C++笔记">C++笔记</a></li><li><a href="/2023/02/24/java/" rel="bookmark" title="Java笔记">Java笔记</a></li><li><a href="/2023/03/31/MySQL/" rel="bookmark" title="MySQL">MySQL</a></li><li><a href="/2023/04/06/GitNote/" rel="bookmark" title="Git">Git</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="image" itemprop="image" alt="Ailzr"
-      data-src="/hexo-blog/images/avatar.jpg">
+      data-src="/images/avatar.jpg">
   <p class="name" itemprop="name">Ailzr</p>
   <div class="description" itemprop="description">我有时会想,在这里写点什么好呢</div>
 </div>
 
 <nav class="state">
     <div class="item posts">
-      <a href="/hexo-blog/archives/">
+      <a href="/archives/">
         <span class="count">11</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
-      <a href="/hexo-blog/categories/">
+      <a href="/categories/">
         <span class="count">3</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
-      <a href="/hexo-blog/tags/">
+      <a href="/tags/">
         <span class="count">10</span>
         <span class="name">标签</span>
       </a>
@@ -804,12 +870,12 @@ Ailzr = Ailzr's Blog</title>
   
     
   <li class="item">
-    <a href="/hexo-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
   </li>
 
     
   <li class="item">
-    <a href="/hexo-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
   </li>
 
         
@@ -819,23 +885,23 @@ Ailzr = Ailzr's Blog</title>
 
         
   <li class="item">
-    <a href="/hexo-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
   </li>
 
         
   <li class="item">
-    <a href="/hexo-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
   </li>
 
         
   <li class="item">
-    <a href="/hexo-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
   </li>
 
   </ul>
     
   <li class="item">
-    <a href="/hexo-blog/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
   </li>
 
 
@@ -847,12 +913,12 @@ Ailzr = Ailzr's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/hexo-blog/2023/02/22/HTML-CSS/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2023/02/22/HTML-CSS/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/hexo-blog/2023/02/24/java/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/2023/02/24/java/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -874,100 +940,100 @@ Ailzr = Ailzr's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
+    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+    <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/03/31/Docker/" title="Docker">Docker</a></span>
+    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/04/06/GitNote/" title="Git">Git</a></span>
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/02/09/C-DataStructure/" title="数据结构与算法(C版)">数据结构与算法(C版)</a></span>
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+    <span><a href="/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
+<a href="/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/04/03/chaoXingCourse/" title="超星刷课脚本安装教程">超星刷课脚本安装教程</a></span>
+    <span><a href="/2023/04/03/chaoXingCourse/" title="超星刷课脚本安装教程">超星刷课脚本安装教程</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/02/23/CppLearn/" title="C++笔记">C++笔记</a></span>
+    <span><a href="/2023/04/06/GitNote/" title="Git">Git</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/hexo-blog/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+<a href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="分类于 开发环境">开发环境</a>
 </div>
 
-    <span><a href="/hexo-blog/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
+    <span><a href="/2023/03/31/Docker/" title="Docker">Docker</a></span>
   </li>
 
   </ul>
@@ -992,13 +1058,13 @@ Ailzr = Ailzr's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">211k 字</span>
+    <span title="站点总字数">215k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:12</span>
+    <span title="站点阅读时长">3:16</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
@@ -1037,7 +1103,7 @@ Ailzr = Ailzr's Blog</title>
 
 <script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
 
-<script src="/hexo-blog/js/app.js?v=0.2.5"></script>
+<script src="/js/app.js?v=0.2.5"></script>
 
 
 
