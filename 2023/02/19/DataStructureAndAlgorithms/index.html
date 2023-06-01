@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="C++,DataStructureAndAlgorithms" />
+  <meta name="keywords" content="DataStructureAndAlgorithms,C++" />
 
 
 <link rel="canonical" href="https://www.ailzr.com/2023/02/19/DataStructureAndAlgorithms/">
@@ -468,8 +468,8 @@ Ailzr = Ailzr's Blog</title>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序的时间复杂度为O(nlog n)。</span></span><br><span class="line"><span class="comment">//当分裂时，总能分为左右相同的两块，则其中分裂部分的复杂度为O(log n),移动部分的时间复杂度为O(n)</span></span><br><span class="line"><span class="comment">//当中值所在位置过于偏离中部，造成左右两块数量不平衡，会导致时间复杂度上升</span></span><br><span class="line"><span class="comment">//极端情况下，有一部分始终没有数据，则时间复杂度退化到O(n^2),考虑到递归调用，效率甚至低于冒泡排序</span></span><br><span class="line"><span class="comment">//快速排序相较于归并排序，不需要调用额外的空间</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Sort.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">getMidI</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr, <span class="type">int</span> first, <span class="type">int</span> last)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> midValue = arr[first];<span class="comment">//选定中值</span></span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> leftMark = first + <span class="number">1</span>;<span class="comment">//左标</span></span><br><span class="line">	<span class="type">int</span> rightMark = last;<span class="comment">//右标</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">		<span class="comment">//当左标小于右标，且左标指向的值小于中值时，左标右移</span></span><br><span class="line">		<span class="keyword">while</span> (leftMark &lt;= rightMark &amp;&amp; arr[leftMark] &lt;= midValue) leftMark++;</span><br><span class="line">		<span class="comment">//当右标大于左标，且右标指向的值大于中值时，右标左移</span></span><br><span class="line">		<span class="keyword">while</span> (rightMark &gt;= leftMark &amp;&amp; arr[rightMark] &gt;= midValue) rightMark--;</span><br><span class="line">		<span class="keyword">if</span> (rightMark &lt; leftMark) <span class="keyword">break</span>;<span class="comment">//当左标大于右标，结束循环</span></span><br><span class="line">		<span class="keyword">else</span> &#123;<span class="comment">//否则当左标和右标都停止时，交换左标与右标指向的值</span></span><br><span class="line">			<span class="type">int</span> temp = arr[leftMark];</span><br><span class="line">			arr[leftMark] = arr[rightMark];</span><br><span class="line">			arr[rightMark] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//最后将中值置于rightMark处</span></span><br><span class="line">	<span class="type">int</span> temp = arr[first];</span><br><span class="line">	arr[first] = arr[rightMark];</span><br><span class="line">	arr[rightMark] = temp;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//返回中值的下标</span></span><br><span class="line">	<span class="keyword">return</span> rightMark;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">quickSortHelper</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr, <span class="type">int</span> first, <span class="type">int</span> last)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (first &lt; last) &#123;</span><br><span class="line">		<span class="type">int</span> midValue = <span class="built_in">getMidI</span>(arr,first,last);<span class="comment">//获取中值的下标</span></span><br><span class="line">		<span class="built_in">quickSortHelper</span>(arr, first, midValue - <span class="number">1</span>);<span class="comment">//从中值处分裂，处理中值左边的部分</span></span><br><span class="line">		<span class="built_in">quickSortHelper</span>(arr, midValue + <span class="number">1</span>, last);<span class="comment">//处理中值右边的部分</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Sort::quickSort</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">quickSortHelper</span>(arr, <span class="number">0</span>, arr.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="tags">
-          <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C++</a>
           <a href="/tags/DataStructureAndAlgorithms/" rel="tag"><i class="ic i-tag"></i> DataStructureAndAlgorithms</a>
+          <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C++</a>
       </div>
   </div>
 
@@ -695,57 +695,7 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/04/06/GitNote/" title="Git">Git</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
-</div>
-
-    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
-</div>
-
-    <span><a href="/2023/04/03/chaoXingCourse/" title="超星刷课脚本安装教程">超星刷课脚本安装教程</a></span>
+    <span><a href="/2023/02/09/C-DataStructure/" title="数据结构与算法(C版)">数据结构与算法(C版)</a></span>
   </li>
 
       
@@ -765,7 +715,47 @@ Ailzr = Ailzr's Blog</title>
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
+    <span><a href="/2023/02/22/HTML-CSS/" title="HTML+CSS">HTML+CSS</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/20/C-Foundation/" title="C语言基础">C语言基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/03/31/MySQL/" title="MySQL">MySQL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
+</div>
+
+    <span><a href="/2023/02/24/java/" title="Java笔记">Java笔记</a></span>
   </li>
 
       
@@ -782,10 +772,20 @@ Ailzr = Ailzr's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/%E6%95%99%E7%A8%8B/" title="分类于 教程">教程</a>
+</div>
+
+    <span><a href="/2023/04/03/chaoXingCourse/" title="超星刷课脚本安装教程">超星刷课脚本安装教程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="分类于 编程笔记">编程笔记</a>
 </div>
 
-    <span><a href="/2023/02/21/Linux-Foundation/" title="Linux基础">Linux基础</a></span>
+    <span><a href="/2023/02/19/DataStructureAndAlgorithms/" title="数据结构与算法">数据结构与算法</a></span>
   </li>
 
   </ul>
@@ -810,13 +810,13 @@ Ailzr = Ailzr's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">239k 字</span>
+    <span title="站点总字数">272k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:37</span>
+    <span title="站点阅读时长">4:07</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
