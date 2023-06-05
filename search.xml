@@ -5602,7 +5602,124 @@
 <p><strong>user 标签：</strong></p>
 <p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202305291859326.png" alt="image-20230529185949146"></p>
 <p>若 privileges check 不做更改，则表示允许所有权限。</p>
+<h3 id="mycat分片规则"><a class="markdownIt-Anchor" href="#mycat分片规则">#</a> Mycat 分片规则</h3>
+<ul>
+<li>分片规则 - 范围：</li>
+</ul>
+<p>根据指定的字段及配置的范围与数据节点的对应情况，来决定该数据属于哪一个分片。</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051237470.png" alt="image-20230605123712301"></p>
+<ul>
+<li>分片规则 - 取模</li>
+</ul>
+<p>根据指定的字段值与节点数量进行求模运算，根据运算结果，决定该数据属于哪一个分片。</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051239514.png" alt="image-20230605123935430"></p>
+<ul>
+<li>分片规则 - 一致性 hash</li>
+</ul>
+<p>所谓一致性 hash，指相同的 hash 因子计算值总是被划分到相同的分区表中，不会因为分区节点的增加而改变原来数据的分区位置。</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051241163.png" alt="image-20230605124147060"></p>
+<ul>
+<li>分片规则 - 枚举</li>
+</ul>
+<p>通过再配置文件中配置可能的枚举值，指定数据分布到不同的数据节点上，本规则适用于按照省份、性别、状态拆分数据等业务。</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051245233.png" alt="image-20230605124548131"></p>
+<ul>
+<li>分片规则 - 应用指定</li>
+</ul>
+<p>运行阶段由应用自主决定路由到哪个分片，直接根据字符子串 (必须是数字) 计算分片号。</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051329016.png" alt="image-20230605132920909"></p>
+<ul>
+<li>分片规则 - 固定分片 hash 算法</li>
+</ul>
+<p>该算法类似于十进制的求模运算，但是为二进制的操作，例如，取 id 的二进制第 10 位与 1111111111 进行位 &amp; 运算。(计算出来的结果必在 0-1023 之间)</p>
+<p>特点：</p>
+<ol>
+<li>如果是求模，连续的值，分别分配到各个不同的分片。但是此算法会将连续的值可能分配到相同的分片，降低事务处理的难度。</li>
+<li>可以均匀分配，也可以非均匀分配。</li>
+<li>分片字段必须是数字类型。</li>
+</ol>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051336485.png" alt="image-20230605133633383"></p>
+<ul>
+<li>分片规则 - 字符串 hash 解析</li>
+</ul>
+<p>截取字符串中的指定位置的子字符串，进行 hash 算法，算出分片。</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051339173.png" alt="image-20230605133945078"></p>
+<ul>
+<li>分片规则 - 按 (天) 日期分片</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051343281.png" alt="image-20230605134346176"></p>
+<ul>
+<li>分片规则 - 按月分片</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051345593.png" alt="image-20230605134505489"></p>
+<h3 id="mycat的管理及监控"><a class="markdownIt-Anchor" href="#mycat的管理及监控">#</a> Mycat 的管理及监控</h3>
+<h4 id="mycat管理"><a class="markdownIt-Anchor" href="#mycat管理">#</a> Mycat 管理：</h4>
+<p>Mycat 默认开通 2 个端口，可以再 server.xml 中进行修改。</p>
+<ol>
+<li>8066 数据访问端口，即进行 DML 和 DDL 操作</li>
+<li>9066 数据库管理端口，即 mycat 服务管理控制功能，用于管理 mycat 的整个集群状态</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -h ip -P port -u user -p password;</span><br></pre></td></tr></table></figure>
+<p>部分基础指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">show @@help</td>
+<td style="text-align:center">查看 Mycat 管理工具帮助文档</td>
+</tr>
+<tr>
+<td style="text-align:center">show @@version</td>
+<td style="text-align:center">查看 Mycat 的版本</td>
+</tr>
+<tr>
+<td style="text-align:center">reload @@config</td>
+<td style="text-align:center">重新加载 Mycat 的配置文件</td>
+</tr>
+<tr>
+<td style="text-align:center">show @@datasource</td>
+<td style="text-align:center">查看 Mycat 的数据源信息</td>
+</tr>
+<tr>
+<td style="text-align:center">show @@datanode</td>
+<td style="text-align:center">查看 Mycat 现有的分片节点信息</td>
+</tr>
+<tr>
+<td style="text-align:center">show @@threadpool</td>
+<td style="text-align:center">查看 Mycat 的线程池信息</td>
+</tr>
+<tr>
+<td style="text-align:center">show @@sql</td>
+<td style="text-align:center">查看执行的 SQL</td>
+</tr>
+<tr>
+<td style="text-align:center">show @@sql.sum</td>
+<td style="text-align:center">查看执行的 SQL 统计</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mycat-eye"><a class="markdownIt-Anchor" href="#mycat-eye">#</a> Mycat-eye</h4>
+<p>Mycat-web (Mycat-eye) 是对 mycat-server 提供的监控服务，功能不局限于对 mycat-server 使用。</p>
+<p>它通过 JDBC 连接对 Mycat、Mysql 监控，监控远程服务器 (目前仅限于 linux 系统) 的 CPU、内存、网络、磁盘。</p>
+<p>Mycat-eye 运行过程中需要依赖 zookeeper，因此需要先安装 zookeeper。</p>
 <h1 id="读写分离"><a class="markdownIt-Anchor" href="#读写分离">#</a> 读写分离</h1>
+<p>读写分离，简单的说是把对数据库的读和写操作分开，以应对不同的数据库服务器。</p>
+<p>主数据库提供写操作，从数据库提供读操作，这样能有效的减轻单台数据库的压力。</p>
+<p>通过 Mycat 可以轻易实现上述功能，不仅支持 Mysql，也支持 Oracle 和 Sql Server。</p>
+<h2 id="一主一从"><a class="markdownIt-Anchor" href="#一主一从">#</a> 一主一从</h2>
+<p>Mycat 配置：</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051424450.png" alt="image-20230605142407341"></p>
+<p>关于 balance：</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051424794.png" alt="image-20230605142440690"></p>
+<h2 id="双主双从"><a class="markdownIt-Anchor" href="#双主双从">#</a> 双主双从</h2>
+<p>Mycat 配置：</p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051435414.png" alt="image-20230605143506281"></p>
+<p><img data-src="https://raw.githubusercontent.com/Ailzr/picBed/master/202306051436533.png" alt="image-20230605143617423"></p>
 ]]></content>
       <categories>
         <category>编程笔记</category>
