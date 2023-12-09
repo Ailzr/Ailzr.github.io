@@ -735,10 +735,398 @@
 <p>C++(C Plus Plus)，是由微软 (Microsoft) 公司基于 C 语言扩充编写的一门语言。</p>
 <p>C++ 是一门面向对象的语言</p>
 <p>其中部分语法与 C 语言相似，可以参考 C 语言笔记 (有些部分我直接从 C 语言笔记里复制过来了，我会将其标出)。</p>
+<h1 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world">#</a> Hello World</h1>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello World!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请自行安装 VS2022 (或者其他 ide)，可以参考 C 语言笔记的内容。</p>
+<p>输入上面的代码，实现第一个 C++ 程序</p>
 <h1 id="c语法"><a class="markdownIt-Anchor" href="#c语法">#</a> C++ 语法</h1>
 <h2 id="注释"><a class="markdownIt-Anchor" href="#注释">#</a> 注释</h2>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="分支语句语句从c中复制"><a class="markdownIt-Anchor" href="#分支语句语句从c中复制">#</a> <mark>分支语句语句 (从 C 中复制)</mark></h2>
+<h2 id="位bit与字节byte"><a class="markdownIt-Anchor" href="#位bit与字节byte">#</a> 位 (bit) 与字节 (byte)</h2>
+<p>在日常使用计算机的时候，我们通常会看到一些数据单位，如 kb,MB,GB 等</p>
+<p>其中 kb 指的是 kilo byte (千字节)，mb 指的是 mega byte (兆字节)。诸如此类的还有 TB,PB,EB 等。</p>
+<p>计算机是电子产品，对其来说，只存在开路 (0) 与闭路 (1)</p>
+<p>我们将一个最基础的单位 (0 或 1) 称为位 (bit)，将 8 个位合在一起称为一个字节 (byte)。</p>
+<p>当我需要将整数 8 存入计算机时，8 会被转换为二进制数 1000 被存入到内存中。</p>
+<p>这在 C 语言中，通常会占用 4 个字节，也就是 32 位。</p>
+<h2 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型">#</a> <mark>数据类型</mark></h2>
+<h3 id="基本数据类型"><a class="markdownIt-Anchor" href="#基本数据类型">#</a> 基本数据类型：</h3>
+<p>基本数据类型包括：</p>
+<p><strong>数值类型：</strong></p>
+<ul>
+<li>整型</li>
+<li>浮点型</li>
+</ul>
+<p><strong>字符类型 (char)</strong></p>
+<p>其中整型包括：短整型 (short)、整型 (int)、长整型 (long)</p>
+<p>其中浮点型包括：单精度型 (float)、双精度型 (double)</p>
+<p><strong>整型，即为整数。  浮点型，即为小数。</strong></p>
+<p><strong>短整型、整型与长整型的差距在于其存储时，占用的字节数</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">字节数</th>
+<th style="text-align:center">存储数值的范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">short</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-2^15, 2^15-1</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">-2^31, 2^31-1</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">-2^63, 2^63-1</td>
+</tr>
+</tbody>
+</table>
+<p>这是大致的内存占用情况，需要注意的是，这些数据类型在不同的系统上，会占用不同的字节数，而非固定。</p>
+<p>通过类型占用的字节数，可以计算出其存储数值范围。</p>
+<p>例如：int 是 4 个字节，也就是 32 位，因为其存储的是二进制数，所以理论上范围应该是 [-2^32，2^32 - 1] 但第一位要用于存储其符号，也就是数值是正还是负，所以占用了一个位，则其范围变为 [-2^31，2^31 - 1]，正数范围需要减一是为了存储 0</p>
+<p><strong>单精度浮点型与双精度浮点型的区别：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">字节</th>
+<th style="text-align:center">存储数值的范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">-3.4*10^38, 3.4*10^38</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">-1.7*10^308, 1.7*10^308</td>
+</tr>
+</tbody>
+</table>
+<p>其中单精度浮点数可以存储到小数点后 6 位数字，而双精度浮点数可以存储到小数点后 15 位数字。</p>
+<p>打印时，默认保留 6 位小数</p>
+<h4 id="布尔类型"><a class="markdownIt-Anchor" href="#布尔类型">#</a> 布尔类型</h4>
+<p>需要注意，C 语言并没有布尔类型，但是程序中经常会用到布尔类型，因此我在这里单独拿出来使用</p>
+<p>在 C89 标准时，C 语言没有布尔类型，在后来的 C99 标准时，才引入了布尔类型。</p>
+<hr>
+<p>布尔类型是只有两种值的数据类型，包含真 (True) 与假 (False)</p>
+<p>在 C 语言中，通常使用 0 作为布尔类型的 False，非 0 作为布尔类型的 True</p>
+<h4 id="构造类型"><a class="markdownIt-Anchor" href="#构造类型">#</a> 构造类型</h4>
+<p>构造类型包括：</p>
+<ul>
+<li>数组 (array)</li>
+<li>结构体 (struct)</li>
+<li>共用体 (union)</li>
+<li>枚举类型 (enum)</li>
+</ul>
+<p>这四种类型会在后面讲到。</p>
+<h4 id="指针类型"><a class="markdownIt-Anchor" href="#指针类型">#</a> 指针类型</h4>
+<p>指针类型通常占用 4 个字节，存储十六进制数，用于保存地址值，具体会在指针的部分讲到。</p>
+<h4 id="空类型"><a class="markdownIt-Anchor" href="#空类型">#</a> 空类型</h4>
+<p>型如其名，空 (void)</p>
+<h2 id="变量"><a class="markdownIt-Anchor" href="#变量">#</a> <mark>变量</mark></h2>
+<p><strong>这块儿从 C 语言笔记那里复制过来的所以用的输出方式可能是 printf 而不是 cout</strong></p>
+<h3 id="声明变量与赋值"><a class="markdownIt-Anchor" href="#声明变量与赋值">#</a> 声明变量与赋值：</h3>
+<p>创建一个新的源文件，并将先前的第一个程序全部注释掉：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> var1;<span class="comment">//声明一个整型变量</span></span><br><span class="line">    var1 = <span class="number">0</span>;<span class="comment">//给var1赋值</span></span><br><span class="line">    <span class="type">float</span> var2 = <span class="number">0.123f</span>;<span class="comment">//声明并初始化一个单精度浮点型变量</span></span><br><span class="line">    <span class="type">double</span> var3 = <span class="number">0.123456</span>;<span class="comment">//声明并初始化一个双精度浮点型变量</span></span><br><span class="line">    <span class="type">char</span> var4 = <span class="string">&#x27;c&#x27;</span>;<span class="comment">//声明并初始化一个字符型变量</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,%f,%lf,%c&quot;</span>, var1, var2, var3, var4);<span class="comment">//使用占位符%d,%f,%lf与%c输出相应变量。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>声明变量，即创建一个变量，然后使用 = 为其赋值。</p>
+<p><strong>注意：赋值行为是将等号右边的数值分配给等号左边的变量，不能写反！</strong></p>
+<p>第一次给变量赋值的行为，被叫做<strong>初始化</strong>，声明与初始化可以写在同一行，如 var2 与 var3</p>
+<p><strong>注意 2：请不要在未初始化的情况下调用变量，会导致程序错误！</strong></p>
+<p>IDE 会默认浮点数为双精度浮点数，在浮点数后面添加 f (或 F)，标志其为单精度浮点数 (也可以不加)。</p>
+<p>打印时，使用占位符进行占位，占位符与后面的变量需要一一对应。其中 % d 为整型的占位符，% f 为单精度浮点型的占位符，% lf 为双精度浮点型的占位符。</p>
+<h3 id="变量名"><a class="markdownIt-Anchor" href="#变量名">#</a> 变量名：</h3>
+<p>变量命名时需要遵循一定的规则：</p>
+<ul>
+<li>变量名只能包含字母、数字、下划线和 $</li>
+<li>变量名只能以字母、下划线或者 $ 开头</li>
+<li>变量名不能使用关键字</li>
+<li>变量名严格区分大小写</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//例如</span></span><br><span class="line"><span class="type">int</span> <span class="number">123</span>abc;<span class="comment">//这是一个不符合语法的变量声明，会导致报错！</span></span><br><span class="line"><span class="type">int</span> <span class="type">int</span>;<span class="comment">//这是一个非法声明！</span></span><br><span class="line"><span class="type">int</span> 变量;<span class="comment">//非法声明！</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> var;<span class="comment">//合法声明</span></span><br><span class="line"><span class="type">int</span> _var;<span class="comment">//合法声明</span></span><br><span class="line"><span class="type">int</span> $var;<span class="comment">//合法声明</span></span><br><span class="line"><span class="type">int</span> VAR;<span class="comment">//合法声明，但需要注意，VAR不等于var</span></span><br></pre></td></tr></table></figure>
+<p><strong>关键字：C 语言使用到的单词，例如：int,float,void 等，在起变量名或者函数名时需要避开。</strong></p>
+<p>关键字并不需要记忆，在 VS2022 中，当使用到关键字时，会被特殊的颜色标出。</p>
+<hr>
+<p>除了必要的语法外，我们在日常编程中也有一些默认规则。</p>
+<ul>
+<li>变量名要做到见名知意</li>
+<li>变量名遵循驼峰法，或者下划线法</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//例如</span></span><br><span class="line"><span class="type">int</span> var;<span class="comment">//var是variable(变量)的缩写</span></span><br><span class="line"><span class="type">int</span> count;<span class="comment">//count(计数)，通常用于计数</span></span><br><span class="line"><span class="type">int</span> sum;<span class="comment">//sum(和)，通常用于求和</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//上面的变量名，看到名字便知道其作用。</span></span><br><span class="line"><span class="comment">//需要使用两个及以上的单词去描述变量时，通常使用驼峰法或下划线法命名</span></span><br><span class="line"><span class="comment">//驼峰法即：单词的首字母大写，如：</span></span><br><span class="line"><span class="type">int</span> studentId;<span class="comment">//学号</span></span><br><span class="line"><span class="type">char</span> studentAddress;<span class="comment">//学生家庭地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//下划线法即：使用下划线分割单词，如：</span></span><br><span class="line"><span class="type">int</span> student_name;<span class="comment">//学生姓名</span></span><br><span class="line"><span class="type">int</span> student_class;<span class="comment">//学生班级</span></span><br></pre></td></tr></table></figure>
+<p>驼峰法与下划线法的选择看个人喜好。</p>
+<h2 id="运算符"><a class="markdownIt-Anchor" href="#运算符">#</a> <mark>运算符</mark></h2>
+<p>需要注意，运算符区分优先级，大致为：</p>
+<p>数值运算符 &gt; 比较运算符 &gt; 逻辑运算符 (不绝对)</p>
+<p>其中逻辑运算符中！&gt; &amp;&amp; &gt; ||</p>
+<p>具体优先级可以自行搜索</p>
+<h3 id="数值运算符"><a class="markdownIt-Anchor" href="#数值运算符">#</a> 数值运算符</h3>
+<p>C 语言中提供一些数值运算的符号，如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">使用方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">赋值运算符，将等号右侧的值赋给等号左边的变量</td>
+<td style="text-align:center">var = 10</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加运算符</td>
+<td style="text-align:center">var = 1 + 2</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减运算符</td>
+<td style="text-align:center">var = 2 - 1</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘运算符</td>
+<td style="text-align:center">var = 5 * 10</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除运算符</td>
+<td style="text-align:center">var = 10 / 5</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">求余数运算符</td>
+<td style="text-align:center">var = 11 % 5 (var 的值为 1)</td>
+</tr>
+<tr>
+<td style="text-align:center">+=</td>
+<td style="text-align:center">可以将右侧式子理解为 var = var + 10</td>
+<td style="text-align:center">var += 10</td>
+</tr>
+<tr>
+<td style="text-align:center">-=</td>
+<td style="text-align:center">可以将右侧式子理解为 var = var - 10</td>
+<td style="text-align:center">var -= 10</td>
+</tr>
+<tr>
+<td style="text-align:center">*=</td>
+<td style="text-align:center">可以将右侧式子理解为 var = var * 10</td>
+<td style="text-align:center">var *= 10</td>
+</tr>
+<tr>
+<td style="text-align:center">/=</td>
+<td style="text-align:center">可以将右侧式子理解为 var = var / 10</td>
+<td style="text-align:center">var /= 10</td>
+</tr>
+<tr>
+<td style="text-align:center">%=</td>
+<td style="text-align:center">可以将右侧式子理解为 var = var % 10</td>
+<td style="text-align:center">var %= 10</td>
+</tr>
+<tr>
+<td style="text-align:center">++</td>
+<td style="text-align:center">自增运算，相当于 var = var + 1</td>
+<td style="text-align:center">var++(或者 ++var)</td>
+</tr>
+<tr>
+<td style="text-align:center">–</td>
+<td style="text-align:center">自减运算，相当于 var = var - 1</td>
+<td style="text-align:center">var–(或者–var)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：var++ 与 ++var 使用方式并不相同，var-- 与 --var 同样</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> var = <span class="number">1</span>;<span class="comment">//声明并初始化整型变量var</span></span><br><span class="line">    </span><br><span class="line">    var += <span class="number">10</span>;<span class="comment">//加运算示例</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, var);</span><br><span class="line">    </span><br><span class="line">    var -= <span class="number">10</span>;<span class="comment">//减运算示例</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, var);</span><br><span class="line">    </span><br><span class="line">    var *= <span class="number">10</span>;<span class="comment">//乘运算示例</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, var);</span><br><span class="line">    </span><br><span class="line">    var /= <span class="number">10</span>;<span class="comment">//除运算示例</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, var);</span><br><span class="line">    </span><br><span class="line">    var = <span class="number">11</span>;<span class="comment">//求余运算示例</span></span><br><span class="line">    var %= <span class="number">10</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, var);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, var++);<span class="comment">//后++示例</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ++var);<span class="comment">//前++示例</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行上述代码，可以发现打印结果为：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="number">11</span>	<span class="comment">//加法示例打印，var为1，var+=10即为var=var+10，所以结果为11</span></span><br><span class="line"><span class="number">1</span>	<span class="comment">//减法示例打印，var此时为11，var-=10即为var=var-10，所以结果为1</span></span><br><span class="line"><span class="number">10</span>  <span class="comment">//乘法示例打印，var此时为1，var*=10即为var=var*10，所以结果为10</span></span><br><span class="line"><span class="number">1</span>   <span class="comment">//除法示例打印，var此时为10，var/=10即为var=var/10，所以结果为1</span></span><br><span class="line"><span class="number">1</span>   <span class="comment">//求余示例打印，计算前给var赋值为11，所以var此时为11，var%=10即为var=var%10，所以结果为1</span></span><br><span class="line"><span class="number">1</span>   <span class="comment">//后++示例</span></span><br><span class="line"><span class="number">3</span>   <span class="comment">//前++示例</span></span><br></pre></td></tr></table></figure>
+<p><strong>需要注意的是后 ++ 与前 ++ 的区分：</strong></p>
+<p><strong>使用后 ++ 时，是首先使用变量 var，再进行自增，所以当 var=1 时，使用 var++ 进行打印，首先使用 var 打印出 1，然后对其进行自增，则 var=2.</strong></p>
+<p><strong>使用前 ++ 时，是首先自增，再使用变量 var，所以当 var=2 时，使用 ++var 进行打印，首先自增，使 var 变为 3，然后对 var 进行打印，打印出数字 3.</strong></p>
+<h3 id="比较运算符"><a class="markdownIt-Anchor" href="#比较运算符">#</a> 比较运算符</h3>
+<p>C 语言中提供一些比较运算的符号，如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">使用方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">判断左值是否小于右值，返回布尔类型</td>
+<td style="text-align:center">number1 &lt; number2</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">判断左值是否大于右值，返回布尔类型</td>
+<td style="text-align:center">number1 &gt; number2</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">判断左值是否小于或等于右值，返回布尔类型</td>
+<td style="text-align:center">number1 &lt;= number2</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:center">判断左值是否大于或等于右值，返回布尔类型</td>
+<td style="text-align:center">number1 &gt;= number2</td>
+</tr>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">判断左值是否等于右值，返回布尔类型</td>
+<td style="text-align:center">number1 == number2</td>
+</tr>
+<tr>
+<td style="text-align:center">!=</td>
+<td style="text-align:center">判断左值是否不等于右值，返回布尔类型</td>
+<td style="text-align:center">number1 != number2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：C 语言自带的数据类型中，并没有真正的布尔类型，只是使用零和非零模拟出的布尔类型</strong></p>
+<h3 id="逻辑运算符"><a class="markdownIt-Anchor" href="#逻辑运算符">#</a> 逻辑运算符</h3>
+<p>C 语言中提供一些逻辑运算的符号，如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">逻辑与，判断左值与右值是否都为真，返回布尔类型</td>
+<td style="text-align:center">a &amp;&amp; b</td>
+</tr>
+<tr>
+<td style="text-align:center">||</td>
+<td style="text-align:center">逻辑或，判断左值或右值是否为真，返回布尔类型</td>
+<td style="text-align:center">a || b</td>
+</tr>
+<tr>
+<td style="text-align:center">!</td>
+<td style="text-align:center">逻辑非，取其相反值，返回布尔类型 (若 a 为 True，则！a 为 False)</td>
+<td style="text-align:center">!a</td>
+</tr>
+</tbody>
+</table>
+<p>逻辑与，逻辑或，逻辑非的运算结果如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&amp;&amp; 运算</th>
+<th style="text-align:center">b = True</th>
+<th style="text-align:center">b = False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a = True</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">False</td>
+</tr>
+<tr>
+<td style="text-align:center">a = False</td>
+<td style="text-align:center">False</td>
+<td style="text-align:center">False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>逻辑与：全真才真，一假皆假。</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">|| 运算</th>
+<th style="text-align:center">b = True</th>
+<th style="text-align:center">b = False</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a = True</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">True</td>
+</tr>
+<tr>
+<td style="text-align:center">a = False</td>
+<td style="text-align:center">True</td>
+<td style="text-align:center">False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>逻辑或：一真即真，全假才假。</strong></p>
+<p><strong>短路现象：</strong></p>
+<p>对于 a&amp;&amp;b，当 a 为假的时候，我们便可以立即断定 a&amp;&amp;b 就是假的，那么程序将不会再判断 b，这种现象被称为短路现象。</p>
+<p>同样的，对于 a||b，当 a 为真，则 a||b 就一定是真的，程序也不会再判断 b。</p>
+<h3 id="位运算符"><a class="markdownIt-Anchor" href="#位运算符">#</a> 位运算符</h3>
+<p>C 语言中提供一些位运算的符号，如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">对左值与右值进行与运算</td>
+<td style="text-align:center">a &amp; b</td>
+</tr>
+<tr>
+<td style="text-align:center">|</td>
+<td style="text-align:center">对左值与右值进行或运算</td>
+<td style="text-align:center">a | b</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">对左值与右值进行位运算</td>
+<td style="text-align:center">a ^ b</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt;</td>
+<td style="text-align:center">对左值进行左移运算，左移位数取决于右值</td>
+<td style="text-align:center">1 &lt;&lt; 5</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&gt;</td>
+<td style="text-align:center">对左值进行右移运算，右移位数取决于右值</td>
+<td style="text-align:center">32 &gt;&gt; 3</td>
+</tr>
+</tbody>
+</table>
+<p>使用如下代码进行测试：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">1</span>, b = <span class="number">5</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a &amp; b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a | b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a ^ b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="number">1</span> &lt;&lt; <span class="number">5</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="number">32</span> &gt;&gt; <span class="number">3</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>会发现，最终输出的结果分别是 1，5，4，32 和 4  接下来我会对位运算做详细解释。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//因为会有对齐操作，为了避免转换为网页时缩进错序，所以使用代码块进行解释</span></span><br><span class="line"><span class="comment">//a的值是1，其对应的二进制数可以写为001，b的值是5，其对应的二进制数可以写为101</span></span><br><span class="line"><span class="comment">//当a和b进行与运算时，我们首先将其对齐，如下</span></span><br><span class="line"><span class="comment">//001</span></span><br><span class="line"><span class="comment">//101</span></span><br><span class="line"><span class="comment">//然后逐个按位比较，如果都是1，那么结果取1，否则取0，于是得到结果</span></span><br><span class="line"><span class="comment">//001</span></span><br><span class="line"><span class="comment">//转化为十进制数后，值是1，所以第一个printf的输出值为1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//而或运算则是：如果都是0，那么结果取0，否则取1。</span></span><br><span class="line"><span class="comment">//001</span></span><br><span class="line"><span class="comment">//101</span></span><br><span class="line"><span class="comment">//101</span></span><br><span class="line"><span class="comment">//按照或运算的规则，可以得到最后的结果为101，转化为十进制则是5，所以第二个printf的输出值为5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//异或运算则是：如果相同则取0，不同则取1</span></span><br><span class="line"><span class="comment">//001</span></span><br><span class="line"><span class="comment">//101</span></span><br><span class="line"><span class="comment">//100</span></span><br><span class="line"><span class="comment">//按照异或运算的规则，可以得到最后的结果为100，转化为十进制则是4，所以第三个printf的输出值为4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//左移运算：将二进制数左移x位，移动后在后面补0</span></span><br><span class="line"><span class="comment">//譬如对于1，其二进制为1，将其左移5位，然后在后面补0，那么结果就是10 0000，转化为十进制数则是32</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//右移运算：将二进制数右移x位，移出部分删去</span></span><br><span class="line"><span class="comment">//譬如对于32，其二进制为10 0000，将其右移3位，那么就变为100，转化为十进制则是4</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据类型转换"><a class="markdownIt-Anchor" href="#数据类型转换">#</a> 数据类型转换</h2>
+<p>将低精度值赋值给高精度值时，数据会自动转换类型，示例代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span> c = <span class="string">&#x27;a&#x27;</span>;<span class="comment">//声明并初始化字符型变量c</span></span><br><span class="line">    <span class="type">int</span> number1 = <span class="number">10</span>;<span class="comment">//声明并初始化整型变量number1</span></span><br><span class="line">    <span class="type">float</span> number2 = <span class="number">10.10</span>;<span class="comment">//声明并初始化单精度浮点型变量number2</span></span><br><span class="line">    <span class="type">double</span> number3 = <span class="number">100.100</span>;<span class="comment">//声明并初始化双精度浮点型变量number3</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//当把高精度的数值，赋给低精度的变量时，会导致警告，例如：</span></span><br><span class="line">    number1 = number2;</span><br><span class="line">    <span class="comment">//因为整型并不存在小数部分，所以将浮点型赋值给整型时，会导致小数部分的数据丢失，因此会被警告</span></span><br><span class="line">    <span class="comment">//将高精度数值赋值给低精度变量时，可以强制转换其数据类型，例如：</span></span><br><span class="line">    number1 = (<span class="type">int</span>)number2;<span class="comment">//在前面使用(数据类型)，来强制转换变量的数据类型</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//而当低精度的数值，赋给高精度的变量时，则会自动转换其数据类型，例如：</span></span><br><span class="line">    number2 = number1;<span class="comment">//并不需要强制转换</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//基本数据类型中，可以自动转换的数据类型级别，大致如下：</span></span><br><span class="line">    <span class="comment">//double &gt; float &gt; unsigned long &gt; long &gt; unsigned int &gt; int &gt; short</span></span><br><span class="line">    number3 = number2 = number1 = c;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf&quot;</span>, number3);<span class="comment">//打印结果应为97.000000</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>需要注意的是：</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">当浮点型被转换为整型时，并不会采取四舍五入的方式，而是截断。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">即var = 1.1得到的结果为var = 1</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">var = 1.6得到的结果也为var = 1</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> var1 = <span class="number">1.1</span>;</span><br><span class="line">    <span class="type">int</span> var2 = <span class="number">1.6</span>;</span><br><span class="line">    <span class="type">float</span> var3 = <span class="number">3</span> / <span class="number">5</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,%d,%f&quot;</span>, var1, var2, var3);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到结果为 1，1，0.000000</p>
+<p>其中 var1 与 var2 已经解释过了，而其中为 float 类型的 var3 结果却是 0.000000</p>
+<p>这是因为参与计算的数值均为整型，即 3 / 5，运算出来的返回结果也只能是整型，得到的结果是被截断过后的整型 0，最后打印出的结果是 0.000000</p>
+<p>若要返回结果为浮点型，则需要使用浮点型数值参与运算，比如改为</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> var3 = <span class="number">3.0</span> / <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="分支语句语句"><a class="markdownIt-Anchor" href="#分支语句语句">#</a> <mark>分支语句语句</mark></h2>
 <h3 id="if-else-if-else语句"><a class="markdownIt-Anchor" href="#if-else-if-else语句">#</a> if、else if、else 语句</h3>
 <p>在生活中，我们经常会遇到分支情况，例如：</p>
 <p>如果沙县小吃比大盘鸡更便宜，我今天就去吃沙县小吃，否则的话就去吃大盘鸡。</p>
@@ -749,11 +1137,11 @@
 </ol>
 <p>而我们根据：哪个更便宜？这个条件对我们要做的选择进行判断。</p>
 <p>在编程中，我们也可以实现类似的分支情况，代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃沙县&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃大盘鸡&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;今晚吃沙县&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;今晚吃大盘鸡&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这部分代码，相信许多人只是读一遍，便能够理解，接下来我要详细介绍 if 语句的细节，首先是语法：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型) &#123;需要执行的代码块&#125;</span><br></pre></td></tr></table></figure>
 <p>这是一个 if 语句的语法，如果 if 后的代码块仅仅只有 1 句 (1 个分号为 1 句)，那么可以不写大括号，如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;只有一句代码时，可以不写大括号&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型)</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;只有一句代码时，可以不写大括号&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 <p>当括号内的布尔类型为真时，执行这条 if 语句，为假时，则不会执行。</p>
 <p>可以使用上面提到的比较运算符来获得布尔类型，如上面的沙县、大盘鸡比较代码。</p>
 <p>需要注意的是，if 语句可以单独使用，而 else 语句不可以，else 语句必须要有对应的 if 语句。</p>
@@ -763,7 +1151,7 @@
 <p>else 语句的匹配规则遵循就近原则：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (布尔类型) &#123;代码块&#125;<span class="comment">//这个if语句没有else</span></span><br><span class="line"><span class="keyword">if</span> (布尔类型) &#123;代码块&#125;<span class="comment">//下面的else语句会匹配离它最近的这个if语句</span></span><br><span class="line"><span class="keyword">else</span> &#123;代码块&#125;</span><br></pre></td></tr></table></figure>
 <p>回到上面的沙县与大盘鸡案例，我们可以想到，其价格的比较结果并非一定只有两种，还会有相同的情况：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃沙县&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (sha_xian == da_pan_ji) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;吃哪个都可以&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;今晚吃大盘鸡&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> sha_xian = <span class="number">20</span>, da_pan_ji = <span class="number">58</span>;</span><br><span class="line">	<span class="keyword">if</span> (sha_xian &lt; da_pan_ji) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;今晚吃沙县&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (sha_xian == da_pan_ji) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;吃哪个都可以&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;今晚吃大盘鸡&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以在 if 的下面添加 else if 语句来判断这种情况，else if 语句的作用类似于 if 语句，但是不能单独使用</p>
 <p><strong>else if 可以存在不止一句</strong></p>
 <p>同样的，当 else if 语句后面只有一条语句时，可以不写大括号。</p>
@@ -846,7 +1234,7 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">函数返回值类型 (*函数指针名)(参数类型列表) = 函数名;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">max</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>&#123;<span class="comment">//声明并实现一个函数，该函数的作用：在a与b中取出更大值并返回</span></span><br><span class="line">    <span class="keyword">if</span> (a &gt; b)</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">   	<span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">10</span>, y = <span class="number">20</span>;</span><br><span class="line">	<span class="type">int</span> (*pointer_max)(<span class="type">int</span>, <span class="type">int</span>) = max;<span class="comment">//使用示例</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;max is %d&quot;</span>, pointer_max(x, y));<span class="comment">//使用函数指针调用函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>回调函数：当函数所需的参数列表中，包含函数指针时，该函数被称为回调函数。</p>
 <p>即在函数中，通过函数指针调用另一个函数，示例如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">print_Function</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;printFunction被调用\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">callback_Function</span><span class="params">(<span class="type">int</span> times, <span class="type">void</span> (*p_f_parameter)(<span class="type">void</span>))</span> &#123;<span class="comment">//回调函数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; times; i++)<span class="comment">//使用for循环，调用times次函数指针所指向的函数</span></span><br><span class="line">		p_f_parameter();</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	callbackFunction(<span class="number">10</span>, print_Function);<span class="comment">//这里仅写函数名，不能加括号，加上括号相当于调用函数，给了一个空值(函数返回为空)</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">print_Function</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;printFunction被调用\n&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">callback_Function</span><span class="params">(<span class="type">int</span> times, <span class="type">void</span> (*p_f_parameter)(<span class="type">void</span>))</span> &#123;<span class="comment">//回调函数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; times; i++)<span class="comment">//使用for循环，调用times次函数指针所指向的函数</span></span><br><span class="line">		p_f_parameter();</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	callbackFunction(<span class="number">10</span>, print_Function);<span class="comment">//这里仅写函数名，不能加括号，加上括号相当于调用函数，给了一个空值(函数返回为空)</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中 callback_Function 为回调函数。</p>
 <h3 id="多级指针"><a class="markdownIt-Anchor" href="#多级指针">#</a> 多级指针</h3>
 <p>正如每个变量都有自己对应的地址，指针变量作为一个存储指针的变量，也有自己的地址。</p>
@@ -881,7 +1269,7 @@
 <p>使用 typedef 关键字可以自定义数据类型，如结构体：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="type">int</span> id;</span><br><span class="line">	<span class="type">char</span> name[<span class="number">10</span>];<span class="comment">//长度为10的字符数组</span></span><br><span class="line">&#125;Student;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	Student student;<span class="comment">//声明一个结构变量</span></span><br><span class="line">	student.id = <span class="number">123</span>;</span><br><span class="line">	<span class="built_in">strcpy</span>(student.name, <span class="string">&quot;张三&quot;</span>);<span class="comment">//使用string.h头文件下的strcpy函数操作字符数组</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;学生：%s, 学号：%d&quot;</span>, student.name, student.id);<span class="comment">//打印测试</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>也可以用于给原有数据类型起别名：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElementType;<span class="comment">//给int起别名为ElementType</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    ElementType data = <span class="number">123456</span>;<span class="comment">//等同于int data = 123456;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, data);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElementType;<span class="comment">//给int起别名为ElementType</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    ElementType data = <span class="number">123456</span>;<span class="comment">//等同于int data = 123456;</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; data &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="堆区开辟数据new关键字"><a class="markdownIt-Anchor" href="#堆区开辟数据new关键字">#</a> <mark>堆区开辟数据 (new 关键字)</mark></h2>
 <p><strong>使用<mark> new</mark> 关键字开辟堆区数据，使用<mark> delete</mark> 关键字进行释放</strong></p>
 <p><strong>注意：开辟的堆区需要程序员手动释放</strong></p>
@@ -2749,6 +3137,8 @@
 <p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202308032342679.png" alt="image-20230803234218554"></p>
 <h2 id="23合并-k-个升序链表"><a class="markdownIt-Anchor" href="#23合并-k-个升序链表">#</a> (23) 合并 K 个升序链表</h2>
 <p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202308121359399.png" alt="image-20230812135901264"></p>
+<h2 id="2048下一个更大的数值平衡数"><a class="markdownIt-Anchor" href="#2048下一个更大的数值平衡数">#</a> (2048) 下一个更大的数值平衡数</h2>
+<p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202312091423964.png" alt="image-20231209141056489"></p>
 <h1 id="题解"><a class="markdownIt-Anchor" href="#题解">#</a> 题解</h1>
 <h2 id="1170比较字符串最小字母出现频次-2"><a class="markdownIt-Anchor" href="#1170比较字符串最小字母出现频次-2">#</a> (1170) 比较字符串最小字母出现频次</h2>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">numSmallerByFrequency</span><span class="params">(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">count</span><span class="params">(<span class="number">11</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (string&amp; w : words)&#123;</span><br><span class="line">            <span class="comment">//统计words中每个string的最小字母出现的次数的情况，最多有10种情况，所以count的长度为11(因为使用下标从1开始)</span></span><br><span class="line">            <span class="type">int</span> req = <span class="built_in">f</span>(w);</span><br><span class="line">            <span class="comment">//每出现一次对应的情况，将其出现次数加1</span></span><br><span class="line">            count[req]++;</span><br><span class="line">            <span class="comment">//当f(queries[i])等于2时，那么对于words大于2的情况，都是大于f(queries[i])的</span></span><br><span class="line">            <span class="comment">//只需要将f(words[i]) &gt; 2的情况全部相加，即count[3] + count[4] + .... + count[10](因为words[i].length &lt; 10)</span></span><br><span class="line">            <span class="comment">//就是f(queries[i]) &lt; f(words[i])的数量</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> sum_len = count.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sum</span><span class="params">(<span class="number">11</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt; sum_len; i++)&#123;</span><br><span class="line">            <span class="comment">//将f(words[i])的count提前计算好</span></span><br><span class="line">            <span class="comment">//当f(queries[i])为4时，需要计算count[5]加到count[10]</span></span><br><span class="line">            <span class="comment">//只需要用sum[10] - sum[5]即可</span></span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + count[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> len = queries.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">answer</span><span class="params">(len)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>;i &lt; len;i++)&#123;</span><br><span class="line">            <span class="comment">//先计算f(queries[i])</span></span><br><span class="line">            <span class="type">int</span> req = <span class="built_in">f</span>(queries[i]);</span><br><span class="line">            <span class="comment">//将sum相减计算的最后结果存储到answer中</span></span><br><span class="line">            answer[i] = sum[<span class="number">10</span>] - sum[req];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(string&amp; str)</span></span>&#123;</span><br><span class="line">        <span class="comment">//统计数</span></span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//当前最小字母</span></span><br><span class="line">        <span class="type">char</span> cur_c = EOF;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span>&amp; c : str)&#123;</span><br><span class="line">            <span class="comment">//如果c的值更小，则重新开始计算</span></span><br><span class="line">            <span class="keyword">if</span> (cur_c == EOF || cur_c &gt; c)&#123;</span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">                cur_c = c;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果当前的最小字母和遍历到的c相同，则统计数增加</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (cur_c == c)&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -2778,6 +3168,8 @@
 <h2 id="23合并-k-个升序链表-2"><a class="markdownIt-Anchor" href="#23合并-k-个升序链表-2">#</a> (23) 合并 K 个升序链表</h2>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//方法1：顺序合并</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//合并a,b两个链表</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode *a, ListNode *b)</span></span>&#123;</span><br><span class="line">        <span class="comment">//如果a链表为空，或者b链表为空</span></span><br><span class="line">        <span class="comment">//如果a为空返回b，如果b为空返回a</span></span><br><span class="line">        <span class="keyword">if</span> ((!a) || (!b)) <span class="keyword">return</span> a ? a : b;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//声明ans的头节点head，与指向ans链表结尾的tail指针</span></span><br><span class="line">        <span class="comment">//使用aPtr和bPtr来操作a链表和b链表</span></span><br><span class="line">        ListNode head, *tail = &amp;head, *aPtr = a, *bPtr = b;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//只要aPtr或者bPtr任意一个指向空，那么就结束循环</span></span><br><span class="line">        <span class="keyword">while</span> (aPtr &amp;&amp; bPtr)&#123;</span><br><span class="line">            <span class="comment">//如果aPtr的值更小，那么将aPtr的节点赋给tail的next，并向后继续读a链表</span></span><br><span class="line">            <span class="keyword">if</span> (aPtr-&gt;val &lt; bPtr-&gt;val)&#123;</span><br><span class="line">                tail-&gt;next = aPtr;</span><br><span class="line">                aPtr = aPtr-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//如果bPtr的更小，那么将bPtr的节点赋给tail的next，并向后继续读b链表</span></span><br><span class="line">                tail-&gt;next = bPtr;</span><br><span class="line">                bPtr = bPtr-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//更新tail</span></span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//循环结束后，a链表为空或者b链表为空，将不为空的链表剩余部分归入ans</span></span><br><span class="line">        tail-&gt;next = (aPtr ? aPtr : bPtr);</span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(vector&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">        ListNode *ans = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>;i &lt; lists.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="comment">//从前往后将ans链表和lists[i]看作两个链表的合并逐个调用mergeTwoLists</span></span><br><span class="line">            ans = <span class="built_in">mergeTwoLists</span>(ans, lists[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法2：分治合并</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//合并a,b两个链表</span></span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode *a, ListNode *b)</span></span>&#123;</span><br><span class="line">        <span class="comment">//如果a链表为空，或者b链表为空</span></span><br><span class="line">        <span class="comment">//如果a为空返回b，如果b为空返回a</span></span><br><span class="line">        <span class="keyword">if</span> ((!a) || (!b)) <span class="keyword">return</span> a ? a : b;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//声明ans的头节点head，与指向ans链表结尾的tail指针</span></span><br><span class="line">        <span class="comment">//使用aPtr和bPtr来操作a链表和b链表</span></span><br><span class="line">        ListNode head, *tail = &amp;head, *aPtr = a, *bPtr = b;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//只要aPtr或者bPtr任意一个指向空，那么就结束循环</span></span><br><span class="line">        <span class="keyword">while</span> (aPtr &amp;&amp; bPtr)&#123;</span><br><span class="line">            <span class="comment">//如果aPtr的值更小，那么将aPtr的节点赋给tail的next，并向后继续读a链表</span></span><br><span class="line">            <span class="keyword">if</span> (aPtr-&gt;val &lt; bPtr-&gt;val)&#123;</span><br><span class="line">                tail-&gt;next = aPtr;</span><br><span class="line">                aPtr = aPtr-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//如果bPtr的更小，那么将bPtr的节点赋给tail的next，并向后继续读b链表</span></span><br><span class="line">                tail-&gt;next = bPtr;</span><br><span class="line">                bPtr = bPtr-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//更新tail</span></span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//循环结束后，a链表为空或者b链表为空，将不为空的链表剩余部分归入ans</span></span><br><span class="line">        tail-&gt;next = (aPtr ? aPtr : bPtr);</span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ListNode* <span class="title">merge</span><span class="params">(vector&lt;ListNode*&gt; &amp;lists, <span class="type">int</span> l, <span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="comment">//使用左右指针与取中值，将链表组分为左半部分与右半部分，然后将二者作为整体进行递归归并</span></span><br><span class="line">        <span class="comment">//不停的左右划分，直到左右部分仅剩一个链表，则返回其本身即可</span></span><br><span class="line">        <span class="comment">//或者剩余两个链表，那么使用mergeTwoLists将其合并为一个链表并返回</span></span><br><span class="line">        <span class="comment">//最后收束归并链表组</span></span><br><span class="line">        <span class="keyword">if</span> (l == r) <span class="keyword">return</span> lists[l];</span><br><span class="line">        <span class="comment">//如果左值已经超过右值，那么返回空即可</span></span><br><span class="line">        <span class="keyword">if</span> (l &gt; r)<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="comment">//(l + r) &gt;&gt; 1即(l + r) / 2</span></span><br><span class="line">        <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">mergeTwoLists</span>(<span class="built_in">merge</span>(lists, l, mid), <span class="built_in">merge</span>(lists, mid + <span class="number">1</span>, r));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeKLists</span><span class="params">(vector&lt;ListNode*&gt;&amp; lists)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">merge</span>(lists, <span class="number">0</span>, lists.<span class="built_in">size</span>() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="2048下一个更大的数值平衡数-2"><a class="markdownIt-Anchor" href="#2048下一个更大的数值平衡数-2">#</a> (2048) 下一个更大的数值平衡数</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">nextBeautifulNumber</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">        <span class="comment">//用于记录某个数的出现次数</span></span><br><span class="line">        map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; m;</span><br><span class="line">        <span class="type">int</span> i = ++n;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="comment">//flag用于标记是否找到平衡数，结束循环</span></span><br><span class="line">            <span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">//temp用于标记某一位数字是否出现过</span></span><br><span class="line">            map&lt;<span class="type">int</span>, <span class="type">bool</span>&gt; temp;</span><br><span class="line">            <span class="keyword">while</span> (i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">                <span class="comment">//如果出现0，说明该数字不符合要求（因为0的出现次数已经为1，不可能满足出现次数为0的要求）</span></span><br><span class="line">                <span class="keyword">if</span> (i % <span class="number">10</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">//如果某数是第一次出现</span></span><br><span class="line">                <span class="keyword">if</span> (temp[i % <span class="number">10</span>] == <span class="literal">false</span>) &#123;</span><br><span class="line">                    <span class="comment">//则将该数设置为已经出现过</span></span><br><span class="line">                    temp[i % <span class="number">10</span>] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="comment">//并将该数对应的map[]设置为需要出现的次数</span></span><br><span class="line">                    m[i % <span class="number">10</span>] = i % <span class="number">10</span> - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//如果该数已经出现过，则将其对应的map[] 需要出现的次数减1</span></span><br><span class="line">                    m[i % <span class="number">10</span>]--;</span><br><span class="line">                &#125;</span><br><span class="line">                i /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = n; j &gt; <span class="number">0</span>; j /= <span class="number">10</span>) &#123;</span><br><span class="line">                <span class="comment">//遍历map，如果均为0说明出现次数匹配，如果不为0，则说明有数字的出现次数不对，把flag调成false</span></span><br><span class="line">                <span class="keyword">if</span> (m[j % <span class="number">10</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">                    flag = <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//根据flag返回查找到的平衡数</span></span><br><span class="line">            <span class="keyword">if</span> (flag)</span><br><span class="line">                <span class="keyword">return</span> n;</span><br><span class="line">            n++;</span><br><span class="line">            i = n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">    Solution s;</span><br><span class="line">    <span class="comment">//遍历题目给出的n的范围（0 &lt;= n &lt;= 1000000)</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000</span>; i++) &#123;</span><br><span class="line">        i = s.<span class="built_in">nextBeautifulNumber</span>(i);</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过上述算法计算出所有结果的可能，然后使用vector存储，用二分查找获取结果并返回，如下：</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">const</span> vector&lt;<span class="type">int</span>&gt; balance &#123;</span><br><span class="line">        <span class="number">1</span>, <span class="number">22</span>, <span class="number">122</span>, <span class="number">212</span>, <span class="number">221</span>, <span class="number">333</span>, <span class="number">1333</span>, <span class="number">3133</span>, <span class="number">3313</span>, <span class="number">3331</span>, <span class="number">4444</span>,</span><br><span class="line">        <span class="number">14444</span>, <span class="number">22333</span>, <span class="number">23233</span>, <span class="number">23323</span>, <span class="number">23332</span>, <span class="number">32233</span>, <span class="number">32323</span>, <span class="number">32332</span>,</span><br><span class="line">        <span class="number">33223</span>, <span class="number">33232</span>, <span class="number">33322</span>, <span class="number">41444</span>, <span class="number">44144</span>, <span class="number">44414</span>, <span class="number">44441</span>, <span class="number">55555</span>,</span><br><span class="line">        <span class="number">122333</span>, <span class="number">123233</span>, <span class="number">123323</span>, <span class="number">123332</span>, <span class="number">132233</span>, <span class="number">132323</span>, <span class="number">132332</span>,</span><br><span class="line">        <span class="number">133223</span>, <span class="number">133232</span>, <span class="number">133322</span>, <span class="number">155555</span>, <span class="number">212333</span>, <span class="number">213233</span>, <span class="number">213323</span>,</span><br><span class="line">        <span class="number">213332</span>, <span class="number">221333</span>, <span class="number">223133</span>, <span class="number">223313</span>, <span class="number">223331</span>, <span class="number">224444</span>, <span class="number">231233</span>,</span><br><span class="line">        <span class="number">231323</span>, <span class="number">231332</span>, <span class="number">232133</span>, <span class="number">232313</span>, <span class="number">232331</span>, <span class="number">233123</span>, <span class="number">233132</span>,</span><br><span class="line">        <span class="number">233213</span>, <span class="number">233231</span>, <span class="number">233312</span>, <span class="number">233321</span>, <span class="number">242444</span>, <span class="number">244244</span>, <span class="number">244424</span>,</span><br><span class="line">        <span class="number">244442</span>, <span class="number">312233</span>, <span class="number">312323</span>, <span class="number">312332</span>, <span class="number">313223</span>, <span class="number">313232</span>, <span class="number">313322</span>,</span><br><span class="line">        <span class="number">321233</span>, <span class="number">321323</span>, <span class="number">321332</span>, <span class="number">322133</span>, <span class="number">322313</span>, <span class="number">322331</span>, <span class="number">323123</span>,</span><br><span class="line">        <span class="number">323132</span>, <span class="number">323213</span>, <span class="number">323231</span>, <span class="number">323312</span>, <span class="number">323321</span>, <span class="number">331223</span>, <span class="number">331232</span>,</span><br><span class="line">        <span class="number">331322</span>, <span class="number">332123</span>, <span class="number">332132</span>, <span class="number">332213</span>, <span class="number">332231</span>, <span class="number">332312</span>, <span class="number">332321</span>,</span><br><span class="line">        <span class="number">333122</span>, <span class="number">333212</span>, <span class="number">333221</span>, <span class="number">422444</span>, <span class="number">424244</span>, <span class="number">424424</span>, <span class="number">424442</span>,</span><br><span class="line">        <span class="number">442244</span>, <span class="number">442424</span>, <span class="number">442442</span>, <span class="number">444224</span>, <span class="number">444242</span>, <span class="number">444422</span>, <span class="number">515555</span>,</span><br><span class="line">        <span class="number">551555</span>, <span class="number">555155</span>, <span class="number">555515</span>, <span class="number">555551</span>, <span class="number">666666</span>, <span class="number">1224444</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">nextBeautifulNumber</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> *<span class="built_in">upper_bound</span>(balance.<span class="built_in">begin</span>(), balance.<span class="built_in">end</span>(), n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法练习</category>
@@ -4557,7 +4949,7 @@
 </li>
 <li>
 <p>使用 vim 编辑 redis.service，添加如下内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Redis</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/redis-stable/src/redis-server /usr/local/redis-stable/redis.conf</span><br><span class="line">ExecRedload=/usr/local/redis-stable/src/redis-server -s reload</span><br><span class="line">ExecStop=/usr/local/redis-stable/src/redis-server -s stop</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Redis</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/redis-stable/src/redis-server /usr/local/redis-stable/redis.conf</span><br><span class="line">ExecReload=/usr/local/redis-stable/src/redis-server -s reload</span><br><span class="line">ExecStop=/usr/local/redis-stable/src/redis-server -s stop</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>重新读取 systemctl 文件：</p>
@@ -7009,7 +7401,7 @@
 </li>
 <li>
 <p>配置发送信息</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> util</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;crypto/tls&quot;</span></span><br><span class="line">	<span class="string">&quot;errors&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/jordan-wright/email&quot;</span></span><br><span class="line">	<span class="string">&quot;net/smtp&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">SendCode</span><span class="params">(toUserEmail, code <span class="type">string</span>)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">    <span class="comment">//toUserEmail是接收者邮箱，code是生成的验证码</span></span><br><span class="line">	e := email.NewEmail()</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用From填写发送者的信息</span></span><br><span class="line">	e.From = <span class="string">&quot;OnlineLearn &lt;michael_m_a@163.com&gt;&quot;</span></span><br><span class="line">    <span class="comment">//To填写接收者邮箱</span></span><br><span class="line">	e.To = []<span class="type">string</span>&#123;toUserEmail&#125;</span><br><span class="line">    <span class="comment">//Subject为项目描述</span></span><br><span class="line">	e.Subject = <span class="string">&quot;验证码发送测试&quot;</span></span><br><span class="line">    <span class="comment">//发送内容</span></span><br><span class="line">	e.HTML = []<span class="type">byte</span>(<span class="string">&quot;您的验证码是：&lt;b&gt;&quot;</span> + code + <span class="string">&quot;&lt;/b&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里以163邮箱为例：</span></span><br><span class="line">	<span class="comment">//err := e.Send(&quot;smtp.163.com:465&quot;, smtp.PlainAuth(&quot;&quot;, &quot;Sender&#x27;s Email@example.com&quot;, &quot;SMTP授权码&quot;, &quot;smtp.163.com&quot;))</span></span><br><span class="line">    </span><br><span class="line">	<span class="comment">//如果使用上面这条语句提示EOF，则使用下面的发送语句，跳过tls验证</span></span><br><span class="line">	err := e.SendWithTLS(<span class="string">&quot;smtp.163.com:465&quot;</span>, smtp.PlainAuth(<span class="string">&quot;&quot;</span>, <span class="string">&quot;Sender&#x27;s Email@example.com&quot;</span>, <span class="string">&quot;SMTP授权码&quot;</span>, <span class="string">&quot;smtp.163.com&quot;</span>),</span><br><span class="line">		&amp;tls.Config&#123;InsecureSkipVerify: <span class="literal">true</span>, ServerName: <span class="string">&quot;smtp.163.com&quot;</span>&#125;)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		err := errors.New(<span class="string">&quot;Send Email Code Error!&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> util</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;crypto/tls&quot;</span></span><br><span class="line">	<span class="string">&quot;errors&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/jordan-wright/email&quot;</span></span><br><span class="line">	<span class="string">&quot;net/smtp&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">SendCode</span><span class="params">(toUserEmail, code <span class="type">string</span>)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">    <span class="comment">//toUserEmail是接收者邮箱，code是生成的验证码</span></span><br><span class="line">	e := email.NewEmail()</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用From填写发送者的信息</span></span><br><span class="line">	e.From = <span class="string">&quot;OnlineLearn &lt;发送者邮箱&gt;&quot;</span></span><br><span class="line">    <span class="comment">//To填写接收者邮箱</span></span><br><span class="line">	e.To = []<span class="type">string</span>&#123;toUserEmail&#125;</span><br><span class="line">    <span class="comment">//Subject为项目描述</span></span><br><span class="line">	e.Subject = <span class="string">&quot;验证码发送测试&quot;</span></span><br><span class="line">    <span class="comment">//发送内容</span></span><br><span class="line">	e.HTML = []<span class="type">byte</span>(<span class="string">&quot;您的验证码是：&lt;b&gt;&quot;</span> + code + <span class="string">&quot;&lt;/b&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里以163邮箱为例：</span></span><br><span class="line">	<span class="comment">//err := e.Send(&quot;smtp.163.com:465&quot;, smtp.PlainAuth(&quot;&quot;, &quot;Sender&#x27;s Email@example.com&quot;, &quot;SMTP授权码&quot;, &quot;smtp.163.com&quot;))</span></span><br><span class="line">    </span><br><span class="line">	<span class="comment">//如果使用上面这条语句提示EOF，则使用下面的发送语句，跳过tls验证</span></span><br><span class="line">	err := e.SendWithTLS(<span class="string">&quot;smtp.163.com:465&quot;</span>, smtp.PlainAuth(<span class="string">&quot;&quot;</span>, <span class="string">&quot;Sender&#x27;s Email@example.com&quot;</span>, <span class="string">&quot;SMTP授权码&quot;</span>, <span class="string">&quot;smtp.163.com&quot;</span>),</span><br><span class="line">		&amp;tls.Config&#123;InsecureSkipVerify: <span class="literal">true</span>, ServerName: <span class="string">&quot;smtp.163.com&quot;</span>&#125;)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		err := errors.New(<span class="string">&quot;Send Email Code Error!&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>生成验证码并发送，写入 redis 等待验证</p>
