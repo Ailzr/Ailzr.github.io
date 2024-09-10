@@ -7493,4 +7493,40 @@
         <tag>Linux systemctl</tag>
       </tags>
   </entry>
+  <entry>
+    <title>office tool plus安装office工具</title>
+    <url>/2024/09/10/office-install/</url>
+    <content><![CDATA[<h1 id="安装office-tool-plus"><a class="markdownIt-Anchor" href="#安装office-tool-plus">#</a> 安装 Office Tool Plus：</h1>
+<p>Office Tool Plus 安装网址：<br>
+ <code>https://otp.landian.vip/zh-cn/</code> <br>
+<img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202409101124906.png" alt=""><br>
+<br><br>
+根据自己的网络情况选择合适的下载路线：<br>
+<img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202409101130415.png" alt=""><br>
+<br><br>
+解压并运行 office tool plus</p>
+<h1 id="安装office"><a class="markdownIt-Anchor" href="#安装office">#</a> 安装 office</h1>
+<h2 id="部署office"><a class="markdownIt-Anchor" href="#部署office">#</a> 部署 office：</h2>
+<p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202409101152007.png" alt=""></p>
+<p>根据自己的需要选择版本，选择后面带有批量许可证的版本，这里以 office 标准版 2019 - 批量许可证版本为例：</p>
+<p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202409101153503.png" alt=""></p>
+<p>确定后点击开始部署，等待部署完成</p>
+<h1 id="激活office"><a class="markdownIt-Anchor" href="#激活office">#</a> 激活 office</h1>
+<h2 id="安装许可证"><a class="markdownIt-Anchor" href="#安装许可证">#</a> 安装许可证</h2>
+<p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202409101214619.png" alt=""></p>
+<p>选择自己部署的同版本 office 的许可证，确定</p>
+<p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202409101215721.png" alt=""></p>
+<h2 id="kms主机设置"><a class="markdownIt-Anchor" href="#kms主机设置">#</a> KMS 主机设置</h2>
+<p><img src="https://raw.githubusercontent.com/Ailzr/picBed/master/202409101218250.png" alt=""></p>
+<p>可以参考下面网址获取 KMS 主机网址：<br>
+ <code>https://www.coolhub.top/tech-articles/kms_list.html</code></p>
+<p>设置好后点击激活，等待激活成功即可</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>office tool plus</tag>
+      </tags>
+  </entry>
 </search>
